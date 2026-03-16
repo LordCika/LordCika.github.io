@@ -1,825 +1,301 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Of Liar — Analisi, propaganda, Israele, media</title>
-    <meta
-      name="description"
-      content="Game Of Liar è una rivista personale dedicata a disinformazione, propaganda, Israele, media, attualità e intelligenza artificiale."
-    />
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bg: #06080b;
-        --bg-2: #0a0e14;
-        --bg-3: #101621;
-        --panel: rgba(255, 255, 255, 0.06);
-        --panel-2: rgba(255, 255, 255, 0.09);
-        --border: rgba(255, 255, 255, 0.12);
-        --border-2: rgba(255, 255, 255, 0.18);
-        --text: rgba(248, 249, 251, 0.96);
-        --muted: rgba(215, 220, 227, 0.68);
-        --soft: rgba(255, 255, 255, 0.84);
-        --accent: #9e1e2d;
-        --accent-soft: rgba(158, 30, 45, 0.2);
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
-        --radius-xl: 32px;
-        --radius-lg: 24px;
-        --radius-md: 18px;
-        --max: 1380px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lord Cika | Archivio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0a0a0f;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      padding: 28px 42px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(10,10,15,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: #b8b8c2;
+      font-size: 15px;
+    }
+
+    main {
+      padding: 36px 42px 80px;
+    }
+
+    .hero {
+      margin-bottom: 42px;
+      padding: 34px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #15151d, #0c0c12);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 14px;
+      max-width: 900px;
+    }
+
+    .hero p {
+      color: #c8c8d2;
+      max-width: 860px;
+      font-size: 18px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      display: block;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #14141b;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.35);
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      background: #1a1a22;
+    }
+
+    .card-content {
+      padding: 14px 14px 16px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      color: #b6b6c1;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 30px 42px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #9d9daa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header, main, footer {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-
-      body {
-        margin: 0;
-        color: var(--text);
-        font-family: 'Inter', system-ui, sans-serif;
-        background:
-          radial-gradient(circle at top, rgba(158, 30, 45, 0.18), transparent 24%),
-          radial-gradient(circle at 85% 10%, rgba(63, 89, 140, 0.16), transparent 22%),
-          linear-gradient(180deg, #0b0f14 0%, #07090d 28%, #05070a 100%);
-      }
-
-      img { display: block; max-width: 100%; }
-      a { color: inherit; text-decoration: none; }
-
-      .noise {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.04;
-        background-image:
-          linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-        background-size: 4px 4px;
-        mix-blend-mode: soft-light;
-      }
-
-      .container {
-        width: min(calc(100% - 40px), var(--max));
-        margin: 0 auto;
-      }
-
-      .glass {
-        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(24px) saturate(150%);
-        -webkit-backdrop-filter: blur(24px) saturate(150%);
-      }
-
-      .section { padding: 28px 0; }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.08);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 0.74rem;
-        color: rgba(255,255,255,0.84);
-      }
-
-      .display,
-      .section-title,
-      .card-title,
-      .article-title,
-      .brand-name {
-        font-family: 'Cormorant Garamond', serif;
-        letter-spacing: -0.02em;
-      }
-
-      .topbar {
-        position: sticky;
-        top: 14px;
-        z-index: 100;
-        padding-top: 14px;
-      }
-
-      .topbar-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 14px 18px;
-        border-radius: 999px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        min-width: 0;
-      }
-
-      .brand img {
-        width: 54px;
-        height: 54px;
-        object-fit: contain;
-        filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
-      }
-
-      .brand-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        line-height: 1;
-      }
-
-      .brand-copy small {
-        color: var(--muted);
-        font-size: 0.68rem;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-      }
-
-      .brand-name {
-        font-size: 1.7rem;
-        font-weight: 700;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        font-size: 0.96rem;
-        color: var(--muted);
-      }
-
-      .nav a:hover { color: var(--text); }
-
-      .nav .cta {
-        color: var(--text);
-        padding: 10px 16px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.12);
+      header h1 {
+        font-size: 30px;
       }
 
       .hero {
-        padding: 34px 0 18px;
+        padding: 24px;
       }
 
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.22fr 0.78fr;
-        gap: 22px;
+      .hero h2 {
+        font-size: 32px;
       }
 
-      .hero-main {
-        position: relative;
-        min-height: 700px;
-        overflow: hidden;
-        border-radius: var(--radius-xl);
-        background: #0b0f14;
-      }
-
-      .hero-main::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(180deg, rgba(8,10,14,0.12) 0%, rgba(8,10,14,0.42) 30%, rgba(8,10,14,0.92) 100%),
-          url('images/hero-poster.jpg') center/cover no-repeat;
-        transform: scale(1.02);
-      }
-
-      .hero-main::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(circle at 50% 8%, rgba(158, 30, 45, 0.28), transparent 28%),
-          linear-gradient(90deg, rgba(0,0,0,0.08), transparent 40%);
-      }
-
-      .hero-content {
-        position: absolute;
-        inset: auto 0 0 0;
-        z-index: 2;
-        padding: 34px;
-      }
-
-      .display {
-        margin: 16px 0 14px;
-        font-size: clamp(3.4rem, 6vw, 6.1rem);
-        line-height: 0.9;
-        max-width: 10ch;
-      }
-
-      .hero-copy {
-        max-width: 62ch;
-        color: rgba(245,247,250,0.78);
-        line-height: 1.7;
-        font-size: 1.02rem;
-      }
-
-      .hero-side {
-        display: grid;
-        gap: 18px;
-      }
-
-      .panel {
-        padding: 22px;
-        border-radius: var(--radius-lg);
-      }
-
-      .panel h3 {
-        margin: 0 0 10px;
-        font-size: 1.08rem;
-      }
-
-      .panel p,
-      .meta,
-      .section-subtitle,
-      .card-copy,
-      .muted {
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-top: 18px;
-      }
-
-      .stat {
-        padding: 16px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 1.15rem;
-        margin-bottom: 4px;
-      }
-
-      .section-header {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 22px;
-        margin-bottom: 18px;
+      .hero p {
+        font-size: 16px;
       }
 
       .section-title {
-        margin: 0 0 8px;
-        font-size: clamp(2.2rem, 3.6vw, 3.5rem);
-        line-height: 0.95;
+        font-size: 24px;
       }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lord Cika</h1>
+    <p>Archivio editoriale — articoli, analisi, copertine</p>
+  </header>
 
-      .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
+  <main>
+    <section class="hero">
+      <h2>Un archivio pubblico dei miei articoli</h2>
+      <p>
+        Questo sito raccoglie i miei articoli con le relative copertine.
+        È il mio archivio editoriale personale: ordinato, indipendente e fuori dal caos dei social.
+      </p>
+    </section>
 
-      .card {
-        position: relative;
-        overflow: hidden;
-        border-radius: var(--radius-lg);
-      }
+    <section>
+      <h2 class="section-title">Archivio</h2>
+      <div class="grid">
 
-      .card-media {
-        aspect-ratio: 4 / 5;
-        background-size: cover;
-        background-position: center;
-      }
+        <a class="card" href="articoli/netanyahu-primo-del-suo-nome.html" data-date="2026-03-01">
+          <img class="cover" src="images/001.png" alt="Netanyahu Primo Del Suo Nome">
+          <div class="card-content">
+            <h3>Netanyahu Primo Del Suo Nome</h3>
+            <p>1 marzo 2026</p>
+          </div>
+        </a>
 
-      .card-body {
-        position: absolute;
-        inset: auto 14px 14px 14px;
-        padding: 18px;
-        border-radius: 22px;
-      }
+        <a class="card" href="articoli/lettera-a-big-mama.html" data-date="2026-03-07">
+          <img class="cover" src="images/002.png" alt="Lettera a Big Mama">
+          <div class="card-content">
+            <h3>Lettera a Big Mama</h3>
+            <p>7 marzo 2026</p>
+          </div>
+        </a>
 
-      .card-title {
-        margin: 0 0 8px;
-        font-size: 2rem;
-        line-height: 0.95;
-      }
+        <a class="card" href="articoli/game-of-liar.html" data-date="2026-03-15">
+          <img class="cover" src="images/003.png" alt="Game Of Liar">
+          <div class="card-content">
+            <h3>Game Of Liar</h3>
+            <p>15 marzo 2026</p>
+          </div>
+        </a>
 
-      .tag-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
-      }
+        <a class="card" href="articoli/l-errore.html" data-date="2026-03-05">
+          <img class="cover" src="images/004.jpg" alt="L'Errore">
+          <div class="card-content">
+            <h3>L'Errore</h3>
+            <p>5 marzo 2026</p>
+          </div>
+        </a>
 
-      .tag {
-        padding: 7px 10px;
-        border-radius: 999px;
-        text-transform: uppercase;
-        letter-spacing: 0.11em;
-        font-size: 0.72rem;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.08);
-        color: rgba(255,255,255,0.88);
-      }
+        <a class="card" href="articoli/adios.html" data-date="2026-03-09">
+          <img class="cover" src="images/006.png" alt="Adios!">
+          <div class="card-content">
+            <h3>Adios!</h3>
+            <p>9 marzo 2026</p>
+          </div>
+        </a>
 
-      .topics {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
+        <a class="card" href="articoli/lo-specchio-dell-ipocrisia.html" data-date="2026-03-10">
+          <img class="cover" src="images/007.png" alt="Lo Specchio dell'Ipocrisia">
+          <div class="card-content">
+            <h3>Lo Specchio dell'Ipocrisia</h3>
+            <p>10 marzo 2026</p>
+          </div>
+        </a>
 
-      .topic {
-        padding: 18px;
-        border-radius: 22px;
-      }
+        <a class="card" href="articoli/operazione-collera-di-dio-ii.html" data-date="2026-03-01">
+          <img class="cover" src="images/008.png" alt="Operazione Collera di Dio II">
+          <div class="card-content">
+            <h3>Operazione Collera di Dio II</h3>
+            <p>1 marzo 2026</p>
+          </div>
+        </a>
 
-      .topic strong {
-        display: block;
-        margin-bottom: 6px;
-      }
+        <a class="card" href="articoli/il-giorno-dei-draghi.html" data-date="2026-03-09">
+          <img class="cover" src="images/009.png" alt="Il Giorno Dei Draghi">
+          <div class="card-content">
+            <h3>Il Giorno Dei Draghi</h3>
+            <p>9 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-preview {
-        position: relative;
-        min-height: 1080px;
-        overflow: hidden;
-        border-radius: 36px;
-        isolation: isolate;
-        background: #040608;
-      }
+        <a class="card" href="articoli/il-danno.html" data-date="2026-03-04">
+          <img class="cover" src="images/010.png" alt="Il Danno">
+          <div class="card-content">
+            <h3>Il Danno</h3>
+            <p>4 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-preview::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: url('images/article-poster.jpg') center/cover no-repeat;
-        transform: scale(1.12);
-        filter: blur(18px);
-      }
+        <a class="card" href="articoli/l-indeciso.html" data-date="2026-03-02">
+          <img class="cover" src="images/011.png" alt="L'Indeciso">
+          <div class="card-content">
+            <h3>L'Indeciso</h3>
+            <p>2 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-preview::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(180deg, rgba(6,8,12,0.34) 0%, rgba(6,8,12,0.75) 16%, rgba(6,8,12,0.92) 36%, rgba(6,8,12,0.96) 100%),
-          radial-gradient(circle at 50% 0%, rgba(158, 30, 45, 0.16), transparent 30%);
-      }
+        <a class="card" href="articoli/lo-scudo.html" data-date="2026-03-12">
+          <img class="cover" src="images/012.png" alt="Lo Scudo">
+          <div class="card-content">
+            <h3>Lo Scudo</h3>
+            <p>12 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-inner {
-        position: relative;
-        z-index: 2;
-        width: min(100%, 980px);
-        margin: 0 auto;
-        padding: 110px 28px 90px;
-      }
+        <a class="card" href="articoli/la-vittima-armata.html" data-date="2026-03-11">
+          <img class="cover" src="images/013.png" alt="La Vittima Armata">
+          <div class="card-content">
+            <h3>La Vittima Armata</h3>
+            <p>11 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-header {
-        text-align: center;
-        margin-bottom: 34px;
-      }
+        <a class="card" href="articoli/l-ultima-maschera.html" data-date="2026-03-06">
+          <img class="cover" src="images/014.png" alt="L'Ultima Maschera">
+          <div class="card-content">
+            <h3>L'Ultima Maschera</h3>
+            <p>6 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-title {
-        margin: 12px auto 16px;
-        max-width: 12ch;
-        font-size: clamp(3.2rem, 6vw, 5.8rem);
-        line-height: 0.92;
-      }
+        <a class="card" href="articoli/mahsa.html" data-date="2026-03-08">
+          <img class="cover" src="images/015.png" alt="Mahsa">
+          <div class="card-content">
+            <h3>Mahsa</h3>
+            <p>8 marzo 2026</p>
+          </div>
+        </a>
 
-      .article-deck {
-        max-width: 60ch;
-        margin: 0 auto;
-        color: rgba(245,247,250,0.76);
-        line-height: 1.72;
-        font-size: 1.04rem;
-      }
-
-      .article-meta {
-        margin-top: 18px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        flex-wrap: wrap;
-        color: rgba(255,255,255,0.8);
-        font-size: 0.92rem;
-      }
-
-      .article-body-wrap {
-        padding: 28px;
-        border-radius: 32px;
-      }
-
-      .article-body {
-        font-size: 1.06rem;
-        line-height: 1.95;
-        color: rgba(245,247,250,0.94);
-      }
-
-      .article-body p { margin: 0 0 1.3em; }
-
-      .article-body p:first-child::first-letter {
-        float: left;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 4.9rem;
-        line-height: 0.85;
-        padding-right: 10px;
-        padding-top: 6px;
-      }
-
-      .pullquote {
-        margin: 34px 0;
-        padding: 24px;
-        border-radius: 24px;
-        border-left: 3px solid rgba(255,255,255,0.22);
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 2rem;
-        line-height: 1.08;
-      }
-
-      .newsletter {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 18px;
-      }
-
-      .newsletter-box {
-        padding: 24px;
-        border-radius: 28px;
-      }
-
-      .fake-form {
-        display: flex;
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .fake-input,
-      .fake-button {
-        border-radius: 999px;
-        padding: 14px 16px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.06);
-        color: var(--text);
-        font: inherit;
-      }
-
-      .fake-input { flex: 1; }
-      .fake-button {
-        cursor: pointer;
-        background: rgba(255,255,255,0.1);
-        font-weight: 700;
-      }
-
-      .footer {
-        padding: 32px 0 68px;
-      }
-
-      .footer-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 22px;
-        border-radius: 26px;
-      }
-
-      .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .footer-brand img {
-        width: 34px;
-        height: 34px;
-        object-fit: contain;
-      }
-
-      @media (max-width: 1180px) {
-        .hero-grid,
-        .cards-grid,
-        .topics,
-        .newsletter {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .hero-main {
-          min-height: 620px;
-        }
-      }
-
-      @media (max-width: 860px) {
-        .topbar-inner,
-        .nav,
-        .hero-grid,
-        .cards-grid,
-        .topics,
-        .newsletter,
-        .stats,
-        .fake-form,
-        .footer-inner {
-          grid-template-columns: 1fr;
-          flex-wrap: wrap;
-        }
-
-        .hero-main,
-        .article-preview {
-          min-height: auto;
-        }
-
-        .hero-content,
-        .article-inner {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .container { width: min(calc(100% - 24px), var(--max)); }
-        .display { font-size: 3rem; }
-        .card-title { font-size: 1.7rem; }
-        .article-title { font-size: 3rem; }
-        .article-body-wrap { padding: 18px; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="noise"></div>
-
-    <header class="topbar">
-      <div class="container">
-        <div class="topbar-inner glass">
-          <a href="#" class="brand">
-            <img src="images/logo.png" alt="Game Of Liar logo" />
-            <div class="brand-copy">
-              <small>Rivista personale</small>
-              <span class="brand-name">Game Of Liar</span>
-            </div>
-          </a>
-
-          <nav class="nav">
-            <a href="#ultimi">Articoli</a>
-            <a href="#temi">Temi</a>
-            <a href="#editoriale">In evidenza</a>
-            <a href="#newsletter" class="cta">Newsletter</a>
-          </nav>
-        </div>
       </div>
-    </header>
+    </section>
+  </main>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="hero-grid">
-            <article class="hero-main glass">
-              <div class="hero-content">
-                <span class="eyebrow">In evidenza · Disinformazione</span>
-                <h1 class="display">Quando una bugia ti piace troppo</h1>
-                <p class="hero-copy">
-                  Analisi, propaganda, media, Israele, intelligenza artificiale e attualità. Un posto in cui le notizie non vengono solo lette: vengono smontate, verificate e rimesse in ordine.
-                </p>
-              </div>
-            </article>
+  <footer>
+    © 2026 Lord Cika. Tutti i diritti riservati.
+  </footer>
 
-            <div class="hero-side">
-              <div class="panel glass">
-                <h3>Cos’è Game Of Liar</h3>
-                <p>
-                  Una rivista personale dedicata a guerra narrativa, disinformazione, doppio standard mediatico, Israele, immagini false, propaganda e linguaggio pubblico. Meno rumore, più struttura.
-                </p>
-                <div class="stats">
-                  <div class="stat">
-                    <strong>Analisi</strong>
-                    <span class="meta">contesto prima del riflesso</span>
-                  </div>
-                  <div class="stat">
-                    <strong>Verifica</strong>
-                    <span class="meta">fonti, immagini, lessico</span>
-                  </div>
-                  <div class="stat">
-                    <strong>Scrittura</strong>
-                    <span class="meta">editoriale, netta, leggibile</span>
-                  </div>
-                </div>
-              </div>
+  <script>
+    const grid = document.querySelector('.grid');
+    const cards = Array.from(grid.querySelectorAll('.card'));
 
-              <div class="panel glass">
-                <h3>Linea editoriale</h3>
-                <p>
-                  Qui non interessa sembrare neutrali quando i fatti non lo sono. Interessa essere chiari, onesti e rigorosi: distinguere tra analisi e propaganda, tra informazione e scenografia, tra realtà e contenuto virale ben truccato.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    cards.sort((a, b) => {
+      return new Date(b.dataset.date) - new Date(a.dataset.date);
+    });
 
-      <section class="section" id="ultimi">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Ultimi articoli</h2>
-              <div class="section-subtitle">
-                Testi su disinformazione, linguaggio mediatico, Israele, immagini generate e guerra narrativa.
-              </div>
-            </div>
-          </div>
-
-          <div class="cards-grid">
-            <article class="card glass">
-              <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/poster-1.jpg');"></div>
-              <div class="card-body glass">
-                <span class="eyebrow">Disinformazione</span>
-                <h3 class="card-title">Game Of Liar</h3>
-                <div class="card-copy">
-                  Quando una notizia conferma troppo bene quello che speri, verificarla diventa più difficile. Ed è proprio lì che comincia il problema.
-                </div>
-                <div class="tag-row">
-                  <span class="tag">Fake News</span>
-                  <span class="tag">Verifica</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card glass">
-              <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/poster-2.jpg');"></div>
-              <div class="card-body glass">
-                <span class="eyebrow">Israele · Media</span>
-                <h3 class="card-title">Il linguaggio cambia con il bersaglio</h3>
-                <div class="card-copy">
-                  Perché certi attacchi vengono raccontati come barbarie e altri come contesto. Stessi morti, lessico diverso.
-                </div>
-                <div class="tag-row">
-                  <span class="tag">Narrativa</span>
-                  <span class="tag">Doppio Standard</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card glass">
-              <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/poster-3.jpg');"></div>
-              <div class="card-body glass">
-                <span class="eyebrow">AI · Immagini</span>
-                <h3 class="card-title">Il falso perfetto non esiste ancora</h3>
-                <div class="card-copy">
-                  Le immagini generate convincono in fretta, ma continuano a tradirsi nei dettagli: geometrie, materia, coerenza dello spazio.
-                </div>
-                <div class="tag-row">
-                  <span class="tag">Generative AI</span>
-                  <span class="tag">Analisi Visiva</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="temi">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Temi</h2>
-              <div class="section-subtitle">
-                Le aree principali del progetto: poche, nette, riconoscibili.
-              </div>
-            </div>
-          </div>
-
-          <div class="topics">
-            <div class="topic glass">
-              <strong>Disinformazione</strong>
-              <div class="muted">
-                Fake news, immagini manipolate, ricostruzioni tossiche, viralità e desiderio di credere.
-              </div>
-            </div>
-            <div class="topic glass">
-              <strong>Israele</strong>
-              <div class="muted">
-                Contesto, propaganda, guerra narrativa, legittimità, doppio standard e memoria pubblica.
-              </div>
-            </div>
-            <div class="topic glass">
-              <strong>Media</strong>
-              <div class="muted">
-                Lessico, frame, reputazione, costruzione del consenso, estetica dell’informazione.
-              </div>
-            </div>
-            <div class="topic glass">
-              <strong>AI</strong>
-              <div class="muted">
-                Prompt, immagini sintetiche, limiti tecnici, manipolazione percettiva e impatto culturale.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="editoriale">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">In evidenza</h2>
-              <div class="section-subtitle">
-                Un’anteprima editoriale con copertina, atmosfera e testo centrale.
-              </div>
-            </div>
-          </div>
-
-          <article class="article-preview glass">
-            <div class="article-inner">
-              <header class="article-header">
-                <span class="eyebrow">Editoriale · Analisi</span>
-                <h1 class="article-title">Quando la bugia è già ben vestita</h1>
-                <p class="article-deck">
-                  La menzogna contemporanea non si presenta più come una truffa rozza. Arriva con il tono giusto, l’immagine giusta, il vocabolario giusto e la faccia di chi sembra voler solo informare.
-                </p>
-                <div class="article-meta">
-                  <span>7 min di lettura</span>
-                  <span>•</span>
-                  <span>Disinformazione</span>
-                  <span>•</span>
-                  <span>Media</span>
-                </div>
-              </header>
-
-              <div class="article-body-wrap glass">
-                <div class="article-body">
-                  <p>
-                    Il problema delle fake news non è soltanto che sono false. Il problema vero è che spesso sono costruite per sembrare moralmente comode. Dicono quello che una parte del pubblico aveva già deciso di voler leggere.
-                  </p>
-                  <p>
-                    In quel momento la verifica diventa un fastidio. Non perché manchino gli strumenti, ma perché controllare significherebbe interrompere un piacere: il piacere di avere ragione in fretta, di stare dalla parte giusta senza fatica, di condividere prima di capire.
-                  </p>
-
-                  <div class="pullquote glass">
-                    La notizia più pericolosa non è quella più assurda. È quella che sembra perfetta per il nostro desiderio di crederci.
-                  </div>
-
-                  <p>
-                    Questo vale ancora di più in tempo di guerra, di propaganda e di polarizzazione. Una foto, un titolo, un video estratto dal contesto possono diventare munizioni narrative. E sui social le munizioni narrative viaggiano molto più veloci dei fatti.
-                  </p>
-                  <p>
-                    Per questo Game Of Liar prova a fare il contrario del riflesso automatico: rallentare, separare estetica e verità, togliere il trucco alle narrazioni troppo seducenti e chiedere ogni volta la cosa più scomoda di tutte: ma è vero?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="newsletter">
-        <div class="container">
-          <div class="newsletter">
-            <div class="newsletter-box glass">
-              <span class="eyebrow">Newsletter</span>
-              <h2 class="section-title" style="margin-top: 14px;">Ricevi i pezzi migliori</h2>
-              <p class="section-subtitle">
-                Una selezione di articoli, analisi e nuovi testi. Niente rumore inutile, niente spam decorativo.
-              </p>
-              <div class="fake-form">
-                <input class="fake-input" type="email" placeholder="La tua email" />
-                <button class="fake-button" type="button">Iscriviti</button>
-              </div>
-            </div>
-
-            <div class="newsletter-box glass">
-              <span class="eyebrow">Autore</span>
-              <h3 style="margin: 14px 0 10px; font-size: 1.2rem;">Game Of Liar</h3>
-              <p class="muted" style="margin:0;">
-                Scrittura editoriale, analisi, disinformazione, attualità, Israele, media e intelligenza artificiale. Un archivio personale di testi, letture critiche e copertine pensate per fermare lo scroll senza mentire al contenuto.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner glass">
-          <div class="footer-brand">
-            <img src="images/logo.png" alt="Game Of Liar logo" />
-            <div>
-              <strong>Game Of Liar</strong><br />
-              <span class="muted">Analisi, propaganda, media, Israele, AI</span>
-            </div>
-          </div>
-          <div class="muted">Rivista personale · Scrittura, verifica, guerra narrativa</div>
-        </div>
-      </div>
-    </footer>
-  </body>
+    cards.forEach(card => grid.appendChild(card));
+  </script>
+</body>
 </html>

@@ -3,86 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lord Cika | Archivio</title>
+  <title>Game Of Liar — Archivio editoriale</title>
+  <meta
+    name="description"
+    content="Archivio editoriale personale di Lord Cika: articoli, analisi, Israele, disinformazione, media, propaganda e intelligenza artificiale."
+  />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #06080b;
+      --bg-2: #0a0e14;
+      --bg-3: #101621;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-2: rgba(255, 255, 255, 0.09);
+      --border: rgba(255, 255, 255, 0.12);
+      --border-2: rgba(255, 255, 255, 0.18);
+      --text: rgba(248, 249, 251, 0.96);
+      --muted: rgba(215, 220, 227, 0.68);
+      --soft: rgba(255, 255, 255, 0.84);
+      --accent: #9e1e2d;
+      --accent-soft: rgba(158, 30, 45, 0.2);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1380px;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      background: #0a0a0f;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(158, 30, 45, 0.18), transparent 24%),
+        radial-gradient(circle at 85% 10%, rgba(63, 89, 140, 0.16), transparent 22%),
+        linear-gradient(180deg, #0b0f14 0%, #07090d 28%, #05070a 100%);
     }
 
-    header {
-      padding: 28px 42px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(10,10,15,0.95);
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 4px 4px;
+      mix-blend-mode: soft-light;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(24px) saturate(150%);
+      -webkit-backdrop-filter: blur(24px) saturate(150%);
+    }
+
+    .display,
+    .section-title,
+    .card-title,
+    .brand-name,
+    .hero-title {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -0.02em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .topbar {
       position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
+      top: 14px;
+      z-index: 100;
+      padding-top: 14px;
     }
 
-    header h1 {
-      font-size: 38px;
-      margin-bottom: 6px;
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border-radius: 999px;
     }
 
-    header p {
-      color: #b8b8c2;
-      font-size: 15px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
     }
 
-    main {
-      padding: 36px 42px 80px;
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      line-height: 1;
+    }
+
+    .brand-copy small {
+      color: var(--muted);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .brand-name {
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .nav .cta {
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .hero {
-      margin-bottom: 42px;
-      padding: 34px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #15151d, #0c0c12);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      padding: 34px 0 18px;
     }
 
-    .hero h2 {
-      font-size: 46px;
-      margin-bottom: 14px;
-      max-width: 900px;
-    }
-
-    .hero p {
-      color: #c8c8d2;
-      max-width: 860px;
-      font-size: 18px;
-    }
-
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 18px;
-    }
-
-    .grid {
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: 1.22fr 0.78fr;
       gap: 22px;
     }
 
-    .card {
-      display: block;
-      border-radius: 18px;
+    .hero-main {
+      position: relative;
+      min-height: 700px;
       overflow: hidden;
-      background: #14141b;
-      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-xl);
+      background: #0b0f14;
+    }
+
+    .hero-main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8,10,14,0.12) 0%, rgba(8,10,14,0.42) 30%, rgba(8,10,14,0.92) 100%),
+        url('images/003.png') center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero-main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(158, 30, 45, 0.28), transparent 28%),
+        linear-gradient(90deg, rgba(0,0,0,0.08), transparent 40%);
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      padding: 34px;
+    }
+
+    .hero-title {
+      margin: 16px 0 14px;
+      font-size: clamp(3.4rem, 6vw, 6.1rem);
+      line-height: 0.9;
+      max-width: 10ch;
+    }
+
+    .hero-copy {
+      max-width: 62ch;
+      color: rgba(245,247,250,0.78);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    .hero-main-link {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .panel p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: clamp(2.2rem, 3.6vw, 3.5rem);
+      line-height: 0.95;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      display: block;
       transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-      text-decoration: none;
-      color: inherit;
     }
 
     .card:hover {
@@ -91,7 +304,72 @@
       box-shadow: 0 18px 34px rgba(0,0,0,0.35);
     }
 
-    .cover {
+    .card-media {
+      aspect-ratio: 4 / 5;
+      background-size: cover;
+      background-position: center;
+      background-color: #14141b;
+    }
+
+    .card-body {
+      position: absolute;
+      inset: auto 14px 14px 14px;
+      padding: 18px;
+      border-radius: 22px;
+    }
+
+    .card-title {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 0.95;
+    }
+
+    .card-copy {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.94rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.72rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.88);
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .archive-card {
+      display: block;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #14141b;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .archive-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.35);
+    }
+
+    .archive-cover {
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
@@ -99,203 +377,358 @@
       background: #1a1a22;
     }
 
-    .card-content {
+    .archive-content {
       padding: 14px 14px 16px;
     }
 
-    .card h3 {
+    .archive-content h3 {
       font-size: 16px;
       margin-bottom: 6px;
+      line-height: 1.3;
     }
 
-    .card p {
+    .archive-content p {
       color: #b6b6c1;
       font-size: 13px;
     }
 
-    footer {
-      padding: 30px 42px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #9d9daa;
-      font-size: 14px;
+    .footer {
+      padding: 32px 0 68px;
     }
 
-    @media (max-width: 700px) {
-      header, main, footer {
-        padding-left: 18px;
-        padding-right: 18px;
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px;
+      border-radius: 26px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .featured-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar-inner,
+      .nav,
+      .hero-grid,
+      .featured-grid,
+      .stats,
+      .footer-inner {
+        grid-template-columns: 1fr;
+        flex-wrap: wrap;
       }
 
-      header h1 {
-        font-size: 30px;
+      .hero-main {
+        min-height: 540px;
       }
 
-      .hero {
-        padding: 24px;
+      .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
       }
+    }
 
-      .hero h2 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .section-title {
-        font-size: 24px;
-      }
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .hero-title { font-size: 3rem; }
+      .card-title { font-size: 1.7rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Lord Cika</h1>
-    <p>Archivio editoriale — articoli, analisi, copertine</p>
+  <div class="noise"></div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner glass">
+        <a href="#" class="brand">
+          <div class="brand-copy">
+            <small>Archivio editoriale</small>
+            <span class="brand-name">Game Of Liar</span>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="#ultimi">Ultimi</a>
+          <a href="#archivio">Archivio</a>
+          <a href="articoli/game-of-liar.html" class="cta">Leggi l'ultimo</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Un archivio pubblico dei miei articoli</h2>
-      <p>
-        Questo sito raccoglie i miei articoli con le relative copertine.
-        È il mio archivio editoriale personale: ordinato, indipendente e fuori dal caos dei social.
-      </p>
+      <div class="container">
+        <div class="hero-grid">
+          <article class="hero-main glass">
+            <a class="hero-main-link" href="articoli/game-of-liar.html" aria-label="Leggi Game Of Liar"></a>
+            <div class="hero-content">
+              <span class="eyebrow">In evidenza · 15 marzo 2026</span>
+              <h1 class="hero-title">Game Of Liar</h1>
+              <p class="hero-copy">
+                Un archivio pubblico dei miei articoli: analisi, disinformazione, media, Israele, propaganda, immagini e linguaggio. Un posto ordinato fuori dal caos dei social.
+              </p>
+            </div>
+          </article>
+
+          <div class="hero-side">
+            <div class="panel glass">
+              <h3>Cos’è questo sito</h3>
+              <p>
+                Questo archivio raccoglie articoli e copertine in una forma semplice ma più editoriale: meno feed, più struttura. I pezzi restano tuoi, ma smettono di sembrare dispersi nel rumore generale.
+              </p>
+              <div class="stats">
+                <div class="stat">
+                  <strong>Articoli</strong>
+                  <span class="muted">testi e analisi</span>
+                </div>
+                <div class="stat">
+                  <strong>Copertine</strong>
+                  <span class="muted">immagini collegate</span>
+                </div>
+                <div class="stat">
+                  <strong>Archivio</strong>
+                  <span class="muted">ordinato per data</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel glass">
+              <h3>Direzione</h3>
+              <p>
+                Tono scuro, impatto visivo forte, lettura pulita. Il sito non deve sembrare un blog improvvisato né un luna park digitale: deve sembrare una rivista personale con un’identità precisa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2 class="section-title">Archivio</h2>
-      <div class="grid">
-
-        <a class="card" href="articoli/netanyahu-primo-del-suo-nome.html" data-date="2026-03-01">
-          <img class="cover" src="images/001.png" alt="Netanyahu Primo Del Suo Nome">
-          <div class="card-content">
-            <h3>Netanyahu Primo Del Suo Nome</h3>
-            <p>1 marzo 2026</p>
+    <section class="section" id="ultimi">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Ultimi articoli</h2>
+            <div class="section-subtitle">
+              Tre pezzi in evidenza con accesso diretto agli articoli reali già caricati.
+            </div>
           </div>
-        </a>
+        </div>
 
-        <a class="card" href="articoli/lettera-a-big-mama.html" data-date="2026-03-07">
-          <img class="cover" src="images/002.png" alt="Lettera a Big Mama">
-          <div class="card-content">
-            <h3>Lettera a Big Mama</h3>
-            <p>7 marzo 2026</p>
+        <div class="featured-grid">
+          <a class="card glass" href="articoli/game-of-liar.html" data-date="2026-03-15">
+            <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/003.png');"></div>
+            <div class="card-body glass">
+              <span class="eyebrow">Disinformazione</span>
+              <h3 class="card-title">Game Of Liar</h3>
+              <div class="card-copy">
+                Quando una notizia conferma troppo bene quello che speri, verificarla diventa più difficile.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Fake News</span>
+                <span class="tag">Verifica</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card glass" href="articoli/lo-scudo.html" data-date="2026-03-12">
+            <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/012.png');"></div>
+            <div class="card-body glass">
+              <span class="eyebrow">Israele</span>
+              <h3 class="card-title">Lo Scudo</h3>
+              <div class="card-copy">
+                Un titolo da prima linea e una copertina forte, per un pezzo che lavora su difesa, percezione e linguaggio.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Analisi</span>
+                <span class="tag">Media</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card glass" href="articoli/la-vittima-armata.html" data-date="2026-03-11">
+            <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/013.png');"></div>
+            <div class="card-body glass">
+              <span class="eyebrow">Media</span>
+              <h3 class="card-title">La Vittima Armata</h3>
+              <div class="card-copy">
+                Una riflessione sul linguaggio pubblico, sulla postura morale e sulla rappresentazione dell’aggressione.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Narrativa</span>
+                <span class="tag">Propaganda</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="archivio">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Archivio</h2>
+            <div class="section-subtitle">
+              Tutti gli articoli disponibili, ordinati automaticamente dal più recente al più vecchio.
+            </div>
           </div>
-        </a>
+        </div>
 
-        <a class="card" href="articoli/game-of-liar.html" data-date="2026-03-15">
-          <img class="cover" src="images/003.png" alt="Game Of Liar">
-          <div class="card-content">
-            <h3>Game Of Liar</h3>
-            <p>15 marzo 2026</p>
-          </div>
-        </a>
+        <div class="archive-grid">
 
-        <a class="card" href="articoli/l-errore.html" data-date="2026-03-05">
-          <img class="cover" src="images/004.jpg" alt="L'Errore">
-          <div class="card-content">
-            <h3>L'Errore</h3>
-            <p>5 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/netanyahu-primo-del-suo-nome.html" data-date="2026-03-01">
+            <img class="archive-cover" src="images/001.png" alt="Netanyahu Primo Del Suo Nome" />
+            <div class="archive-content">
+              <h3>Netanyahu Primo Del Suo Nome</h3>
+              <p>1 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/adios.html" data-date="2026-03-09">
-          <img class="cover" src="images/006.png" alt="Adios!">
-          <div class="card-content">
-            <h3>Adios!</h3>
-            <p>9 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/lettera-a-big-mama.html" data-date="2026-03-07">
+            <img class="archive-cover" src="images/002.png" alt="Lettera a Big Mama" />
+            <div class="archive-content">
+              <h3>Lettera a Big Mama</h3>
+              <p>7 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/lo-specchio-dell-ipocrisia.html" data-date="2026-03-10">
-          <img class="cover" src="images/007.png" alt="Lo Specchio dell'Ipocrisia">
-          <div class="card-content">
-            <h3>Lo Specchio dell'Ipocrisia</h3>
-            <p>10 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/game-of-liar.html" data-date="2026-03-15">
+            <img class="archive-cover" src="images/003.png" alt="Game Of Liar" />
+            <div class="archive-content">
+              <h3>Game Of Liar</h3>
+              <p>15 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/operazione-collera-di-dio-ii.html" data-date="2026-03-01">
-          <img class="cover" src="images/008.png" alt="Operazione Collera di Dio II">
-          <div class="card-content">
-            <h3>Operazione Collera di Dio II</h3>
-            <p>1 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/l-errore.html" data-date="2026-03-05">
+            <img class="archive-cover" src="images/004.jpg" alt="L'Errore" />
+            <div class="archive-content">
+              <h3>L'Errore</h3>
+              <p>5 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/il-giorno-dei-draghi.html" data-date="2026-03-09">
-          <img class="cover" src="images/009.png" alt="Il Giorno Dei Draghi">
-          <div class="card-content">
-            <h3>Il Giorno Dei Draghi</h3>
-            <p>9 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/adios.html" data-date="2026-03-09">
+            <img class="archive-cover" src="images/006.png" alt="Adios!" />
+            <div class="archive-content">
+              <h3>Adios!</h3>
+              <p>9 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/il-danno.html" data-date="2026-03-04">
-          <img class="cover" src="images/010.png" alt="Il Danno">
-          <div class="card-content">
-            <h3>Il Danno</h3>
-            <p>4 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/lo-specchio-dell-ipocrisia.html" data-date="2026-03-10">
+            <img class="archive-cover" src="images/007.png" alt="Lo Specchio dell'Ipocrisia" />
+            <div class="archive-content">
+              <h3>Lo Specchio dell'Ipocrisia</h3>
+              <p>10 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/l-indeciso.html" data-date="2026-03-02">
-          <img class="cover" src="images/011.png" alt="L'Indeciso">
-          <div class="card-content">
-            <h3>L'Indeciso</h3>
-            <p>2 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/operazione-collera-di-dio-ii.html" data-date="2026-03-01">
+            <img class="archive-cover" src="images/008.png" alt="Operazione Collera di Dio II" />
+            <div class="archive-content">
+              <h3>Operazione Collera di Dio II</h3>
+              <p>1 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/lo-scudo.html" data-date="2026-03-12">
-          <img class="cover" src="images/012.png" alt="Lo Scudo">
-          <div class="card-content">
-            <h3>Lo Scudo</h3>
-            <p>12 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/il-giorno-dei-draghi.html" data-date="2026-03-09">
+            <img class="archive-cover" src="images/009.png" alt="Il Giorno Dei Draghi" />
+            <div class="archive-content">
+              <h3>Il Giorno Dei Draghi</h3>
+              <p>9 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/la-vittima-armata.html" data-date="2026-03-11">
-          <img class="cover" src="images/013.png" alt="La Vittima Armata">
-          <div class="card-content">
-            <h3>La Vittima Armata</h3>
-            <p>11 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/il-danno.html" data-date="2026-03-04">
+            <img class="archive-cover" src="images/010.png" alt="Il Danno" />
+            <div class="archive-content">
+              <h3>Il Danno</h3>
+              <p>4 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/l-ultima-maschera.html" data-date="2026-03-06">
-          <img class="cover" src="images/014.png" alt="L'Ultima Maschera">
-          <div class="card-content">
-            <h3>L'Ultima Maschera</h3>
-            <p>6 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/l-indeciso.html" data-date="2026-03-02">
+            <img class="archive-cover" src="images/011.png" alt="L'Indeciso" />
+            <div class="archive-content">
+              <h3>L'Indeciso</h3>
+              <p>2 marzo 2026</p>
+            </div>
+          </a>
 
-        <a class="card" href="articoli/mahsa.html" data-date="2026-03-08">
-          <img class="cover" src="images/015.png" alt="Mahsa">
-          <div class="card-content">
-            <h3>Mahsa</h3>
-            <p>8 marzo 2026</p>
-          </div>
-        </a>
+          <a class="archive-card" href="articoli/lo-scudo.html" data-date="2026-03-12">
+            <img class="archive-cover" src="images/012.png" alt="Lo Scudo" />
+            <div class="archive-content">
+              <h3>Lo Scudo</h3>
+              <p>12 marzo 2026</p>
+            </div>
+          </a>
 
+          <a class="archive-card" href="articoli/la-vittima-armata.html" data-date="2026-03-11">
+            <img class="archive-cover" src="images/013.png" alt="La Vittima Armata" />
+            <div class="archive-content">
+              <h3>La Vittima Armata</h3>
+              <p>11 marzo 2026</p>
+            </div>
+          </a>
+
+          <a class="archive-card" href="articoli/l-ultima-maschera.html" data-date="2026-03-06">
+            <img class="archive-cover" src="images/014.png" alt="L'Ultima Maschera" />
+            <div class="archive-content">
+              <h3>L'Ultima Maschera</h3>
+              <p>6 marzo 2026</p>
+            </div>
+          </a>
+
+          <a class="archive-card" href="articoli/mahsa.html" data-date="2026-03-08">
+            <img class="archive-cover" src="images/015.png" alt="Mahsa" />
+            <div class="archive-content">
+              <h3>Mahsa</h3>
+              <p>8 marzo 2026</p>
+            </div>
+          </a>
+
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    © 2026 Lord Cika. Tutti i diritti riservati.
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner glass">
+        <div class="footer-brand">
+          <div>
+            <strong>Game Of Liar</strong><br />
+            <span class="muted">Archivio editoriale personale</span>
+          </div>
+        </div>
+        <div class="muted">© 2026 Lord Cika. Tutti i diritti riservati.</div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    const grid = document.querySelector('.grid');
-    const cards = Array.from(grid.querySelectorAll('.card'));
+    const archiveGrid = document.querySelector('.archive-grid');
+    const archiveCards = Array.from(archiveGrid.querySelectorAll('.archive-card'));
 
-    cards.sort((a, b) => {
+    archiveCards.sort((a, b) => {
       return new Date(b.dataset.date) - new Date(a.dataset.date);
     });
 
-    cards.forEach(card => grid.appendChild(card));
+    archiveCards.forEach(card => archiveGrid.appendChild(card));
   </script>
 </body>
 </html>

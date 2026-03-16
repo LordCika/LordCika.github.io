@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lord Cika | Archivio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0b0b0f;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      padding: 24px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      background: rgba(11,11,15,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      color: #b8b8c2;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 32px 40px 80px;
+    }
+
+    .hero {
+      margin-bottom: 40px;
+      padding: 32px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #15151d, #0d0d12);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #c9c9d4;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #14141b;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      background: #1d1d27;
+    }
+
+    .card-content {
+      padding: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      color: #a7a7b5;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #c3c3cf;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 30px 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #9f9fac;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lord Cika</h1>
+    <p>Archivio editoriale — articoli, analisi, copertine</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Un archivio pubblico dei miei articoli</h2>
+      <p>
+        Questo sito raccoglie i miei articoli con le relative copertine.
+        È il mio archivio editoriale personale: ordinato, indipendente e fuori dal caos dei social.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Ultimi articoli</h2>
+      <div class="grid">
+        <a class="card" href="#">
+          <img class="cover" src="https://via.placeholder.com/800x1000?text=Copertina+1" alt="Copertina articolo 1">
+          <div class="card-content">
+            <span class="tag">Israele</span>
+            <h3>Titolo del primo articolo</h3>
+            <p>Breve descrizione dell’articolo o sottotitolo.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <img class="cover" src="https://via.placeholder.com/800x1000?text=Copertina+2" alt="Copertina articolo 2">
+          <div class="card-content">
+            <span class="tag">Disinformazione</span>
+            <h3>Titolo del secondo articolo</h3>
+            <p>Breve descrizione dell’articolo o sottotitolo.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <img class="cover" src="https://via.placeholder.com/800x1000?text=Copertina+3" alt="Copertina articolo 3">
+          <div class="card-content">
+            <span class="tag">AI e Media</span>
+            <h3>Titolo del terzo articolo</h3>
+            <p>Breve descrizione dell’articolo o sottotitolo.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Lord Cika. Tutti i diritti riservati.
+  </footer>
+</body>
+</html>

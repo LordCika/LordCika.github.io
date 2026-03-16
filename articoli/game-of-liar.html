@@ -70,6 +70,44 @@
       line-height: 1.15;
     }
 
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 32px;
+    }
+
+    .share-buttons button {
+      background: #14141c;
+      color: #f5f5f5;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .share-buttons button:hover {
+      background: #1c1c26;
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .copy-message {
+      text-align: center;
+      color: #b6b6c1;
+      font-size: 14px;
+      margin-bottom: 28px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      min-height: 20px;
+    }
+
+    .copy-message.show {
+      opacity: 1;
+    }
+
     article {
       font-size: 18px;
       color: #e5e5ec;
@@ -121,6 +159,14 @@
 
     <div class="meta">15 marzo 2026</div>
     <h1>Game Of Liar</h1>
+
+    <div class="share-buttons">
+      <button onclick="shareOnFacebook()">Condividi su Facebook</button>
+      <button onclick="shareOnX()">Condividi su X</button>
+      <button onclick="copyInstagramLink()">Instagram</button>
+    </div>
+
+    <div id="copyMessage" class="copy-message">Link copiato negli appunti</div>
 
     <article>
       <p>Ecco qui. Anche io sono vittima delle fake news.</p>
@@ -192,5 +238,37 @@
       © 2026 Lord Cika. Tutti i diritti riservati.
     </footer>
   </div>
+
+  <script>
+    function getArticleUrl() {
+      return window.location.href;
+    }
+
+    function getArticleTitle() {
+      return document.title;
+    }
+
+    function shareOnFacebook() {
+      const url = encodeURIComponent(getArticleUrl());
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+
+    function shareOnX() {
+      const url = encodeURIComponent(getArticleUrl());
+      const text = encodeURIComponent(getArticleTitle());
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    }
+
+    function copyInstagramLink() {
+      navigator.clipboard.writeText(getArticleUrl()).then(() => {
+        const message = document.getElementById('copyMessage');
+        message.classList.add('show');
+        message.textContent = 'Link copiato negli appunti';
+        setTimeout(() => {
+          message.classList.remove('show');
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>

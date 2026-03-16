@@ -357,6 +357,7 @@
       inset: auto 14px 14px 14px;
       padding: 18px;
       border-radius: 22px;
+      z-index: 2;
     }
 
     .card-title {
@@ -389,6 +390,53 @@
       color: rgba(255,255,255,0.88);
     }
 
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.92rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .card-link:hover {
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-1px);
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .share-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+      font-family: inherit;
+    }
+
+    .share-btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
     .archive-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -408,6 +456,11 @@
       transform: translateY(-6px) scale(1.01);
       border-color: rgba(255,255,255,0.15);
       box-shadow: 0 18px 34px rgba(0,0,0,0.35);
+    }
+
+    .archive-cover-link,
+    .archive-title-link {
+      display: block;
     }
 
     .archive-cover {
@@ -431,6 +484,33 @@
     .archive-content p {
       color: #b6b6c1;
       font-size: 13px;
+    }
+
+    .archive-share {
+      margin-top: 12px;
+    }
+
+    .copy-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%) translateY(16px);
+      background: rgba(10, 14, 20, 0.92);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.32);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 300;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     .footer {
@@ -635,7 +715,7 @@
         </div>
 
         <div class="featured-grid">
-          <a class="card glass" href="articoli/game-of-liar.html" data-date="2026-03-15">
+          <article class="card glass" data-date="2026-03-15">
             <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/003.png');"></div>
             <div class="card-body glass">
               <span class="eyebrow">Disinformazione</span>
@@ -647,10 +727,16 @@
                 <span class="tag">Fake News</span>
                 <span class="tag">Verifica</span>
               </div>
+              <a class="card-link article-link" href="articoli/game-of-liar.html">Leggi articolo</a>
+              <div class="share-buttons" data-share-title="Game Of Liar">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="card glass" href="articoli/lo-scudo.html" data-date="2026-03-12">
+          <article class="card glass" data-date="2026-03-12">
             <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/012.png');"></div>
             <div class="card-body glass">
               <span class="eyebrow">Israele</span>
@@ -662,10 +748,16 @@
                 <span class="tag">Analisi</span>
                 <span class="tag">Media</span>
               </div>
+              <a class="card-link article-link" href="articoli/lo-scudo.html">Leggi articolo</a>
+              <div class="share-buttons" data-share-title="Lo Scudo">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="card glass" href="articoli/la-vittima-armata.html" data-date="2026-03-11">
+          <article class="card glass" data-date="2026-03-11">
             <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/013.png');"></div>
             <div class="card-body glass">
               <span class="eyebrow">Media</span>
@@ -677,8 +769,14 @@
                 <span class="tag">Narrativa</span>
                 <span class="tag">Propaganda</span>
               </div>
+              <a class="card-link article-link" href="articoli/la-vittima-armata.html">Leggi articolo</a>
+              <div class="share-buttons" data-share-title="La Vittima Armata">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
         </div>
       </div>
     </section>
@@ -695,117 +793,215 @@
         </div>
 
         <div class="archive-grid">
-          <a class="archive-card" href="articoli/netanyahu-primo-del-suo-nome.html" data-date="2026-03-01">
-            <img class="archive-cover" src="images/001.png" alt="Netanyahu Primo Del Suo Nome" />
+          <article class="archive-card" data-date="2026-03-01">
+            <a class="archive-cover-link article-link" href="articoli/netanyahu-primo-del-suo-nome.html">
+              <img class="archive-cover" src="images/001.png" alt="Netanyahu Primo Del Suo Nome" />
+            </a>
             <div class="archive-content">
-              <h3>Netanyahu Primo Del Suo Nome</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/netanyahu-primo-del-suo-nome.html">Netanyahu Primo Del Suo Nome</a></h3>
               <p>1 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Netanyahu Primo Del Suo Nome">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/lettera-a-big-mama.html" data-date="2026-03-07">
-            <img class="archive-cover" src="images/002.png" alt="Lettera a Big Mama" />
+          <article class="archive-card" data-date="2026-03-07">
+            <a class="archive-cover-link article-link" href="articoli/lettera-a-big-mama.html">
+              <img class="archive-cover" src="images/002.png" alt="Lettera a Big Mama" />
+            </a>
             <div class="archive-content">
-              <h3>Lettera a Big Mama</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/lettera-a-big-mama.html">Lettera a Big Mama</a></h3>
               <p>7 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Lettera a Big Mama">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/game-of-liar.html" data-date="2026-03-15">
-            <img class="archive-cover" src="images/003.png" alt="Game Of Liar" />
+          <article class="archive-card" data-date="2026-03-15">
+            <a class="archive-cover-link article-link" href="articoli/game-of-liar.html">
+              <img class="archive-cover" src="images/003.png" alt="Game Of Liar" />
+            </a>
             <div class="archive-content">
-              <h3>Game Of Liar</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/game-of-liar.html">Game Of Liar</a></h3>
               <p>15 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Game Of Liar">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/l-errore.html" data-date="2026-03-05">
-            <img class="archive-cover" src="images/004.jpg" alt="L'Errore" />
+          <article class="archive-card" data-date="2026-03-05">
+            <a class="archive-cover-link article-link" href="articoli/l-errore.html">
+              <img class="archive-cover" src="images/004.jpg" alt="L'Errore" />
+            </a>
             <div class="archive-content">
-              <h3>L'Errore</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/l-errore.html">L'Errore</a></h3>
               <p>5 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="L'Errore">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/adios.html" data-date="2026-03-09">
-            <img class="archive-cover" src="images/006.png" alt="Adios!" />
+          <article class="archive-card" data-date="2026-03-09">
+            <a class="archive-cover-link article-link" href="articoli/adios.html">
+              <img class="archive-cover" src="images/006.png" alt="Adios!" />
+            </a>
             <div class="archive-content">
-              <h3>Adios!</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/adios.html">Adios!</a></h3>
               <p>9 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Adios!">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/lo-specchio-dell-ipocrisia.html" data-date="2026-03-10">
-            <img class="archive-cover" src="images/007.png" alt="Lo Specchio dell'Ipocrisia" />
+          <article class="archive-card" data-date="2026-03-10">
+            <a class="archive-cover-link article-link" href="articoli/lo-specchio-dell-ipocrisia.html">
+              <img class="archive-cover" src="images/007.png" alt="Lo Specchio dell'Ipocrisia" />
+            </a>
             <div class="archive-content">
-              <h3>Lo Specchio dell'Ipocrisia</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/lo-specchio-dell-ipocrisia.html">Lo Specchio dell'Ipocrisia</a></h3>
               <p>10 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Lo Specchio dell'Ipocrisia">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/operazione-collera-di-dio-ii.html" data-date="2026-03-01">
-            <img class="archive-cover" src="images/008.png" alt="Operazione Collera di Dio II" />
+          <article class="archive-card" data-date="2026-03-01">
+            <a class="archive-cover-link article-link" href="articoli/operazione-collera-di-dio-ii.html">
+              <img class="archive-cover" src="images/008.png" alt="Operazione Collera di Dio II" />
+            </a>
             <div class="archive-content">
-              <h3>Operazione Collera di Dio II</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/operazione-collera-di-dio-ii.html">Operazione Collera di Dio II</a></h3>
               <p>1 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Operazione Collera di Dio II">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/il-giorno-dei-draghi.html" data-date="2026-03-09">
-            <img class="archive-cover" src="images/009.png" alt="Il Giorno Dei Draghi" />
+          <article class="archive-card" data-date="2026-03-09">
+            <a class="archive-cover-link article-link" href="articoli/il-giorno-dei-draghi.html">
+              <img class="archive-cover" src="images/009.png" alt="Il Giorno Dei Draghi" />
+            </a>
             <div class="archive-content">
-              <h3>Il Giorno Dei Draghi</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/il-giorno-dei-draghi.html">Il Giorno Dei Draghi</a></h3>
               <p>9 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Il Giorno Dei Draghi">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/il-danno.html" data-date="2026-03-04">
-            <img class="archive-cover" src="images/010.png" alt="Il Danno" />
+          <article class="archive-card" data-date="2026-03-04">
+            <a class="archive-cover-link article-link" href="articoli/il-danno.html">
+              <img class="archive-cover" src="images/010.png" alt="Il Danno" />
+            </a>
             <div class="archive-content">
-              <h3>Il Danno</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/il-danno.html">Il Danno</a></h3>
               <p>4 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Il Danno">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/l-indeciso.html" data-date="2026-03-02">
-            <img class="archive-cover" src="images/011.png" alt="L'Indeciso" />
+          <article class="archive-card" data-date="2026-03-02">
+            <a class="archive-cover-link article-link" href="articoli/l-indeciso.html">
+              <img class="archive-cover" src="images/011.png" alt="L'Indeciso" />
+            </a>
             <div class="archive-content">
-              <h3>L'Indeciso</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/l-indeciso.html">L'Indeciso</a></h3>
               <p>2 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="L'Indeciso">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/lo-scudo.html" data-date="2026-03-12">
-            <img class="archive-cover" src="images/012.png" alt="Lo Scudo" />
+          <article class="archive-card" data-date="2026-03-12">
+            <a class="archive-cover-link article-link" href="articoli/lo-scudo.html">
+              <img class="archive-cover" src="images/012.png" alt="Lo Scudo" />
+            </a>
             <div class="archive-content">
-              <h3>Lo Scudo</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/lo-scudo.html">Lo Scudo</a></h3>
               <p>12 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Lo Scudo">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/la-vittima-armata.html" data-date="2026-03-11">
-            <img class="archive-cover" src="images/013.png" alt="La Vittima Armata" />
+          <article class="archive-card" data-date="2026-03-11">
+            <a class="archive-cover-link article-link" href="articoli/la-vittima-armata.html">
+              <img class="archive-cover" src="images/013.png" alt="La Vittima Armata" />
+            </a>
             <div class="archive-content">
-              <h3>La Vittima Armata</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/la-vittima-armata.html">La Vittima Armata</a></h3>
               <p>11 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="La Vittima Armata">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/l-ultima-maschera.html" data-date="2026-03-06">
-            <img class="archive-cover" src="images/014.png" alt="L'Ultima Maschera" />
+          <article class="archive-card" data-date="2026-03-06">
+            <a class="archive-cover-link article-link" href="articoli/l-ultima-maschera.html">
+              <img class="archive-cover" src="images/014.png" alt="L'Ultima Maschera" />
+            </a>
             <div class="archive-content">
-              <h3>L'Ultima Maschera</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/l-ultima-maschera.html">L'Ultima Maschera</a></h3>
               <p>6 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="L'Ultima Maschera">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="archive-card" href="articoli/mahsa.html" data-date="2026-03-08">
-            <img class="archive-cover" src="images/015.png" alt="Mahsa" />
+          <article class="archive-card" data-date="2026-03-08">
+            <a class="archive-cover-link article-link" href="articoli/mahsa.html">
+              <img class="archive-cover" src="images/015.png" alt="Mahsa" />
+            </a>
             <div class="archive-content">
-              <h3>Mahsa</h3>
+              <h3><a class="archive-title-link article-link" href="articoli/mahsa.html">Mahsa</a></h3>
               <p>8 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Mahsa">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <button class="share-btn share-instagram" type="button">Instagram</button>
+              </div>
             </div>
-          </a>
+          </article>
         </div>
       </div>
     </section>
@@ -822,15 +1018,65 @@
     </div>
   </footer>
 
+  <div class="copy-toast" id="copyToast">Link copiato. Incollalo su Instagram.</div>
+
   <script>
     const archiveGrid = document.querySelector('.archive-grid');
     const archiveCards = Array.from(archiveGrid.querySelectorAll('.archive-card'));
+    const copyToast = document.getElementById('copyToast');
 
     archiveCards.sort((a, b) => {
       return new Date(b.dataset.date) - new Date(a.dataset.date);
     });
 
     archiveCards.forEach(card => archiveGrid.appendChild(card));
+
+    function getAbsoluteUrl(relativeOrAbsoluteUrl) {
+      return new URL(relativeOrAbsoluteUrl, window.location.href).href;
+    }
+
+    function showCopyToast(message = 'Link copiato. Incollalo su Instagram.') {
+      copyToast.textContent = message;
+      copyToast.classList.add('show');
+      clearTimeout(showCopyToast._timer);
+      showCopyToast._timer = setTimeout(() => {
+        copyToast.classList.remove('show');
+      }, 2200);
+    }
+
+    async function copyLink(url) {
+      try {
+        await navigator.clipboard.writeText(url);
+        showCopyToast();
+      } catch (error) {
+        showCopyToast('Impossibile copiare il link.');
+      }
+    }
+
+    document.querySelectorAll('.share-buttons').forEach(group => {
+      const card = group.closest('.card, .archive-card');
+      const articleLink = card.querySelector('.article-link');
+      if (!articleLink) return;
+
+      const articleUrl = getAbsoluteUrl(articleLink.getAttribute('href'));
+      const shareTitle = group.dataset.shareTitle || document.title;
+
+      const facebookBtn = group.querySelector('.share-facebook');
+      const xBtn = group.querySelector('.share-x');
+      const instagramBtn = group.querySelector('.share-instagram');
+
+      if (facebookBtn) {
+        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`;
+      }
+
+      if (xBtn) {
+        xBtn.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(shareTitle)}`;
+      }
+
+      if (instagramBtn) {
+        instagramBtn.addEventListener('click', () => copyLink(articleUrl));
+      }
+    });
   </script>
 </body>
 </html>

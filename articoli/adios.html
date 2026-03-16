@@ -56,18 +56,60 @@
       display: block;
     }
 
-    .meta {
-      color: #b6b6c1;
-      font-size: 14px;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
     h1 {
       font-size: 42px;
       margin-bottom: 24px;
       text-align: center;
       line-height: 1.15;
+    }
+
+    .article-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 0 0 30px;
+    }
+
+    .author-avatar-link {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .author-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .author-name {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .author-name:hover {
+      opacity: 0.8;
+    }
+
+    .author-date {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #b6b6c1;
     }
 
     article {
@@ -79,14 +121,44 @@
       margin-bottom: 20px;
     }
 
-    .hashtags {
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
       margin-top: 36px;
+      margin-bottom: 24px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .share-btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .hashtags {
+      margin-top: 24px;
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
       color: #b6b6c1;
       font-size: 15px;
       line-height: 1.8;
       word-break: break-word;
+      text-align: center;
     }
 
     footer {
@@ -106,6 +178,15 @@
       article {
         font-size: 17px;
       }
+
+      .article-author {
+        gap: 12px;
+      }
+
+      .author-avatar {
+        width: 52px;
+        height: 52px;
+      }
     }
   </style>
 </head>
@@ -119,8 +200,30 @@
       <img src="../images/006.png" alt="Adios!">
     </div>
 
-    <div class="meta">9 marzo 2026</div>
     <h1>Adios!</h1>
+
+    <div class="article-author">
+      <a
+        href="https://www.facebook.com/zavathalavudvash"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="author-avatar-link"
+      >
+        <img src="../images/avatar.jpg" alt="Lord Cika" class="author-avatar" />
+      </a>
+
+      <div class="author-meta">
+        <a
+          href="https://www.facebook.com/zavathalavudvash"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="author-name"
+        >
+          Lord Cika
+        </a>
+        <div class="author-date">9 marzo 2026</div>
+      </div>
+    </div>
 
     <article>
       <p>Come mai non si vedono più le immagini lacrime strappa da Gaza?</p>
@@ -133,16 +236,32 @@
 
       <p>Che faccio se scopro che erano notizie inventate?</p>
 
-      <div style="margin-top:36px; margin-bottom:20px; text-align:center;">
+      <div class="share-buttons">
         <a
-          href="https://www.facebook.com/zavathalavudvash/"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://lordcika.github.io/articles/adios.html"
           target="_blank"
           rel="noopener noreferrer"
-          style="color:#ffffff; text-decoration:none; font-size:15px; font-weight:600; opacity:0.9; transition:opacity 0.2s ease;"
-          onmouseover="this.style.opacity='0.7'"
-          onmouseout="this.style.opacity='0.9'"
+          class="share-btn"
         >
-          Marcolino Di Capua
+          Facebook
+        </a>
+
+        <a
+          href="https://twitter.com/intent/tweet?url=https://lordcika.github.io/articles/adios.html&text=Adios!"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="share-btn"
+        >
+          X
+        </a>
+
+        <a
+          href="https://www.linkedin.com/sharing/share-offsite/?url=https://lordcika.github.io/articles/adios.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="share-btn"
+        >
+          LinkedIn
         </a>
       </div>
 

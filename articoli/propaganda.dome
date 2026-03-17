@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Propaganda Dome | INOoriginal</title>
+  <title>Gaza, Iran e la guerra della propaganda | Lord Cika</title>
   <meta
     name="description"
-    content="Israele, Gaza, Hamas, propaganda e guerra informativa: non basta colpire il nemico, bisogna impedirgli di scrivere da solo il copione."
+    content="Un’analisi sul terreno narrativo della guerra tra Israele, Hamas e Iran: propaganda, tempi della comunicazione e percezione pubblica del conflitto."
   />
   <style>
     * {
@@ -17,27 +17,26 @@
 
     :root {
       --bg: #0a0a0f;
-      --panel: rgba(255,255,255,0.06);
-      --panel-2: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.12);
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-strong: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.1);
       --text: #f5f5f5;
-      --muted: rgba(245,245,245,0.72);
-      --soft: rgba(245,245,245,0.55);
-      --accent: #ffffff;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --muted: rgba(255, 255, 255, 0.68);
+      --soft: rgba(255, 255, 255, 0.82);
+      --accent: #8ab4ff;
     }
 
     body {
       background: var(--bg);
       color: var(--text);
       font-family: Arial, sans-serif;
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     header {
       padding: 24px 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(10,10,15,0.95);
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 10, 15, 0.95);
       position: sticky;
       top: 0;
       z-index: 20;
@@ -48,56 +47,47 @@
       color: var(--text);
       text-decoration: none;
       font-size: 14px;
-      opacity: 0.82;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    header a:hover {
+      opacity: 1;
     }
 
     .container {
-      width: 100%;
       max-width: 860px;
       margin: 0 auto;
       padding: 56px 24px 80px;
     }
 
-    .hero-image {
-      width: 100%;
-      border-radius: 22px;
-      display: block;
-      margin-bottom: 30px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: 1.1;
+    .title {
       text-align: center;
-      margin-bottom: 22px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 24px;
       letter-spacing: -0.02em;
     }
 
-    .author-box {
+    .author-block {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
       justify-content: flex-start;
     }
 
-    .author-box a {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
+    .author-block a {
       text-decoration: none;
       color: inherit;
     }
 
     .author-avatar {
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+      border: 1px solid var(--border);
     }
 
     .author-meta {
@@ -114,92 +104,90 @@
 
     .author-date {
       font-size: 13px;
-      color: var(--soft);
+      color: var(--muted);
     }
 
     article {
       font-size: 1.08rem;
-      color: var(--text);
+      color: var(--soft);
     }
 
     article p {
       margin-bottom: 1.35em;
     }
 
-    .share-block {
-      margin-top: 46px;
+    .publication-note {
+      margin-top: 36px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 18px;
+      font-size: 0.98rem;
+    }
+
+    .publication-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .publication-note a:hover {
+      text-decoration: underline;
+    }
+
+    .hashtags {
+      margin-top: 20px;
+      font-size: 0.96rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .share-section {
+      margin-top: 42px;
       display: flex;
-      align-items: center;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
       justify-content: flex-start;
     }
 
-    .share-label {
-      width: 100%;
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
     .share-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      text-decoration: none;
       padding: 10px 16px;
       border-radius: 999px;
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.95rem;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.08),
-        0 8px 24px rgba(0,0,0,0.22);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
 
     .share-btn:hover {
       transform: translateY(-1px);
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.22);
-    }
-
-    .cross-published {
-      margin-top: 34px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .cross-published a {
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.22);
     }
 
     footer {
-      margin-top: 56px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: var(--soft);
-      font-size: 0.92rem;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     @media (max-width: 640px) {
       .container {
-        padding: 40px 18px 64px;
-      }
-
-      .author-box {
-        margin-bottom: 30px;
+        padding-top: 36px;
       }
 
       article {
         font-size: 1rem;
+      }
+
+      .author-block {
+        margin-bottom: 32px;
       }
     }
   </style>
@@ -210,21 +198,26 @@
   </header>
 
   <main class="container">
-    <img src="../images/016.png" alt="Copertina articolo" class="hero-image" />
+    <h1 class="title">Gaza, Iran e la guerra della propaganda</h1>
 
-    <h1>Chi scrive il copione</h1>
-
-    <div class="author-box">
+    <div class="author-block">
       <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
-        <img src="../images/avatar.jpg" alt="Avatar Marcolino Di Capua" class="author-avatar" />
-        <div class="author-meta">
-          <div class="author-name">Marcolino Di Capua</div>
-          <div class="author-date">17 marzo 2026</div>
-        </div>
+        <img src="../images/avatar.jpg" alt="Avatar di Marcolino Di Capua" class="author-avatar" />
       </a>
+      <div class="author-meta">
+        <a
+          href="https://www.facebook.com/zavathalavudvash"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="author-name"
+        >
+          Marcolino Di Capua
+        </a>
+        <div class="author-date">17 marzo 2026</div>
+      </div>
     </div>
 
-    <article id="article-content">
+    <article>
       <p>C’è una cosa che una certa sinistra “ProPalProHamasLGBTQALLAHAKBAR” ama ripetere quando si parla di Gaza: Israele avrà pure vinto militarmente, ma Hamas lo avrebbe umiliato sul piano della propaganda. Ed è curioso, perché spesso è uno dei pochissimi terreni su cui questa gente pensa ancora di poter rivendicare una vittoria.</p>
 
       <p>Il punto è che, per quanto detta così sembri uno slogan da centro sociale stile Askatasuna, sotto c’è una domanda seria. È davvero possibile che Israele, uno degli Stati più avanzati al mondo sul piano tecnologico, militare e dell’intelligence, non sia riuscito a tenere testa a Hamas sul terreno della narrazione? Davvero una macchina statale di quel livello si è fatta schiacciare, simbolicamente e mediaticamente, da un’organizzazione terroristica?</p>
@@ -239,7 +232,7 @@
 
       <p>Avete letto bene?</p>
 
-      <p>C’è una grande fetta di popolazione là fuori che questa seconda parte del racconto non la conosce affatto. Non sa nemmeno che esista. Per moltissimi, la storia si è fermata al primo titolo, alla prima immagine, alla prima accusa. Tutto il resto è evaporato. (non come i 70.000 morti a Gaza. ndr)</p>
+      <p>C’è una grande fetta di popolazione là fuori che questa seconda parte del racconto non la conosce affatto. Non sa nemmeno che esista. Per moltissimi, la storia si è fermata al primo titolo, alla prima immagine, alla prima accusa. Tutto il resto è evaporato. (non come i 70.000 morti a Gaza .ndr)</p>
 
       <p>E allora la domanda vera è: che cosa è successo in quelle poche ore?</p>
 
@@ -261,41 +254,60 @@
 
       <p>E qui la questione non è tanto se quel singolo video abbia “vinto” qualcosa. La questione è che sembra mostrare un cambio di mentalità. A Gaza, spesso Israele appariva costretto a inseguire la menzogna dopo che questa aveva già fatto il giro del mondo. Qui, invece, prova a intervenire subito sul terreno simbolico, prima che il racconto avversario si sedimenti del tutto. Prova a rompere il meccanismo, a sabotare il ritmo dell’accusa, a togliere all’avversario il monopolio della prima impressione.</p>
 
-      <p>La lezione, forse, è questa: nella guerra informativa contemporanea non basta più smentire. Bisogna disturbare. Bisogna interrompere la linearità della propaganda nemica. Bisogna inserire rumore, attrito, dubbio, tempo perso. Perché, se il nemico prospera sulla velocità con cui trasforma una menzogna in verità emotiva, allora costringerlo a perdere tempo, a verificare, a rincorrere, a fermarsi un attimo prima di lanciare il prossimo racconto tossico, diventa già una forma di difesa.</p>
+      <p>La lezione, forse, è questa: nella guerra informativa contemporanea non basta più smentire. Bisogna disturbare. Bisogna interrompere la linearità della propaganda nemica.</p>
+
+      <p>Bisogna inserire rumore, attrito, dubbio, tempo perso. Perché, se il nemico prospera sulla velocità con cui trasforma una menzogna in verità emotiva, allora costringerlo a perdere tempo, a verificare, a rincorrere, a fermarsi un attimo prima di lanciare il prossimo racconto tossico, diventa già una forma di difesa.</p>
 
       <p>Se è davvero così, allora l’Iran potrebbe star mostrando un Israele che ha imparato almeno una lezione di Gaza: non basta colpire il nemico. Bisogna impedirgli di scrivere da solo il copione.</p>
+
+      <div class="publication-note">
+        Pubblicato anche su
+        <a
+          href="https://ilrepubblicano.it/israele-hamas-guerra-propaganda-narrazione/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Il Repubblicano
+        </a>
+      </div>
+
+      <div class="hashtags">
+        #Israele #Hamas #Gaza #Iran #Propaganda #Disinformazione #Media #NarrativeWar #Informazione #Geopolitica
+      </div>
+
+      <div class="share-section">
+        <a
+          class="share-btn"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://lordcika.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Condividi su Facebook
+        </a>
+
+        <a
+          class="share-btn"
+          href="https://twitter.com/intent/tweet?url=https://lordcika.github.io/&text=Gaza,%20Iran%20e%20la%20guerra%20della%20propaganda"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Condividi su X
+        </a>
+
+        <a
+          class="share-btn"
+          href="https://www.linkedin.com/sharing/share-offsite/?url=https://lordcika.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Condividi su LinkedIn
+        </a>
+      </div>
     </article>
-
-    <div class="share-block">
-      <div class="share-label">Condividi l’articolo</div>
-      <a class="share-btn" id="share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a class="share-btn" id="share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
-      <a class="share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-
-    <div class="cross-published">
-      L’articolo è pubblicato anche su
-      <a href="https://ilrepubblicano.it/" target="_blank" rel="noopener noreferrer">Il Repubblicano</a>.
-    </div>
-
-    <footer>
-      INOoriginal — Archivio editoriale personale
-    </footer>
   </main>
 
-  <script>
-    const pageUrl = window.location.href;
-    const pageTitle = document.title;
-
-    document.getElementById('share-facebook').href =
-      'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl);
-
-    document.getElementById('share-x').href =
-      'https://twitter.com/intent/tweet?url=' + encodeURIComponent(pageUrl) +
-      '&text=' + encodeURIComponent(pageTitle);
-
-    document.getElementById('share-linkedin').href =
-      'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl);
-  </script>
+  <footer>
+    © Lord Cika
+  </footer>
 </body>
 </html>

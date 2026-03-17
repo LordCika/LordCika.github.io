@@ -108,14 +108,31 @@
     }
 
     .topbar-inner {
-      width: min(100%, 1100px);
+      width: min(100%, 1120px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 30px 32px;
+      border-radius: 56px;
+    }
+
+    .topbar-left {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 24px;
-      padding: 34px 32px 28px;
-      border-radius: 56px;
+      min-width: 0;
+    }
+
+    .topbar-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 12px;
+      min-width: 0;
     }
 
     .brand {
@@ -162,6 +179,43 @@
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.14);
       font-size: 1.05rem;
+    }
+
+    .top-social-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.52);
+    }
+
+    .top-socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .top-socials a,
+    .site-share-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      line-height: 1;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .top-socials a:hover,
+    .site-share-btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
     }
 
     .hero {
@@ -413,6 +467,8 @@
       border: 1px solid rgba(255,255,255,0.14);
       font-size: 0.92rem;
       transition: background 0.2s ease, transform 0.2s ease;
+      position: relative;
+      z-index: 5;
     }
 
     .card-link:hover {
@@ -540,6 +596,18 @@
       .featured-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .topbar-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-right {
+        align-items: center;
+      }
+
+      .top-socials {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 860px) {
@@ -555,6 +623,11 @@
         border-radius: 38px;
         padding: 26px 18px 22px;
         gap: 18px;
+      }
+
+      .topbar-left,
+      .topbar-right {
+        align-items: center;
       }
 
       .hero-main {
@@ -588,6 +661,14 @@
         padding: 14px 22px;
         font-size: 1rem;
       }
+
+      .top-social-label {
+        text-align: center;
+      }
+
+      .top-socials {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 640px) {
@@ -610,6 +691,12 @@
         width: 100%;
         text-align: center;
       }
+
+      .top-socials a,
+      .site-share-btn {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+      }
     }
   </style>
 </head>
@@ -620,15 +707,29 @@
     <div class="container">
       <div class="topbar-shell">
         <div class="topbar-inner glass">
-          <a href="#" class="brand">
-            <img src="images/Logo.png" alt="INOoriginal logo" class="brand-logo" />
-          </a>
+          <div class="topbar-left">
+            <a href="#" class="brand">
+              <img src="images/Logo.png" alt="INOoriginal logo" class="brand-logo" />
+            </a>
 
-          <nav class="nav">
-            <a href="#ultimi">Ultimi</a>
-            <a href="#archivio">Archivio</a>
-            <a href="articoli/propaganda-dome.html" class="cta">Leggi l'ultimo</a>
-          </nav>
+            <nav class="nav">
+              <a href="#ultimi">Ultimi</a>
+              <a href="#archivio">Archivio</a>
+              <a href="articoli/propaganda-dome.html" class="cta">Leggi l'ultimo</a>
+            </nav>
+          </div>
+
+          <div class="topbar-right">
+            <div class="top-social-label">Seguimi / condividi</div>
+
+            <div class="top-socials">
+              <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://www.instagram.com/cikar0linh0/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://www.linkedin.com/in/marco-d-80026a149" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://x.com/LordWiesenthal" target="_blank" rel="noopener noreferrer">X</a>
+              <button class="site-share-btn" id="shareSiteBtn" type="button">Condividi sito</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1087,6 +1188,49 @@
         linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
       }
     });
+
+    const shareSiteBtn = document.getElementById('shareSiteBtn');
+
+    if (shareSiteBtn) {
+      shareSiteBtn.addEventListener('click', async () => {
+        const siteUrl = window.location.origin + window.location.pathname;
+        const shareData = {
+          title: document.title,
+          text: 'Dai un’occhiata a INOoriginal',
+          url: siteUrl
+        };
+
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(siteUrl);
+            const originalText = shareSiteBtn.textContent;
+            shareSiteBtn.textContent = 'Link copiato';
+            setTimeout(() => {
+              shareSiteBtn.textContent = originalText;
+            }, 1800);
+          } else {
+            prompt('Copia questo link:', siteUrl);
+          }
+        } catch (error) {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(siteUrl);
+              const originalText = shareSiteBtn.textContent;
+              shareSiteBtn.textContent = 'Link copiato';
+              setTimeout(() => {
+                shareSiteBtn.textContent = originalText;
+              }, 1800);
+            } else {
+              prompt('Copia questo link:', siteUrl);
+            }
+          } catch (fallbackError) {
+            prompt('Copia questo link:', siteUrl);
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>

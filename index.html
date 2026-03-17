@@ -113,7 +113,7 @@
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 28px;
-      padding: 30px 32px;
+      padding: 28px 32px;
       border-radius: 56px;
     }
 
@@ -122,7 +122,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 24px;
+      gap: 20px;
       min-width: 0;
     }
 
@@ -131,7 +131,7 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       min-width: 0;
     }
 
@@ -174,18 +174,18 @@
 
     .nav .cta {
       color: var(--text);
-      padding: 16px 28px;
+      padding: 15px 24px;
       border-radius: 999px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.14);
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .top-social-label {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.52);
+      color: rgba(255,255,255,0.5);
     }
 
     .top-socials {
@@ -193,17 +193,22 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 10px;
+      max-width: 420px;
     }
 
-    .top-socials a,
+    .top-social-btn,
     .site-share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       appearance: none;
       border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
       color: var(--text);
-      padding: 10px 14px;
+      padding: 10px 13px;
       border-radius: 999px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       line-height: 1;
       cursor: pointer;
       font-family: inherit;
@@ -211,11 +216,20 @@
       white-space: nowrap;
     }
 
-    .top-socials a:hover,
+    .top-social-btn:hover,
     .site-share-btn:hover {
       background: rgba(255,255,255,0.12);
       border-color: rgba(255,255,255,0.2);
       transform: translateY(-1px);
+    }
+
+    .top-social-btn svg,
+    .site-share-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+      flex-shrink: 0;
+      opacity: 0.92;
     }
 
     .hero {
@@ -607,6 +621,7 @@
 
       .top-socials {
         justify-content: center;
+        max-width: none;
       }
     }
 
@@ -621,7 +636,7 @@
 
       .topbar-inner {
         border-radius: 38px;
-        padding: 26px 18px 22px;
+        padding: 24px 18px 22px;
         gap: 18px;
       }
 
@@ -692,10 +707,21 @@
         text-align: center;
       }
 
-      .top-socials a,
+      .top-social-btn,
       .site-share-btn {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         padding: 10px 12px;
+      }
+
+      .top-social-btn span,
+      .site-share-btn span {
+        display: none;
+      }
+
+      .top-social-btn svg,
+      .site-share-btn svg {
+        width: 16px;
+        height: 16px;
       }
     }
   </style>
@@ -723,11 +749,40 @@
             <div class="top-social-label">Seguimi / condividi</div>
 
             <div class="top-socials">
-              <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a href="https://www.instagram.com/cikar0linh0/" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://www.linkedin.com/in/marco-d-80026a149" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://x.com/LordWiesenthal" target="_blank" rel="noopener noreferrer">X</a>
-              <button class="site-share-btn" id="shareSiteBtn" type="button">Condividi sito</button>
+              <a class="top-social-btn" href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V10H9.5v3h2.6v8h1.4z"/>
+                </svg>
+                <span>Facebook</span>
+              </a>
+
+              <a class="top-social-btn" href="https://www.instagram.com/cikar0linh0/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm10.5 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 15a2.8 2.8 0 0 0 0-5.6z"/>
+                </svg>
+                <span>Instagram</span>
+              </a>
+
+              <a class="top-social-btn" href="https://www.linkedin.com/in/marco-d-80026a149" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.9 8.5A1.9 1.9 0 1 1 6.9 4.7a1.9 1.9 0 0 1 0 3.8zM5.1 9.9h3.5V20H5.1V9.9zm5.5 0H14v1.4h.1c.5-.9 1.6-1.7 3.2-1.7 3.4 0 4 2.2 4 5.2V20h-3.5v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20h-3.5V9.9z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a class="top-social-btn" href="https://x.com/LordWiesenthal" target="_blank" rel="noopener noreferrer" aria-label="X">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.9 3H21l-4.6 5.3L21.8 21h-4.7l-3.7-4.8L9.2 21H7.1l5-5.8L2.8 3h4.8l3.3 4.4L14.8 3h4.1zm-1.6 16h1.3L6.7 4.9H5.3L17.3 19z"/>
+                </svg>
+                <span>X</span>
+              </a>
+
+              <button class="site-share-btn" id="shareSiteBtn" type="button" aria-label="Condividi sito">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 16.1c-.8 0-1.5.3-2 .8l-7.1-4.1c.1-.3.1-.5.1-.8s0-.5-.1-.8l7-4.1c.5.5 1.2.8 2 .8a3 3 0 1 0-2.9-3.6L8 8.4a3 3 0 1 0 0 7.2l7 4.1a3 3 0 1 0 3-3.6z"/>
+                </svg>
+                <span>Condividi sito</span>
+              </button>
             </div>
           </div>
         </div>
@@ -1205,10 +1260,10 @@
             await navigator.share(shareData);
           } else if (navigator.clipboard && navigator.clipboard.writeText) {
             await navigator.clipboard.writeText(siteUrl);
-            const originalText = shareSiteBtn.textContent;
-            shareSiteBtn.textContent = 'Link copiato';
+            const originalText = shareSiteBtn.querySelector('span').textContent;
+            shareSiteBtn.querySelector('span').textContent = 'Link copiato';
             setTimeout(() => {
-              shareSiteBtn.textContent = originalText;
+              shareSiteBtn.querySelector('span').textContent = originalText;
             }, 1800);
           } else {
             prompt('Copia questo link:', siteUrl);
@@ -1217,10 +1272,10 @@
           try {
             if (navigator.clipboard && navigator.clipboard.writeText) {
               await navigator.clipboard.writeText(siteUrl);
-              const originalText = shareSiteBtn.textContent;
-              shareSiteBtn.textContent = 'Link copiato';
+              const originalText = shareSiteBtn.querySelector('span').textContent;
+              shareSiteBtn.querySelector('span').textContent = 'Link copiato';
               setTimeout(() => {
-                shareSiteBtn.textContent = originalText;
+                shareSiteBtn.querySelector('span').textContent = originalText;
               }, 1800);
             } else {
               prompt('Copia questo link:', siteUrl);

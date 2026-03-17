@@ -178,47 +178,6 @@
       font-size: 1rem;
     }
 
-    .floating-socials {
-      position: absolute;
-      top: 50%;
-      right: -78px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .floating-social-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.07);
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
-    }
-
-    .floating-social-btn:hover {
-      background: rgba(255,255,255,0.13);
-      border-color: rgba(255,255,255,0.22);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
-    }
-
-    .floating-social-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-      opacity: 0.95;
-    }
-
     .hero {
       padding: 34px 0 18px;
     }
@@ -309,24 +268,102 @@
       line-height: 1.65;
     }
 
-    .stats {
+    .identity-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .identity-copy {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 0.98rem;
+    }
+
+    .identity-tags {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-top: 18px;
     }
 
-    .stat {
+    .identity-tag {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .stat strong {
+    .identity-tag strong {
       display: block;
-      font-size: 1.15rem;
-      margin-bottom: 4px;
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .identity-tag span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .identity-socials {
+      padding-top: 2px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .identity-socials-label {
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.74);
+    }
+
+    .identity-socials-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .identity-social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      cursor: pointer;
+      font: inherit;
+      gap: 8px;
+    }
+
+    .identity-social-btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.24);
+    }
+
+    .identity-social-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+      opacity: 0.95;
+      flex-shrink: 0;
+    }
+
+    .identity-social-btn span {
+      font-size: 0.9rem;
+      line-height: 1;
     }
 
     .live-panel {
@@ -592,22 +629,6 @@
       filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28));
     }
 
-    @media (max-width: 1280px) {
-      .floating-socials {
-        right: -64px;
-      }
-
-      .floating-social-btn {
-        width: 44px;
-        height: 44px;
-      }
-
-      .floating-social-btn svg {
-        width: 17px;
-        height: 17px;
-      }
-    }
-
     @media (max-width: 1180px) {
       .hero-grid,
       .featured-grid {
@@ -618,20 +639,14 @@
         width: 100%;
       }
 
-      .floating-socials {
-        position: static;
-        transform: none;
-        margin-top: 14px;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+      .identity-tags {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 860px) {
       .hero-grid,
       .featured-grid,
-      .stats,
       .footer-inner {
         grid-template-columns: 1fr;
         flex-wrap: wrap;
@@ -675,13 +690,14 @@
         font-size: 1rem;
       }
 
-      .floating-socials {
-        gap: 10px;
+      .identity-socials-row {
+        gap: 8px;
       }
 
-      .floating-social-btn {
-        width: 42px;
+      .identity-social-btn {
+        min-width: 42px;
         height: 42px;
+        padding: 0 12px;
       }
     }
 
@@ -706,14 +722,9 @@
         text-align: center;
       }
 
-      .floating-social-btn {
-        width: 40px;
-        height: 40px;
-      }
-
-      .floating-social-btn svg {
-        width: 16px;
-        height: 16px;
+      .identity-social-btn {
+        flex: 1 1 calc(50% - 8px);
+        justify-content: center;
       }
     }
   </style>
@@ -738,38 +749,6 @@
               </nav>
             </div>
           </div>
-
-          <div class="floating-socials" aria-label="Social e condivisione sito">
-            <a class="floating-social-btn" href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V10H9.5v3h2.6v8h1.4z"/>
-              </svg>
-            </a>
-
-            <a class="floating-social-btn" href="https://www.instagram.com/cikar0linh0/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm10.5 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 15a2.8 2.8 0 0 0 0-5.6z"/>
-              </svg>
-            </a>
-
-            <a class="floating-social-btn" href="https://www.linkedin.com/in/marco-d-80026a149" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6.9 8.5A1.9 1.9 0 1 1 6.9 4.7a1.9 1.9 0 0 1 0 3.8zM5.1 9.9h3.5V20H5.1V9.9zm5.5 0H14v1.4h.1c.5-.9 1.6-1.7 3.2-1.7 3.4 0 4 2.2 4 5.2V20h-3.5v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20h-3.5V9.9z"/>
-              </svg>
-            </a>
-
-            <a class="floating-social-btn" href="https://x.com/LordWiesenthal" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18.9 3H21l-4.6 5.3L21.8 21h-4.7l-3.7-4.8L9.2 21H7.1l5-5.8L2.8 3h4.8l3.3 4.4L14.8 3h4.1zm-1.6 16h1.3L6.7 4.9H5.3L17.3 19z"/>
-              </svg>
-            </a>
-
-            <button class="floating-social-btn" id="shareSiteBtn" type="button" aria-label="Condividi sito" title="Condividi sito">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18 16.1c-.8 0-1.5.3-2 .8l-7.1-4.1c.1-.3.1-.5.1-.8s0-.5-.1-.8l7-4.1c.5.5 1.2.8 2 .8a3 3 0 1 0-2.9-3.6L8 8.4a3 3 0 1 0 0 7.2l7 4.1a3 3 0 1 0 3-3.6z"/>
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -792,23 +771,60 @@
           </article>
 
           <div class="hero-side">
-            <div class="panel glass">
-              <h3>Cos’è questo sito</h3>
-              <p>
-                Questo archivio raccoglie articoli e copertine in una forma semplice ma più editoriale: meno feed, più struttura. I pezzi restano tuoi, ma smettono di sembrare dispersi nel rumore generale.
-              </p>
-              <div class="stats">
-                <div class="stat">
-                  <strong>Articoli</strong>
-                  <span class="muted">testi e analisi</span>
+            <div class="panel glass identity-panel">
+              <div>
+                <h3>Identità editoriale</h3>
+                <p class="identity-copy">
+                  INOoriginal raccoglie analisi su propaganda, disinformazione, Israele, media e conflitti narrativi.
+                  Un archivio personale con taglio editoriale: meno rumore da feed, più struttura e contesto.
+                </p>
+              </div>
+
+              <div class="identity-tags">
+                <div class="identity-tag">
+                  <strong>Propaganda</strong>
+                  <span>narrazioni, linguaggio e guerra informativa</span>
                 </div>
-                <div class="stat">
-                  <strong>Copertine</strong>
-                  <span class="muted">immagini collegate</span>
+                <div class="identity-tag">
+                  <strong>Israele</strong>
+                  <span>analisi, conflitti e contesto mediorientale</span>
                 </div>
-                <div class="stat">
-                  <strong>Archivio</strong>
-                  <span class="muted">ordinato per data</span>
+                <div class="identity-tag">
+                  <strong>Media & AI</strong>
+                  <span>disinformazione, piattaforme e cultura digitale</span>
+                </div>
+              </div>
+
+              <div class="identity-socials">
+                <div class="identity-socials-label">Segui il progetto</div>
+                <div class="identity-socials-row" aria-label="Social e condivisione sito">
+                  <a class="identity-social-btn" href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V10H9.5v3h2.6v8h1.4z"/>
+                    </svg>
+                    <span>Facebook</span>
+                  </a>
+
+                  <a class="identity-social-btn" href="https://www.linkedin.com/in/marco-d-80026a149" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6.9 8.5A1.9 1.9 0 1 1 6.9 4.7a1.9 1.9 0 0 1 0 3.8zM5.1 9.9h3.5V20H5.1V9.9zm5.5 0H14v1.4h.1c.5-.9 1.6-1.7 3.2-1.7 3.4 0 4 2.2 4 5.2V20h-3.5v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20h-3.5V9.9z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+
+                  <a class="identity-social-btn" href="https://x.com/LordWiesenthal" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M18.9 3H21l-4.6 5.3L21.8 21h-4.7l-3.7-4.8L9.2 21H7.1l5-5.8L2.8 3h4.8l3.3 4.4L14.8 3h4.1zm-1.6 16h1.3L6.7 4.9H5.3L17.3 19z"/>
+                    </svg>
+                    <span>X</span>
+                  </a>
+
+                  <button class="identity-social-btn" id="shareSiteBtn" type="button" aria-label="Condividi sito" title="Condividi sito">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M18 16.1c-.8 0-1.5.3-2 .8l-7.1-4.1c.1-.3.1-.5.1-.8s0-.5-.1-.8l7-4.1c.5.5 1.2.8 2 .8a3 3 0 1 0-2.9-3.6L8 8.4a3 3 0 1 0 0 7.2l7 4.1a3 3 0 1 0 3-3.6z"/>
+                    </svg>
+                    <span>Condividi</span>
+                  </button>
                 </div>
               </div>
             </div>

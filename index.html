@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- ===== INIZIO METADATI BASE PAGINA ===== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>INOoriginal — Archivio editoriale</title>
@@ -8,6 +9,19 @@
     name="description"
     content="INOoriginal, archivio editoriale personale di Lord Cika: articoli, analisi, Israele, disinformazione, media, propaganda e intelligenza artificiale."
   />
+  <!-- ===== FINE METADATI BASE PAGINA ===== -->
+
+  <!--
+    ===== INIZIO AREA FUTURI META TAG =====
+    INCOLLA QUI eventuali nuovi meta tag:
+    - Open Graph
+    - Twitter Card
+    - verifica Google
+    - script analytics nel <head>
+    ===== FINE AREA FUTURI META TAG =====
+  -->
+
+  <!-- ===== INIZIO STILI CSS GLOBALI ===== -->
   <style>
     :root {
       --bg: #06080b;
@@ -708,20 +722,33 @@
       }
     }
   </style>
+  <!-- ===== FINE STILI CSS GLOBALI ===== -->
 </head>
 <body>
   <div class="noise"></div>
 
+  <!-- ===== INIZIO HEADER / TOPBAR ===== -->
   <header class="topbar">
     <div class="container">
       <div class="topbar-shell">
         <div class="topbar-wrap">
           <div class="topbar-inner glass">
             <div class="topbar-left">
+              <!--
+                ===== INIZIO LOGO HEADER =====
+                Per cambiare il logo del sito, modifica il file qui sotto:
+                src="images/Logo.png"
+                ===== FINE LOGO HEADER =====
+              -->
               <a href="#" class="brand">
                 <img src="images/Logo.png" alt="INOoriginal logo" class="brand-logo" />
               </a>
 
+              <!--
+                ===== INIZIO MENU NAVIGAZIONE =====
+                INCOLLA QUI eventuali nuovi link del menu
+                ===== FINE MENU NAVIGAZIONE =====
+              -->
               <nav class="nav">
                 <a href="#ultimi">Ultimi</a>
                 <a href="#archivio">Archivio</a>
@@ -733,11 +760,24 @@
       </div>
     </div>
   </header>
+  <!-- ===== FINE HEADER / TOPBAR ===== -->
 
   <main>
+    <!-- ===== INIZIO HERO PRINCIPALE ===== -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
+          <!--
+            ===== INIZIO CARD HERO PRINCIPALE =====
+            Quando esce un nuovo articolo principale, aggiorna questo blocco:
+            - href hero-main-link
+            - data visibile
+            - titolo
+            - testo
+            - immagine nel CSS .hero-main::before
+            - bottone "Leggi l'ultimo" nel menu sopra
+            ===== FINE CARD HERO PRINCIPALE =====
+          -->
           <article class="hero-main glass">
             <a class="hero-main-link" href="articoli/propaganda-dome.html" aria-label="Leggi Propaganda Dome"></a>
             <div class="hero-content">
@@ -750,7 +790,9 @@
             </div>
           </article>
 
+          <!-- ===== INIZIO COLONNA LATERALE HERO ===== -->
           <div class="hero-side">
+            <!-- ===== INIZIO BOX ABOUT ===== -->
             <div class="panel glass identity-panel">
               <div>
                 <h3>About</h3>
@@ -767,6 +809,11 @@
                 </div>
               </div>
 
+              <!--
+                ===== INIZIO SOCIAL PROFILO / SITO =====
+                INCOLLA QUI nuovi bottoni social del progetto
+                ===== FINE SOCIAL PROFILO / SITO =====
+              -->
               <div class="identity-socials">
                 <div class="identity-socials-label">Segui il progetto</div>
                 <div class="identity-socials-row" aria-label="Social e condivisione sito">
@@ -800,7 +847,9 @@
                 </div>
               </div>
             </div>
+            <!-- ===== FINE BOX ABOUT ===== -->
 
+            <!-- ===== INIZIO BOX WIDGET ESTERNO ===== -->
             <div class="panel glass live-panel">
               <h3>Direzione</h3>
               <p>
@@ -823,11 +872,15 @@
                 <a href="https://rocketalert.live/" target="_blank" rel="noopener noreferrer">rocketalert.live</a>
               </div>
             </div>
+            <!-- ===== FINE BOX WIDGET ESTERNO ===== -->
           </div>
+          <!-- ===== FINE COLONNA LATERALE HERO ===== -->
         </div>
       </div>
     </section>
+    <!-- ===== FINE HERO PRINCIPALE ===== -->
 
+    <!-- ===== INIZIO SEZIONE ULTIMI ARTICOLI ===== -->
     <section class="section" id="ultimi">
       <div class="container">
         <div class="section-header">
@@ -840,6 +893,17 @@
         </div>
 
         <div class="featured-grid">
+          <!--
+            ===== INIZIO BLOCCO NUOVO ARTICOLO IN EVIDENZA =====
+            INCOLLA QUI SOTTO un nuovo <article class="card glass">...</article>
+
+            Regola pratica:
+            - qui metti solo gli articoli che vuoi mostrare nei 3 riquadri "Ultimi articoli"
+            - quando aggiungi un nuovo pezzo, di solito ne entra uno nuovo e ne esce uno vecchio
+            - questo blocco NON si ordina da solo: qui l'ordine lo decidi tu manualmente
+            ===== FINE BLOCCO NUOVO ARTICOLO IN EVIDENZA =====
+          -->
+
           <article class="card glass" data-date="2026-03-17">
             <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/016.png');"></div>
             <div class="card-body glass">
@@ -908,7 +972,9 @@
         </div>
       </div>
     </section>
+    <!-- ===== FINE SEZIONE ULTIMI ARTICOLI ===== -->
 
+    <!-- ===== INIZIO SEZIONE ARCHIVIO ===== -->
     <section class="section" id="archivio">
       <div class="container">
         <div class="section-header">
@@ -921,6 +987,17 @@
         </div>
 
         <div class="archive-grid">
+          <!--
+            ===== INIZIO BLOCCO NUOVO ARTICOLO IN ARCHIVIO =====
+            INCOLLA QUI SOTTO un nuovo <article class="archive-card">...</article>
+
+            Regola pratica:
+            - qui dentro vanno TUTTI gli articoli del sito
+            - l'ordine finale viene sistemato automaticamente dallo script usando data-date
+            - quindi puoi anche incollarlo in fondo, purché data-date sia corretta
+            ===== FINE BLOCCO NUOVO ARTICOLO IN ARCHIVIO =====
+          -->
+
           <article class="archive-card" data-date="2026-03-17">
             <a class="archive-cover-link article-link" href="articoli/propaganda-dome.html">
               <img class="archive-cover" src="images/016.png" alt="Propaganda Dome" />
@@ -1163,19 +1240,29 @@
         </div>
       </div>
     </section>
+    <!-- ===== FINE SEZIONE ARCHIVIO ===== -->
   </main>
 
+  <!-- ===== INIZIO FOOTER ===== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner glass">
         <div class="footer-brand">
+          <!--
+            ===== INIZIO LOGO FOOTER =====
+            Per cambiare il logo del footer, modifica:
+            src="images/Logo.png"
+            ===== FINE LOGO FOOTER =====
+          -->
           <img src="images/Logo.png" alt="INOoriginal logo" class="footer-logo" />
         </div>
         <div class="muted">© 2026 Lord Cika. Tutti i diritti riservati.</div>
       </div>
     </div>
   </footer>
+  <!-- ===== FINE FOOTER ===== -->
 
+  <!-- ===== INIZIO SCRIPT PAGINA ===== -->
   <script>
     const archiveGrid = document.querySelector('.archive-grid');
     const archiveCards = Array.from(archiveGrid.querySelectorAll('.archive-card'));
@@ -1258,5 +1345,16 @@
       });
     }
   </script>
+  <!-- ===== FINE SCRIPT PAGINA ===== -->
+
+  <!--
+    ===== INIZIO AREA FUTURI SCRIPT =====
+    INCOLLA QUI eventuali nuovi script:
+    - analytics
+    - contatori
+    - widget
+    - script personalizzati
+    ===== FINE AREA FUTURI SCRIPT =====
+  -->
 </body>
 </html>

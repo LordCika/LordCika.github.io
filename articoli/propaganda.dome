@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propaganda Dome | INOoriginal</title>
+  <meta
+    name="description"
+    content="Israele, Gaza, Hamas, propaganda e guerra informativa: non basta colpire il nemico, bisogna impedirgli di scrivere da solo il copione."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #f5f5f5;
+      --muted: rgba(245,245,245,0.72);
+      --soft: rgba(245,245,245,0.55);
+      --accent: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 24px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(10,10,15,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+    }
+
+    header a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      opacity: 0.82;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 22px;
+      display: block;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      text-align: center;
+      margin-bottom: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
+      justify-content: flex-start;
+    }
+
+    .author-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .author-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .author-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-date {
+      font-size: 13px;
+      color: var(--soft);
+    }
+
+    article {
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    article p {
+      margin-bottom: 1.35em;
+    }
+
+    .share-block {
+      margin-top: 46px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .share-label {
+      width: 100%;
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 8px 24px rgba(0,0,0,0.22);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .cross-published {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .cross-published a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--soft);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 40px 18px 64px;
+      }
+
+      .author-box {
+        margin-bottom: 30px;
+      }
+
+      article {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← Torna all’archivio</a>
+  </header>
+
+  <main class="container">
+    <img src="../images/016.png" alt="Copertina articolo" class="hero-image" />
+
+    <h1>Chi scrive il copione</h1>
+
+    <div class="author-box">
+      <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+        <img src="../images/avatar.jpg" alt="Avatar Marcolino Di Capua" class="author-avatar" />
+        <div class="author-meta">
+          <div class="author-name">Marcolino Di Capua</div>
+          <div class="author-date">17 marzo 2026</div>
+        </div>
+      </a>
+    </div>
+
+    <article id="article-content">
+      <p>C’è una cosa che una certa sinistra “ProPalProHamasLGBTQALLAHAKBAR” ama ripetere quando si parla di Gaza: Israele avrà pure vinto militarmente, ma Hamas lo avrebbe umiliato sul piano della propaganda. Ed è curioso, perché spesso è uno dei pochissimi terreni su cui questa gente pensa ancora di poter rivendicare una vittoria.</p>
+
+      <p>Il punto è che, per quanto detta così sembri uno slogan da centro sociale stile Askatasuna, sotto c’è una domanda seria. È davvero possibile che Israele, uno degli Stati più avanzati al mondo sul piano tecnologico, militare e dell’intelligence, non sia riuscito a tenere testa a Hamas sul terreno della narrazione? Davvero una macchina statale di quel livello si è fatta schiacciare, simbolicamente e mediaticamente, da un’organizzazione terroristica?</p>
+
+      <p>Oppure il problema è un altro: che a Gaza Israele abbia vinto sul campo, ma abbia perso nel modo in cui quella guerra è stata percepita, raccontata, semplificata e trasformata in immagine? Perché, se è così, allora vale la pena chiedersi se quella lezione non sia servita. E se la guerra con l’Iran non stia mostrando, proprio adesso, un Israele molto meno ingenuo sul fronte propagandistico.</p>
+
+      <p>Prendiamo il caso dell’ospedale Al-Ahli Arab, noto anche come ospedale Battista, a Gaza City. La sera del 17 ottobre 2023, a soli dieci giorni dall’inizio del conflitto, un’esplosione colpì l’area dell’ospedale e, secondo il Ministero della Salute di Gaza, controllato da Hamas, la responsabilità venne attribuita immediatamente a un raid aereo israeliano. Si parlò inizialmente di circa 500 vittime. Molti media internazionali e diversi leader arabi rilanciarono subito questa versione, alimentando proteste in tutto il Medio Oriente e non solo.</p>
+
+      <p>Poche ore dopo, le Forze di Difesa Israeliane negarono ogni responsabilità, sostenendo che l’esplosione fosse stata causata dal fallimento del lancio di un razzo da parte della Jihad Islamica Palestinese, gruppo armato alleato di Hamas. Nei giorni successivi, diverse valutazioni di intelligence occidentali e varie analisi tecniche andarono nella stessa direzione: con alta probabilità non si era trattato di un attacco aereo israeliano, ma dell’impatto di un razzo di Hamas fuori controllo. Anche l’analisi dei danni, del cratere e della natura dell’incendio venne citata da più parti come elemento incompatibile con la versione iniziale diffusa da Hamas.</p>
+
+      <p>Elemento incompatibile con la versione iniziale diffusa da Hamas. Ve lo ripeto volutamente.</p>
+
+      <p>Avete letto bene?</p>
+
+      <p>C’è una grande fetta di popolazione là fuori che questa seconda parte del racconto non la conosce affatto. Non sa nemmeno che esista. Per moltissimi, la storia si è fermata al primo titolo, alla prima immagine, alla prima accusa. Tutto il resto è evaporato. (non come i 70.000 morti a Gaza. ndr)</p>
+
+      <p>E allora la domanda vera è: che cosa è successo in quelle poche ore?</p>
+
+      <p>Non è successo nulla di eccezionale. È successo esattamente ciò che accade quando uno Stato, prima di parlare, deve verificare, ricostruire, capire, raccogliere elementi. Israele, in quelle ore, ha dovuto accertare che cosa fosse realmente accaduto. E proprio in quel tempo, nel tempo necessario a controllare i fatti, ha perso terreno. O, per dirla meglio, ha perso il primo round narrativo.</p>
+
+      <p>Perché Hamas aveva già fatto partire il racconto. Aveva già indicato il colpevole, già diffuso la sua versione, già messo in moto la macchina emotiva, politica e mediatica. Ed è qui che si vede uno dei problemi centrali. In una guerra tradizionale, il tempo che ti serve per capire è tempo utile. In una guerra narrativa, quel tempo può diventare una condanna. Perché mentre tu verifichi, l’altro accusa. Mentre tu ricostruisci, l’altro semplifica. Mentre tu porti prove, l’altro ha già consegnato al pubblico una storia pronta, emotivamente perfetta, moralmente intuitiva, facilissima da condividere.</p>
+
+      <p>E cioè: che cosa faresti se qualcuno ti accusasse all’improvviso di aver ucciso un bambino e, mentre cerchi le prove che ti scagionano, Javier Bardem, il Sudafrica, la Spagna, Greta Thunberg e mezzo pianeta cominciassero a dire all’altro mezzo pianeta che sei un assassino di bambini? Che cosa faresti se, quando finalmente presenti i dati, le immagini, le verifiche e le analisi, nessuno fosse più disposto ad ascoltarti? Che cosa faresti se quelli che dovrebbero giudicare i fatti fossero già stati emotivamente convinti da chi ti accusa?</p>
+
+      <p>Perché questo è il punto: la propaganda più efficace non è quella che dimostra. È quella che arriva prima. Non è quella che convince meglio. È quella che occupa per prima lo spazio mentale del pubblico. E una volta che quell’immagine si è fissata, sradicarla diventa quasi impossibile, anche quando emergono elementi che la smentiscono o, quantomeno, la complicano.</p>
+
+      <p>Ed è forse proprio qui che Israele ha capito di avere un problema. Non necessariamente un problema di verità, ma un problema di ritmo. Non di assenza di argomenti, ma di assenza di prontezza narrativa. Perché nell’ecosistema mediatico contemporaneo, soprattutto nei social, non basta avere ragione e, a volte, non basta nemmeno avere le prove: bisogna impedire che la menzogna diventi, anche solo per ventiquattr’ore, la versione moralmente definitiva dei fatti.</p>
+
+      <p>E se Gaza è stata, almeno in parte, il laboratorio di questo fallimento, allora la domanda successiva diventa inevitabile: Israele ha imparato? Perché, guardando a ciò che sta accadendo nella guerra con l’Iran, il sospetto è che qualcosa sia cambiato. Non che Israele abbia smesso di subire propaganda ostile, quello sarebbe fantascienza, ma che abbia finalmente capito che lasciare il primo racconto agli altri significa consegnare agli altri anche il potere di decidere chi sarà il colpevole, chi la vittima e chi il mostro, prima ancora che i fatti abbiano il tempo di parlare.</p>
+
+      <p>Ed è qui che il quadro si fa interessante. Nelle ultime ore, dopo la diffusione della voce secondo cui Netanyahu sarebbe stato ucciso o gravemente ferito in un raid iraniano, il premier israeliano è ricomparso in un video girato in un caffè nei pressi di Gerusalemme, ironizzando apertamente sulla propaganda avversaria. Non una smentita solenne, non un comunicato ingessato con il pulpito e le bandiere dietro.</p>
+
+      <p>Con un reel.</p>
+
+      <p>E qui la questione non è tanto se quel singolo video abbia “vinto” qualcosa. La questione è che sembra mostrare un cambio di mentalità. A Gaza, spesso Israele appariva costretto a inseguire la menzogna dopo che questa aveva già fatto il giro del mondo. Qui, invece, prova a intervenire subito sul terreno simbolico, prima che il racconto avversario si sedimenti del tutto. Prova a rompere il meccanismo, a sabotare il ritmo dell’accusa, a togliere all’avversario il monopolio della prima impressione.</p>
+
+      <p>La lezione, forse, è questa: nella guerra informativa contemporanea non basta più smentire. Bisogna disturbare. Bisogna interrompere la linearità della propaganda nemica. Bisogna inserire rumore, attrito, dubbio, tempo perso. Perché, se il nemico prospera sulla velocità con cui trasforma una menzogna in verità emotiva, allora costringerlo a perdere tempo, a verificare, a rincorrere, a fermarsi un attimo prima di lanciare il prossimo racconto tossico, diventa già una forma di difesa.</p>
+
+      <p>Se è davvero così, allora l’Iran potrebbe star mostrando un Israele che ha imparato almeno una lezione di Gaza: non basta colpire il nemico. Bisogna impedirgli di scrivere da solo il copione.</p>
+    </article>
+
+    <div class="share-block">
+      <div class="share-label">Condividi l’articolo</div>
+      <a class="share-btn" id="share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a class="share-btn" id="share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+      <a class="share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+
+    <div class="cross-published">
+      L’articolo è pubblicato anche su
+      <a href="https://ilrepubblicano.it/" target="_blank" rel="noopener noreferrer">Il Repubblicano</a>.
+    </div>
+
+    <footer>
+      INOoriginal — Archivio editoriale personale
+    </footer>
+  </main>
+
+  <script>
+    const pageUrl = window.location.href;
+    const pageTitle = document.title;
+
+    document.getElementById('share-facebook').href =
+      'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl);
+
+    document.getElementById('share-x').href =
+      'https://twitter.com/intent/tweet?url=' + encodeURIComponent(pageUrl) +
+      '&text=' + encodeURIComponent(pageTitle);
+
+    document.getElementById('share-linkedin').href =
+      'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl);
+  </script>
+</body>
+</html>

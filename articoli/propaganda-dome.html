@@ -18,7 +18,6 @@
     :root {
       --bg: #0a0a0f;
       --panel: rgba(255, 255, 255, 0.04);
-      --panel-strong: rgba(255, 255, 255, 0.08);
       --border: rgba(255, 255, 255, 0.1);
       --text: #f5f5f5;
       --muted: rgba(255, 255, 255, 0.68);
@@ -73,7 +72,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       justify-content: flex-start;
     }
 
@@ -105,6 +104,17 @@
     .author-date {
       font-size: 13px;
       color: var(--muted);
+    }
+
+    .cover-wrap {
+      margin-bottom: 36px;
+    }
+
+    .article-cover {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     article {
@@ -187,7 +197,7 @@
       }
 
       .author-block {
-        margin-bottom: 32px;
+        margin-bottom: 28px;
       }
     }
   </style>
@@ -215,6 +225,10 @@
         </a>
         <div class="author-date">17 marzo 2026</div>
       </div>
+    </div>
+
+    <div class="cover-wrap">
+      <img src="../images/016.png" alt="Propaganda Dome" class="article-cover" />
     </div>
 
     <article>
@@ -278,7 +292,7 @@
       <div class="share-section">
         <a
           class="share-btn"
-          href="https://www.facebook.com/sharer/sharer.php?u=https://lordcika.github.io/propaganda-dome.html"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://lordcika.github.io/articoli/propaganda-dome.html"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -287,7 +301,7 @@
 
         <a
           class="share-btn"
-          href="https://twitter.com/intent/tweet?url=https://lordcika.github.io/propaganda-dome.html&text=Propaganda%20Dome"
+          href="https://twitter.com/intent/tweet?url=https://lordcika.github.io/articoli/propaganda-dome.html&text=Propaganda%20Dome"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -296,7 +310,7 @@
 
         <a
           class="share-btn"
-          href="https://www.linkedin.com/sharing/share-offsite/?url=https://lordcika.github.io/propaganda-dome.html"
+          href="https://www.linkedin.com/sharing/share-offsite/?url=https://lordcika.github.io/articoli/propaganda-dome.html"
           target="_blank"
           rel="noopener noreferrer"
         >

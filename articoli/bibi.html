@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIBI | INOoriginal</title>
+  <meta
+    name="description"
+    content="Un’analisi sulla figura di Benjamin Netanyahu, tra accuse di corruzione, costruzione mediatica e demonizzazione politica."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="BIBI" />
+  <meta
+    property="og:description"
+    content="Un’analisi sulla figura di Benjamin Netanyahu, tra accuse di corruzione, costruzione mediatica e demonizzazione politica."
+  />
+  <meta property="og:image" content="../images/017.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BIBI" />
+  <meta
+    name="twitter:description"
+    content="Un’analisi sulla figura di Benjamin Netanyahu, tra accuse di corruzione, costruzione mediatica e demonizzazione politica."
+  />
+  <meta name="twitter:image" content="../images/017.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #07090d;
+      --bg-2: #0d1118;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: rgba(248, 249, 251, 0.96);
+      --muted: rgba(248, 249, 251, 0.62);
+      --soft: rgba(248, 249, 251, 0.8);
+      --accent: #9ecbff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --maxw: 860px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(158, 203, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #06080b 0%, #0b0f15 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-link {
+      font-size: 14px;
+      color: var(--soft);
+      opacity: 0.9;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .page {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 90px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #111;
+    }
+
+    .title-wrap {
+      text-align: center;
+      margin: 34px auto 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .author-card {
+      width: 100%;
+      margin: 26px 0 34px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .author-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-name a:hover {
+      text-decoration: underline;
+    }
+
+    .author-info {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    article {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.028));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+    }
+
+    article p {
+      font-size: 1.08rem;
+      color: var(--text);
+      margin-bottom: 1.35em;
+    }
+
+    article p:last-child {
+      margin-bottom: 0;
+    }
+
+    .share-wrap {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .share-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 0.94rem;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        width: min(100%, calc(100% - 22px));
+        min-height: 62px;
+      }
+
+      .page {
+        width: min(100%, calc(100% - 22px));
+        padding-top: 26px;
+      }
+
+      .hero-image {
+        aspect-ratio: 4 / 5;
+        border-radius: 20px;
+      }
+
+      .author-card {
+        padding: 14px;
+      }
+
+      article {
+        border-radius: 22px;
+        padding: 20px 18px;
+      }
+
+      article p {
+        font-size: 1.02rem;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .share-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../index.html">← Torna all’archivio</a>
+      <div class="brand">INOoriginal</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="../images/017.png"
+        alt="Cover articolo BIBI"
+      />
+    </section>
+
+    <div class="title-wrap">
+      <div class="eyebrow">Analisi</div>
+      <h1>BIBI</h1>
+      <p class="subtitle">
+        Netanyahu tra accuse di corruzione, costruzione mediatica e demonizzazione politica.
+      </p>
+    </div>
+
+    <div class="author-card">
+      <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+        <img
+          class="author-avatar"
+          src="../images/avatar.jpg"
+          alt="Avatar di Marcolino Di Capua"
+        />
+      </a>
+      <div class="author-meta">
+        <div class="author-name">
+          <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+            Marcolino Di Capua
+          </a>
+        </div>
+        <div class="author-info">18 marzo 2026 · Tempo di lettura: 6 min</div>
+      </div>
+    </div>
+
+    <article>
+      <p>Vi capita mai, ma sì, certo che vi capita, di sentir dire, o addirittura di dire, che anche se Israele ha il diritto di difendersi, Netanyahu è un politico che non va bene? “Io sono contro Netanyahu”. “Netanyahu non mi piace”.</p>
+
+      <p>Ora. Io ho sempre votato Netanyahu. Da quando ho fatto l’Aliyah, e a parte un piccolo intermezzo, ho sempre vissuto sotto governi Netanyahu. E dovrò sempre ringraziarlo, perché se ho potuto emigrare, farmi una vita, lavorare e, quando è stato necessario, proteggermi, lo devo anche a lui.</p>
+
+      <p>Detto questo, mi sono chiesto: perché, nell’informazione collettiva, il primo ministro israeliano è considerato il male di Israele? Perché è considerato una persona corrotta?</p>
+
+      <p>Cioè, alla fine, come non lo sapevo io, non lo sanno molte persone. Quindi il metodo più giusto è cercare di capire cosa effettivamente avrebbe fatto, e se le ragioni di questo astio siano giustificate oppure no. Quello che voglio dimostrare è che queste accuse sono più un prodotto ideologico che altro. O meglio: tutto è iniziato perché mi sono chiesto: “Ma se fossi io quello esagerato, che non vede i difetti di Israele e quindi di Netanyahu?”.</p>
+
+      <p>E allora la domanda vera è diventata un’altra: Netanyahu è davvero corrotto oltre la media, oppure è stato trasformato nel simbolo assoluto del male per ragioni ideologiche e mediatiche?</p>
+
+      <p>Perché le due cose non sono la stessa cosa. Uno può anche avere difetti, può anche essere processato, può anche avere zone grigie, ma da qui a diventare il Voldemort del nuovo millennio ce ne passa. Ed è proprio qui che la questione, secondo me, si fa interessante.</p>
+
+      <p>Tutti conosciamo la storia leggendaria che c’è dietro la figura di Bibi. Il fratello, unica vittima israeliana della leggendaria missione di salvataggio a Entebbe. Quasi vent’anni alla guida di un Paese che, tra amori e dissapori, lo ha sempre rieletto. E poi alcuni nei, alcune ombre, che sono la base di tutto il racconto costruito contro di lui.</p>
+
+      <p>Per prima cosa ho voluto capire quali fossero le accuse contro Netanyahu prima del 7 ottobre 2023.</p>
+
+      <p>Bibi era, ed è tuttora, sotto processo in tre casi di corruzione, noti come Caso 1000, 2000 e 4000, con imputazioni di corruzione, frode e abuso di fiducia.</p>
+
+      <p>In sintesi, prima del 7 ottobre 2023:<br>
+      Caso 1000: accuse di aver ricevuto regali di lusso — sigari, champagne, gioielli — da uomini d’affari in cambio di favori politici e diplomatici.<br>
+      Caso 2000: accuse di aver negoziato con l’editore del quotidiano Yedioth Ahronoth una copertura mediatica favorevole in cambio di una legge che penalizzasse il giornale rivale Israel Hayom.<br>
+      Caso 4000: il più grave, riguarda presunti favori regolatori all’azienda di telecomunicazioni Bezeq e al sito di news Walla in cambio di copertura mediatica positiva per lui e sua moglie.</p>
+
+      <p>Ecco, questi sono i capi d’accusa.</p>
+
+      <p>Ora, a me questa cosa ha fatto venire un dubbio. Non era possibile, secondo me. Non era possibile che il “criminale per eccellenza”, “l’uomo più odiato del pianeta”, il “nuovo Führer”, prima del 7 ottobre fosse, nei fatti, un politico accusato di cose che, cosi di botto, sembrano più da politico medio occidentale che da incarnazione del male assoluto.</p>
+
+      <p>E sì, perché al momento gli italiani che accusano Netanyahu di corruzione e abuso di potere fanno anche un po’ sorridere. L’Italia è pur sempre il Paese di Tangentopoli, delle correnti, dei governi tecnici, dei moralisti a giorni alterni e del Movimento 5 Stelle al governo. Quindi non è esattamente nella posizione più elegante del mondo per fare la morale agli altri.</p>
+
+      <p>Ma il punto non è assolverlo per simpatia o per tifoseria. Il punto è capire se Netanyahu sia davvero un politico eccezionalmente corrotto, oppure se intorno a lui sia stata costruita un’immagine volutamente mostruosa, sproporzionata rispetto alle accuse reali, perché utile a un certo racconto ideologico e mediatico.</p>
+
+      <p>Se guardiamo la questione in questi termini, il quadro cambia parecchio. Perché Netanyahu può anche essere antipatico, arrogante, divisivo, cinico, troppo attaccato al potere. Può aver governato troppo a lungo. Può aver commesso errori, anche gravi. Tutto legittimo.</p>
+
+      <p>Ma una cosa è questo. Un’altra è raccontarlo come se fosse il male assoluto in persona, come se tutta la complessità israeliana si potesse ridurre a una sola faccia, possibilmente con espressione satanica, buona per i post Instagram, per i cortei universitari e per la pornografia morale di una certa informazione.</p>
+
+      <p>Quindi, la ricerca, ridotta all’osso, ha prodotto questo risultato: il Voldemort del nuovo millennio, prima del 7 ottobre 2023, sarebbe accusato di:<br>
+      aver ricevuto regali in cambio di favori politici;<br>
+      aver cercato un accordo con un giornale per ottenere maggiore visibilità o una copertura più favorevole;<br>
+      aver concesso presunti favori regolatori a una società di telecomunicazioni in cambio di maggiore sostegno mediatico.</p>
+
+      <p>Ora, intendiamoci: non sono accuse irrilevanti. Non sto dicendo questo. Sto dicendo però che c’è già qui una sproporzione enorme tra i fatti contestati e l’immagine pubblica costruita attorno a lui.</p>
+
+      <p>Ed è qui che, secondo me, casca tutto.</p>
+
+      <p>Perché Netanyahu non è stato trasformato in un simbolo assoluto solo per quello che ha fatto. È stato trasformato in un simbolo assoluto anche per quello che rappresenta. Rappresenta Israele che resiste, Israele che risponde, Israele che non chiede scusa per il fatto di esistere. E allora diventa perfetto come bersaglio: non più un politico da criticare, ma una figura da demonizzare.</p>
+
+      <p>La domanda, alla fine, è tutta qui: il livello di odio, deformazione e ossessione costruito intorno a lui è davvero proporzionato alle accuse reali?</p>
+
+      <p>La mia risposta, almeno per tutto quello che viene prima del 7 ottobre, è no.</p>
+
+      <p>Dopo il 7 ottobre il discorso cambia, si allarga, si incattivisce ancora di più e soprattutto diventa il vero terreno su cui la figura di Netanyahu viene usata come contenitore simbolico di tutto il male possibile, tipo la melma rosa di Ghostbusters 2 che si alimentava del male di tutto il mondo.</p>
+
+      <p>Ma quello è un altro capitolo, e merita di essere affrontato a parte.</p>
+
+      <p>Perché prima di discutere le accuse successive bisognava capire una cosa più semplice: Netanyahu era già davvero il mostro che ci avevano raccontato prima della guerra, oppure il mostro serviva già allora, e il 7 ottobre ha solo reso tutto più facile?</p>
+
+      <div class="share-wrap">
+        <div class="share-label">Condividi questo articolo</div>
+        <div class="share-buttons">
+          <button class="share-btn" onclick="shareFacebook()">Facebook</button>
+          <button class="share-btn" onclick="shareX()">X</button>
+          <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        INOoriginal — Archivio editoriale personale.
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function getShareUrl() {
+      return window.location.href;
+    }
+
+    function getShareTitle() {
+      return document.title;
+    }
+
+    function shareFacebook() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareX() {
+      const url = encodeURIComponent(getShareUrl());
+      const text = encodeURIComponent(getShareTitle());
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareLinkedIn() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener,noreferrer");
+    }
+  </script>
+</body>
+</html>

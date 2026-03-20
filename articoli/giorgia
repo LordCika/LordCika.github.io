@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giorgia | INOoriginal</title>
+  <meta
+    name="description"
+    content="Un’analisi del podcast di Giorgia Meloni con Fedez e Mr. Marra, tra strategia comunicativa, Iran, referendum e scontro narrativo."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Giorgia" />
+  <meta
+    property="og:description"
+    content="Un’analisi del podcast di Giorgia Meloni con Fedez e Mr. Marra, tra strategia comunicativa, Iran, referendum e scontro narrativo."
+  />
+  <meta property="og:image" content="../images/018.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Giorgia" />
+  <meta
+    name="twitter:description"
+    content="Un’analisi del podcast di Giorgia Meloni con Fedez e Mr. Marra, tra strategia comunicativa, Iran, referendum e scontro narrativo."
+  />
+  <meta name="twitter:image" content="../images/018.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #07090d;
+      --bg-2: #0d1118;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: rgba(248, 249, 251, 0.96);
+      --muted: rgba(248, 249, 251, 0.62);
+      --soft: rgba(248, 249, 251, 0.8);
+      --accent: #9ecbff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --maxw: 860px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(158, 203, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #06080b 0%, #0b0f15 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-link {
+      font-size: 14px;
+      color: var(--soft);
+      opacity: 0.9;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .page {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 90px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #111;
+    }
+
+    .title-wrap {
+      text-align: center;
+      margin: 34px auto 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .author-card {
+      width: 100%;
+      margin: 26px 0 34px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .author-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-name a:hover {
+      text-decoration: underline;
+    }
+
+    .author-info {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    article {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.028));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+    }
+
+    article p {
+      font-size: 1.08rem;
+      color: var(--text);
+      margin-bottom: 1.35em;
+    }
+
+    article p:last-child {
+      margin-bottom: 0;
+    }
+
+    .publication-note {
+      margin-top: 8px;
+      margin-bottom: 18px;
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    .publication-note a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .hashtags {
+      margin-top: 10px;
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+      line-height: 1.9;
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .share-wrap {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .share-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 0.94rem;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        width: min(100%, calc(100% - 22px));
+        min-height: 62px;
+      }
+
+      .page {
+        width: min(100%, calc(100% - 22px));
+        padding-top: 26px;
+      }
+
+      .hero-image {
+        aspect-ratio: 4 / 5;
+        border-radius: 20px;
+      }
+
+      .author-card {
+        padding: 14px;
+      }
+
+      article {
+        border-radius: 22px;
+        padding: 20px 18px;
+      }
+
+      article p {
+        font-size: 1.02rem;
+      }
+
+      .publication-note,
+      .hashtags {
+        font-size: 0.94rem;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .share-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../index.html">← Torna all’archivio</a>
+      <div class="brand">INOoriginal</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="../images/018.png"
+        alt="Cover articolo Giorgia"
+      />
+    </section>
+
+    <div class="title-wrap">
+      <div class="eyebrow">Analisi</div>
+      <h1>Giorgia</h1>
+      <p class="subtitle">
+        Il podcast con Fedez e Mr. Marra come operazione politica, mediatica e narrativa.
+      </p>
+    </div>
+
+    <div class="author-card">
+      <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+        <img
+          class="author-avatar"
+          src="../images/avatar.jpg"
+          alt="Avatar di Marcolino Di Capua"
+        />
+      </a>
+      <div class="author-meta">
+        <div class="author-name">
+          <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+            Marcolino Di Capua
+          </a>
+        </div>
+        <div class="author-info">20 marzo 2026 · Tempo di lettura: 6 min</div>
+      </div>
+    </div>
+
+    <article>
+      <p>Mi sono messo la sveglia sul telefonino per seguire il podcast di Fedez e Mr. Marra.</p>
+
+      <p>Sì, perché il 19 marzo c’era come ospite Giorgia nazionale.</p>
+
+      <p>Così mi sono accomodato e ho fatto partire i 55 minuti di podcast.</p>
+
+      <p>La prima impressione che ho avuto è stata questa: mi ha fatto riflettere il fatto di aver letto qualche commento delle solite zecche, secondo cui il Presidente del Consiglio non può ridicolizzarsi partecipando a un podcast.</p>
+
+      <p>Io trovo molto più ridicolo Marra, che si è presentato davanti al Presidente del Consiglio con voile e treccine rosse, se proprio vogliamo fare una classifica delle inopportunità.</p>
+
+      <p>Ma comunque, prima di parlare delle mie impressioni, vorrei chiarire la mia posizione su questo evento.</p>
+
+      <p>La mossa di Giorgia Meloni è stata geniale.</p>
+
+      <p>Sa benissimo che, con le conferenze stampa ufficiali, non arriverà mai ai giovani. Oggi l’attenzione dei giovani se la prende chi sui social funziona davvero. E guarda caso, nel campo dell’informazione, a dominare quello spazio è soprattutto la sinistra. Così molti giovani finiscono per essere esposti quasi solo a una narrazione di sinistra.</p>
+
+      <p>Quindi che cosa ha fatto?</p>
+
+      <p>Ha accettato l’invito nel podcast più seguito sui social. In questo modo, invece di passare attraverso il filtro della palude mediatica di sinistra, parla direttamente ai giovani.</p>
+
+      <p>Questo è il contesto.</p>
+
+      <p>Ora andiamo ad analizzare quello che è successo in questa oretta. Parleremo di questa oretta, e non dei 10 secondi finali in cui il Presidente rimproverava un suo collaboratore per averla interrotta e fatta perdere il filo del discorso.</p>
+
+      <p>Sì, perché la sinistra rosicona, non potendo attaccare il Presidente su niente dell’intervista, ha dovuto riversare tutto il suo sdegno sui bloopers.</p>
+
+      <p>È come se domani guardassi i bloopers di Titanic e chiedessi che vengano ritirati gli 11 Oscar al film. Sono stupidi.</p>
+
+      <p>Ora, chiarito questo, entriamo nel vivo del racconto.</p>
+
+      <p>Il podcast è iniziato subito come fa di solito il Paris Saint-Germain all’inizio di una partita: rinvio del pallone e tutti avanti. E così è stato.</p>
+
+      <p>Marra sembra quello che fa le domande, e Fedez quello che, prima dell’intervista, se l’è fatte approvare da Marra.</p>
+
+      <p>Prima domanda: guerra in Iran.</p>
+
+      <p>Devo essere sincero: era la domanda che aspettavo di più. E nonostante Marra spingesse per far sì che il Presidente del Consiglio si tradisse nei confronti di Israele e degli Stati Uniti, Giorgia ha risposto in un modo che, francamente, trovo difficile da controbattere:</p>
+
+      <p>“L’Italia non ha intenzione di entrare in guerra e, in ogni caso, preferisco una guerra ingiusta oggi che una guerra domani peggiore, perché l’Iran ha la bomba atomica.”</p>
+
+      <p>Per tutti quelli che non lo sanno, il regime iraniano ha dichiarato più volte la propria ostilità radicale verso Israele. E quando un regime del genere arricchisce uranio oltre la soglia compatibile con il solo uso civile, è evidente che il problema non può essere minimizzato.</p>
+
+      <p>Ora, solo un idiota non capirebbe che, se l’Iran arricchisce l’uranio oltre la soglia massima per uso civile, allora va fermato. Non vedo altre soluzioni.</p>
+
+      <p>Fedez e Marra non controbattono.</p>
+
+      <p>Fanno questi podcast in nome degli “interessi nazionali italiani” e poi si sorprendono se Israele guarda ai propri interessi nazionali?</p>
+
+      <p>Poi arriva l’altra domanda, ovviamente sul referendum giustizia di domenica e lunedì.</p>
+
+      <p>Qui salto tutta la fase in cui Fedez si prende in giro da solo parlando dei servizi segreti italiani, e quella in cui Marra, convinto di essere un professionista della comunicazione — che, se non fosse stato per Fedez, ancora faceva le dirette su Discord, NDR — insiste per farsi dare ragione su come, secondo lui, sia la destra sia la sinistra abbiano sbagliato la comunicazione online sul referendum.</p>
+
+      <p>E quindi? Vuole una risposta? Che risposta pretendeva? Ha incalzato su questa domanda più di una volta, ma caro Davide Marra, che cosa doveva dirti?</p>
+
+      <p>“Sì, abbiamo sbagliato”?</p>
+
+      <p>“Sì, è andata male”?</p>
+
+      <p>“Sì, sei bravo”?</p>
+
+      <p>“Sì, ci sei arrivato solo tu”?</p>
+
+      <p>Sinceramente: che risposta volevi?</p>
+
+      <p>Perché, più di spiegarti che un conto è fare informazione debole e un conto è fare informazione riempiendo i cittadini di invenzioni e sperando in un’isteria collettiva, che cosa avrebbe dovuto aggiungere?</p>
+
+      <p>Il Presidente del Consiglio ha spiegato, in modo molto semplice, perché secondo lei bisognerebbe votare per il Sì.</p>
+
+      <p>Ed è proprio questo il punto. La sinistra non ci ha mai spiegato, in questi mesi, perché bisognerebbe votare No. L’unica motivazione della sinistra sembra essere quella di fare “dispetto alla Meloni”. È questo che si capisce dalla politica di sinistra.</p>
+
+      <p>Il naufragio diventa evidente quando viene chiesto al Presidente di rispondere a un intervento del professor Barbero.</p>
+
+      <p>Ed è qui che voglio spiegare il mio ragionamento.</p>
+
+      <p>Il professor Barbero, in quell’intervento, non ha spiegato che la riforma è sbagliata nel merito. O meglio: chiunque si aspettasse una spiegazione vera delle motivazioni, è rimasto deluso. Il professore ha sostenuto che la legge sarebbe sbagliata perché, un domani, qualcuno potrebbe approfittarsene in modo disonesto.</p>
+
+      <p>Ed è proprio questa la parte più preoccupante del suo discorso, e forse anche la più offensiva. Perché sottintende che chi dovrà far funzionare i due CSM finirà inevitabilmente per approfittarsene. Io questo lo trovo offensivo. Se qualcuno è disonesto, non significa che debbano esserlo tutti. Non si può giudicare sbagliata una legge solo perché si immagina, in partenza, la malafede di chi dovrà applicarla.</p>
+
+      <p>Capito? La legge sarebbe sbagliata perché io ho trovato il modo di fregarla.</p>
+
+      <p>Ma secondo questo ragionamento, allora nessuna legge va bene. Perché ci sarà sempre un modo per aggirare una legge. Non esiste la legge perfetta.</p>
+
+      <p>Quindi trovo assurdo bocciare una legge perché, se la vuoi aggirare, basta fare così.</p>
+
+      <p>È questo il nocciolo della questione sul referendum. E infatti il Presidente spiega anche che in nessun modo verrà alterata la Costituzione e che, comunque, se ci fossero sospetti sulla scelta dei “giudici laici”, sarà sempre il Presidente della Repubblica a firmare il passaggio definitivo.</p>
+
+      <p>Quindi adesso la sinistra non si fida più del faro della democrazia, Mattarella?</p>
+
+      <p>Concludo, sperando di non fare vilipendio al Presidente del Consiglio, ma vorrei dire a tutta la sinistra:</p>
+
+      <p>“Avete deciso di fottere la stronza sbagliata”.</p>
+
+      <p>Bravissima Giorgia.</p>
+
+      <div class="publication-note">
+        Pubblicato anche su
+        <a
+          href="https://ilrepubblicano.it"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Il Repubblicano
+        </a>
+      </div>
+
+      <p class="hashtags">
+        #GiorgiaMeloni #Podcast #Fedez #MrMarra #PoliticaItaliana #ComunicazionePolitica #Media #Narrazione #Iran #Israele #Referendum #Analisi
+      </p>
+
+      <div class="share-wrap">
+        <div class="share-label">Condividi questo articolo</div>
+        <div class="share-buttons">
+          <button class="share-btn" onclick="shareFacebook()">Facebook</button>
+          <button class="share-btn" onclick="shareX()">X</button>
+          <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        INOoriginal — Archivio editoriale personale.
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function getShareUrl() {
+      return window.location.href;
+    }
+
+    function getShareTitle() {
+      return document.title;
+    }
+
+    function shareFacebook() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareX() {
+      const url = encodeURIComponent(getShareUrl());
+      const text = encodeURIComponent(getShareTitle());
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareLinkedIn() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener,noreferrer");
+    }
+  </script>
+</body>
+</html>

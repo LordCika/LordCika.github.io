@@ -216,7 +216,7 @@
       inset: 0;
       background:
         linear-gradient(180deg, rgba(8,10,14,0.12) 0%, rgba(8,10,14,0.42) 30%, rgba(8,10,14,0.92) 100%),
-        url('images/017.png') center/cover no-repeat;
+        url('images/018.png') center/cover no-repeat;
       transform: scale(1.02);
     }
 
@@ -734,25 +734,14 @@
         <div class="topbar-wrap">
           <div class="topbar-inner glass">
             <div class="topbar-left">
-              <!--
-                ===== INIZIO LOGO HEADER =====
-                Per cambiare il logo del sito, modifica il file qui sotto:
-                src="images/Logo.png"
-                ===== FINE LOGO HEADER =====
-              -->
               <a href="#" class="brand">
                 <img src="images/Logo.png" alt="INOoriginal logo" class="brand-logo" />
               </a>
 
-              <!--
-                ===== INIZIO MENU NAVIGAZIONE =====
-                INCOLLA QUI eventuali nuovi link del menu
-                ===== FINE MENU NAVIGAZIONE =====
-              -->
               <nav class="nav">
                 <a href="#ultimi">Ultimi</a>
                 <a href="#archivio">Archivio</a>
-                <a href="articoli/bibi.html" class="cta">Leggi l'ultimo</a>
+                <a href="articoli/giorgia.html" class="cta">Leggi l'ultimo</a>
               </nav>
             </div>
           </div>
@@ -767,32 +756,19 @@
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <!--
-            ===== INIZIO CARD HERO PRINCIPALE =====
-            Quando esce un nuovo articolo principale, aggiorna questo blocco:
-            - href hero-main-link
-            - data visibile
-            - titolo
-            - testo
-            - immagine nel CSS .hero-main::before
-            - bottone "Leggi l'ultimo" nel menu sopra
-            ===== FINE CARD HERO PRINCIPALE =====
-          -->
           <article class="hero-main glass">
-            <a class="hero-main-link" href="articoli/bibi.html" aria-label="Leggi BIBI"></a>
+            <a class="hero-main-link" href="articoli/giorgia.html" aria-label="Leggi Giorgia"></a>
             <div class="hero-content">
-              <span class="eyebrow">In evidenza · 18 marzo 2026</span>
-              <h1 class="hero-title">BIBI</h1>
+              <span class="eyebrow">In evidenza · 20 marzo 2026</span>
+              <h1 class="hero-title">Giorgia</h1>
               <p class="hero-copy">
-                Netanyahu tra accuse di corruzione, costruzione mediatica e demonizzazione politica: quanto c’è di reale e quanto invece è il prodotto di una narrazione costruita?
+                La scelta di Giorgia Meloni di entrare in un podcast non è folclore politico, ma una mossa precisa: uscire dal filtro dei media tradizionali e parlare direttamente a un pubblico più giovane.
               </p>
               <div class="hero-author">di Marcolino Di Capua</div>
             </div>
           </article>
 
-          <!-- ===== INIZIO COLONNA LATERALE HERO ===== -->
           <div class="hero-side">
-            <!-- ===== INIZIO BOX ABOUT ===== -->
             <div class="panel glass identity-panel">
               <div>
                 <h3>About</h3>
@@ -809,11 +785,6 @@
                 </div>
               </div>
 
-              <!--
-                ===== INIZIO SOCIAL PROFILO / SITO =====
-                INCOLLA QUI nuovi bottoni social del progetto
-                ===== FINE SOCIAL PROFILO / SITO =====
-              -->
               <div class="identity-socials">
                 <div class="identity-socials-label">Segui il progetto</div>
                 <div class="identity-socials-row" aria-label="Social e condivisione sito">
@@ -847,9 +818,7 @@
                 </div>
               </div>
             </div>
-            <!-- ===== FINE BOX ABOUT ===== -->
 
-            <!-- ===== INIZIO BOX WIDGET ESTERNO ===== -->
             <div class="panel glass live-panel">
               <h3>Direzione</h3>
               <p>
@@ -872,9 +841,7 @@
                 <a href="https://rocketalert.live/" target="_blank" rel="noopener noreferrer">rocketalert.live</a>
               </div>
             </div>
-            <!-- ===== FINE BOX WIDGET ESTERNO ===== -->
           </div>
-          <!-- ===== FINE COLONNA LATERALE HERO ===== -->
         </div>
       </div>
     </section>
@@ -893,16 +860,27 @@
         </div>
 
         <div class="featured-grid">
-          <!--
-            ===== INIZIO BLOCCO NUOVO ARTICOLO IN EVIDENZA =====
-            INCOLLA QUI SOTTO un nuovo <article class="card glass">...</article>
-
-            Regola pratica:
-            - qui metti solo gli articoli che vuoi mostrare nei 3 riquadri "Ultimi articoli"
-            - quando aggiungi un nuovo pezzo, di solito ne entra uno nuovo e ne esce uno vecchio
-            - questo blocco NON si ordina da solo: qui l'ordine lo decidi tu manualmente
-            ===== FINE BLOCCO NUOVO ARTICOLO IN EVIDENZA =====
-          -->
+          <article class="card glass" data-date="2026-03-20">
+            <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/018.png');"></div>
+            <div class="card-body glass">
+              <span class="eyebrow">Politica</span>
+              <h3 class="card-title">Giorgia</h3>
+              <div class="card-author">Marcolino Di Capua</div>
+              <div class="card-copy">
+                Un podcast, una scelta strategica e un cambio di linguaggio: Meloni prova a parlare ai giovani senza passare dalla mediazione ostile dei circuiti tradizionali.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Meloni</span>
+                <span class="tag">Media</span>
+              </div>
+              <a class="card-link article-link" href="articoli/giorgia.html">Leggi articolo</a>
+              <div class="share-buttons" data-share-title="Giorgia">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
 
           <article class="card glass" data-date="2026-03-18">
             <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/017.png');"></div>
@@ -947,28 +925,6 @@
               </div>
             </div>
           </article>
-
-          <article class="card glass" data-date="2026-03-15">
-            <div class="card-media" style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/003.png');"></div>
-            <div class="card-body glass">
-              <span class="eyebrow">Disinformazione</span>
-              <h3 class="card-title">Game Of Liar</h3>
-              <div class="card-author">Marcolino Di Capua</div>
-              <div class="card-copy">
-                Quando una notizia conferma troppo bene quello che speri, verificarla diventa più difficile.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Fake News</span>
-                <span class="tag">Verifica</span>
-              </div>
-              <a class="card-link article-link" href="articoli/game-of-liar.html">Leggi articolo</a>
-              <div class="share-buttons" data-share-title="Game Of Liar">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -987,16 +943,21 @@
         </div>
 
         <div class="archive-grid">
-          <!--
-            ===== INIZIO BLOCCO NUOVO ARTICOLO IN ARCHIVIO =====
-            INCOLLA QUI SOTTO un nuovo <article class="archive-card">...</article>
-
-            Regola pratica:
-            - qui dentro vanno TUTTI gli articoli del sito
-            - l'ordine finale viene sistemato automaticamente dallo script usando data-date
-            - quindi puoi anche incollarlo in fondo, purché data-date sia corretta
-            ===== FINE BLOCCO NUOVO ARTICOLO IN ARCHIVIO =====
-          -->
+          <article class="archive-card" data-date="2026-03-20">
+            <a class="archive-cover-link article-link" href="articoli/giorgia.html">
+              <img class="archive-cover" src="images/018.png" alt="Giorgia" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/giorgia.html">Giorgia</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>20 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Giorgia">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
 
           <article class="archive-card" data-date="2026-03-18">
             <a class="archive-cover-link article-link" href="articoli/bibi.html">
@@ -1264,12 +1225,6 @@
     <div class="container">
       <div class="footer-inner glass">
         <div class="footer-brand">
-          <!--
-            ===== INIZIO LOGO FOOTER =====
-            Per cambiare il logo del footer, modifica:
-            src="images/Logo.png"
-            ===== FINE LOGO FOOTER =====
-          -->
           <img src="images/Logo.png" alt="INOoriginal logo" class="footer-logo" />
         </div>
         <div class="muted">© 2026 Lord Cika. Tutti i diritti riservati.</div>

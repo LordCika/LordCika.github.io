@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-MLY1XH197N');
   </script>
 
@@ -20,15 +19,30 @@
     name="description"
     content="INOoriginal, archivio editoriale personale di Lord Cika: articoli, analisi, Israele, disinformazione, media, propaganda e intelligenza artificiale."
   />
-  <!-- ===== FINE METADATI BASE PAGINA ===== -->
 
-  <!-- ===== INIZIO AREA FUTURI META TAG =====
-       INCOLLA QUI eventuali nuovi meta tag:
-       - Open Graph
-       - Twitter Card
-       - verifica Google
-       - script analytics nel <head>
-       ===== FINE AREA FUTURI META TAG ===== -->
+  <!-- ===== Open Graph / Twitter Card ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="INOoriginal" />
+  <meta property="og:url" content="https://lordcika.github.io/" />
+  <meta property="og:title" content="INOoriginal — Archivio editoriale" />
+  <meta property="og:description" content="Archivio editoriale personale: articoli, analisi e riflessioni su propaganda, disinformazione, Israele, media digitali e intelligenza artificiale." />
+  <meta property="og:image" content="https://lordcika.github.io/images/018.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="it_IT" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@LordWiesenthal" />
+  <meta name="twitter:title" content="INOoriginal — Archivio editoriale" />
+  <meta name="twitter:description" content="Archivio editoriale personale: articoli, analisi e riflessioni su propaganda, disinformazione, Israele, media digitali e intelligenza artificiale." />
+  <meta name="twitter:image" content="https://lordcika.github.io/images/018.png" />
+
+  <!-- ===== RSS Feed ===== -->
+  <link rel="alternate" type="application/rss+xml" title="INOoriginal RSS Feed" href="https://lordcika.github.io/feed.xml" />
+
+  <!-- ===== Canonical ===== -->
+  <link rel="canonical" href="https://lordcika.github.io/" />
+  <!-- ===== FINE METADATI BASE PAGINA ===== -->
 
   <!-- ===== INIZIO STILI CSS GLOBALI ===== -->
   <style>
@@ -216,6 +230,21 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.14);
       font-size: 1rem;
+    }
+
+    .nav .rss-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .nav .rss-link svg {
+      width: 14px;
+      height: 14px;
+      fill: #f26522;
+      flex-shrink: 0;
     }
 
     .hero {
@@ -668,6 +697,31 @@
       filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28));
     }
 
+    .footer-rss {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-rss:hover {
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+    }
+
+    .footer-rss svg {
+      width: 14px;
+      height: 14px;
+      fill: #f26522;
+      flex-shrink: 0;
+    }
+
     @media (max-width: 1180px) {
       .hero-grid,
       .featured-grid {
@@ -788,13 +842,17 @@
         <div class="topbar-wrap">
           <div class="topbar-inner glass">
             <div class="topbar-left">
-              <a href="#" class="brand">
+              <a href="https://lordcika.github.io/" class="brand">
                 <img src="images/Logo.png" alt="INOoriginal logo" class="brand-logo" />
               </a>
 
               <nav class="nav" aria-label="Navigazione principale">
                 <a href="#ultimi">Ultimi</a>
                 <a href="#archivio">Archivio</a>
+                <a href="https://lordcika.github.io/feed.xml" class="rss-link" title="RSS Feed" aria-label="RSS Feed">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 19a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0zM2.6 9.4v3.2c4.9 0 8.8 4 8.8 8.9h3.2c0-6.6-5.4-12-12-12zm0-6.4v3.2c8.2 0 14.8 6.6 14.8 14.8H20.6c0-9.9-8-18-18-18z"/></svg>
+                  RSS
+                </a>
                 <a href="articoli/giorgia.html" class="cta">Leggi l'ultimo</a>
               </nav>
             </div>
@@ -845,7 +903,7 @@
                     raccontate, deformate e usate.
                   </p>
                   <p>
-                    L’idea della pagina è semplice: osservare il linguaggio, smontare la propaganda e
+                    L'idea della pagina è semplice: osservare il linguaggio, smontare la propaganda e
                     dare agli eventi una forma più leggibile.
                   </p>
                 </div>
@@ -867,9 +925,7 @@
                     title="Facebook"
                   >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V10H9.5v3h2.6v8h1.4z"
-                      />
+                      <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V10H9.5v3h2.6v8h1.4z"/>
                     </svg>
                     <span>Facebook</span>
                   </a>
@@ -883,9 +939,7 @@
                     title="LinkedIn"
                   >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M6.9 8.5A1.9 1.9 0 1 1 6.9 4.7a1.9 1.9 0 0 1 0 3.8zM5.1 9.9h3.5V20H5.1V9.9zm5.5 0H14v1.4h.1c.5-.9 1.6-1.7 3.2-1.7 3.4 0 4 2.2 4 5.2V20h-3.5v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20h-3.5V9.9z"
-                      />
+                      <path d="M6.9 8.5A1.9 1.9 0 1 1 6.9 4.7a1.9 1.9 0 0 1 0 3.8zM5.1 9.9h3.5V20H5.1V9.9zm5.5 0H14v1.4h.1c.5-.9 1.6-1.7 3.2-1.7 3.4 0 4 2.2 4 5.2V20h-3.5v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20h-3.5V9.9z"/>
                     </svg>
                     <span>LinkedIn</span>
                   </a>
@@ -899,9 +953,7 @@
                     title="X"
                   >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M18.9 3H21l-4.6 5.3L21.8 21h-4.7l-3.7-4.8L9.2 21H7.1l5-5.8L2.8 3h4.8l3.3 4.4L14.8 3h4.1zm-1.6 16h1.3L6.7 4.9H5.3L17.3 19z"
-                      />
+                      <path d="M18.9 3H21l-4.6 5.3L21.8 21h-4.7l-3.7-4.8L9.2 21H7.1l5-5.8L2.8 3h4.8l3.3 4.4L14.8 3h4.1zm-1.6 16h1.3L6.7 4.9H5.3L17.3 19z"/>
                     </svg>
                     <span>X</span>
                   </a>
@@ -914,9 +966,7 @@
                     title="Condividi sito"
                   >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M18 16.1c-.8 0-1.5.3-2 .8l-7.1-4.1c.1-.3.1-.5.1-.8s0-.5-.1-.8l7-4.1c.5.5 1.2.8 2 .8a3 3 0 1 0-2.9-3.6L8 8.4a3 3 0 1 0 0 7.2l7 4.1a3 3 0 1 0 3-3.6z"
-                      />
+                      <path d="M18 16.1c-.8 0-1.5.3-2 .8l-7.1-4.1c.1-.3.1-.5.1-.8s0-.5-.1-.8l7-4.1c.5.5 1.2.8 2 .8a3 3 0 1 0-2.9-3.6L8 8.4a3 3 0 1 0 0 7.2l7 4.1a3 3 0 1 0 3-3.6z"/>
                     </svg>
                     <span>Condividi</span>
                   </button>
@@ -935,7 +985,6 @@
                   title="Rocket alerts live in Israel"
                   loading="lazy"
                   referrerpolicy="no-referrer"
-                  allowfullscreen
                 ></iframe>
               </div>
 
@@ -970,11 +1019,7 @@
           <article class="card glass" data-date="2026-03-22">
             <div
               class="card-media"
-              style="
-                background-image:
-                  linear-gradient(180deg, rgba(6, 8, 12, 0.08), rgba(6, 8, 12, 0.18)),
-                  url('images/018.png');
-              "
+              style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/018.png');"
             ></div>
 
             <div class="card-body glass">
@@ -996,15 +1041,9 @@
               </a>
 
               <div class="share-buttons" data-share-title="Giorgia">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
@@ -1012,11 +1051,7 @@
           <article class="card glass" data-date="2026-03-18">
             <div
               class="card-media"
-              style="
-                background-image:
-                  linear-gradient(180deg, rgba(6, 8, 12, 0.08), rgba(6, 8, 12, 0.18)),
-                  url('images/017.png');
-              "
+              style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/017.png');"
             ></div>
 
             <div class="card-body glass">
@@ -1037,15 +1072,9 @@
               </a>
 
               <div class="share-buttons" data-share-title="BIBI">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
@@ -1053,11 +1082,7 @@
           <article class="card glass" data-date="2026-03-17">
             <div
               class="card-media"
-              style="
-                background-image:
-                  linear-gradient(180deg, rgba(6, 8, 12, 0.08), rgba(6, 8, 12, 0.18)),
-                  url('images/016.png');
-              "
+              style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/016.png');"
             ></div>
 
             <div class="card-body glass">
@@ -1079,15 +1104,9 @@
               </a>
 
               <div class="share-buttons" data-share-title="Propaganda Dome">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
@@ -1103,7 +1122,7 @@
           <div>
             <h2 class="section-title">Archivio</h2>
             <div class="section-subtitle">
-              Tutti gli articoli disponibili, ordinati automaticamente dal più recente al più vecchio.
+              Tutti gli articoli disponibili, ordinati dal più recente al più vecchio.
             </div>
           </div>
         </div>
@@ -1111,513 +1130,272 @@
         <div class="archive-grid">
           <article class="archive-card" data-date="2026-03-22">
             <a class="archive-cover-link article-link" href="articoli/giorgia.html">
-              <img class="archive-cover" src="images/018.png" alt="Giorgia" />
+              <img class="archive-cover" src="images/018.png" alt="Giorgia" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/giorgia.html">
-                  Giorgia
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/giorgia.html">Giorgia</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>22 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="Giorgia">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
           <article class="archive-card" data-date="2026-03-18">
             <a class="archive-cover-link article-link" href="articoli/bibi.html">
-              <img class="archive-cover" src="images/017.png" alt="BIBI" />
+              <img class="archive-cover" src="images/017.png" alt="BIBI" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/bibi.html">
-                  BIBI
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/bibi.html">BIBI</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>18 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="BIBI">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
           <article class="archive-card" data-date="2026-03-17">
             <a class="archive-cover-link article-link" href="articoli/propaganda-dome.html">
-              <img
-                class="archive-cover"
-                src="images/016.png"
-                alt="Propaganda Dome"
-              />
+              <img class="archive-cover" src="images/016.png" alt="Propaganda Dome" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/propaganda-dome.html">
-                  Propaganda Dome
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/propaganda-dome.html">Propaganda Dome</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>17 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="Propaganda Dome">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-01">
-            <a
-              class="archive-cover-link article-link"
-              href="articoli/netanyahu-primo-del-suo-nome.html"
-            >
-              <img
-                class="archive-cover"
-                src="images/001.png"
-                alt="Netanyahu Primo Del Suo Nome"
-              />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/netanyahu-primo-del-suo-nome.html"
-                >
-                  Netanyahu Primo Del Suo Nome
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>1 marzo 2026</p>
-              <div
-                class="share-buttons archive-share"
-                data-share-title="Netanyahu Primo Del Suo Nome"
-              >
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-07">
-            <a class="archive-cover-link article-link" href="articoli/lettera-a-big-mama.html">
-              <img
-                class="archive-cover"
-                src="images/002.png"
-                alt="Lettera a Big Mama"
-              />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/lettera-a-big-mama.html"
-                >
-                  Lettera a Big Mama
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>7 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="Lettera a Big Mama">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
           <article class="archive-card" data-date="2026-03-15">
             <a class="archive-cover-link article-link" href="articoli/game-of-liar.html">
-              <img class="archive-cover" src="images/003.png" alt="Game Of Liar" />
+              <img class="archive-cover" src="images/003.png" alt="Game Of Liar" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/game-of-liar.html">
-                  Game Of Liar
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/game-of-liar.html">Game Of Liar</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>15 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="Game Of Liar">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-05">
-            <a class="archive-cover-link article-link" href="articoli/l-errore.html">
-              <img class="archive-cover" src="images/004.jpg" alt="L'Errore" />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/l-errore.html">
-                  L'Errore
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>5 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="L'Errore">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-09">
-            <a class="archive-cover-link article-link" href="articoli/adios.html">
-              <img class="archive-cover" src="images/006.png" alt="Adios!" />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/adios.html">
-                  Adios!
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>9 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="Adios!">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-10">
-            <a
-              class="archive-cover-link article-link"
-              href="articoli/lo-specchio-dell-ipocrisia.html"
-            >
-              <img
-                class="archive-cover"
-                src="images/007.png"
-                alt="Lo Specchio dell'Ipocrisia"
-              />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/lo-specchio-dell-ipocrisia.html"
-                >
-                  Lo Specchio dell'Ipocrisia
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>10 marzo 2026</p>
-              <div
-                class="share-buttons archive-share"
-                data-share-title="Lo Specchio dell'Ipocrisia"
-              >
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-01">
-            <a
-              class="archive-cover-link article-link"
-              href="articoli/operazione-collera-di-dio-ii.html"
-            >
-              <img
-                class="archive-cover"
-                src="images/008.png"
-                alt="Operazione Collera di Dio II"
-              />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/operazione-collera-di-dio-ii.html"
-                >
-                  Operazione Collera di Dio II
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>1 marzo 2026</p>
-              <div
-                class="share-buttons archive-share"
-                data-share-title="Operazione Collera di Dio II"
-              >
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-09">
-            <a class="archive-cover-link article-link" href="articoli/il-giorno-dei-draghi.html">
-              <img
-                class="archive-cover"
-                src="images/009.png"
-                alt="Il Giorno Dei Draghi"
-              />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/il-giorno-dei-draghi.html"
-                >
-                  Il Giorno Dei Draghi
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>9 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="Il Giorno Dei Draghi">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-04">
-            <a class="archive-cover-link article-link" href="articoli/il-danno.html">
-              <img class="archive-cover" src="images/010.png" alt="Il Danno" />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/il-danno.html">
-                  Il Danno
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>4 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="Il Danno">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="archive-card" data-date="2026-03-02">
-            <a class="archive-cover-link article-link" href="articoli/l-indeciso.html">
-              <img class="archive-cover" src="images/011.png" alt="L'Indeciso" />
-            </a>
-            <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/l-indeciso.html">
-                  L'Indeciso
-                </a>
-              </h3>
-              <div class="archive-author">Marcolino Di Capua</div>
-              <p>2 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="L'Indeciso">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
           <article class="archive-card" data-date="2026-03-12">
             <a class="archive-cover-link article-link" href="articoli/lo-scudo.html">
-              <img class="archive-cover" src="images/012.png" alt="Lo Scudo" />
+              <img class="archive-cover" src="images/012.png" alt="Lo Scudo" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/lo-scudo.html">
-                  Lo Scudo
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/lo-scudo.html">Lo Scudo</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>12 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="Lo Scudo">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
           <article class="archive-card" data-date="2026-03-11">
             <a class="archive-cover-link article-link" href="articoli/la-vittima-armata.html">
-              <img
-                class="archive-cover"
-                src="images/013.png"
-                alt="La Vittima Armata"
-              />
+              <img class="archive-cover" src="images/013.png" alt="La Vittima Armata" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/la-vittima-armata.html"
-                >
-                  La Vittima Armata
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/la-vittima-armata.html">La Vittima Armata</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>11 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="La Vittima Armata">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
-          <article class="archive-card" data-date="2026-03-06">
-            <a class="archive-cover-link article-link" href="articoli/l-ultima-maschera.html">
-              <img
-                class="archive-cover"
-                src="images/014.png"
-                alt="L'Ultima Maschera"
-              />
+          <article class="archive-card" data-date="2026-03-10">
+            <a class="archive-cover-link article-link" href="articoli/lo-specchio-dell-ipocrisia.html">
+              <img class="archive-cover" src="images/007.png" alt="Lo Specchio dell'Ipocrisia" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a
-                  class="archive-title-link article-link"
-                  href="articoli/l-ultima-maschera.html"
-                >
-                  L'Ultima Maschera
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/lo-specchio-dell-ipocrisia.html">Lo Specchio dell'Ipocrisia</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
-              <p>6 marzo 2026</p>
-              <div class="share-buttons archive-share" data-share-title="L'Ultima Maschera">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+              <p>10 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Lo Specchio dell'Ipocrisia">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-09">
+            <a class="archive-cover-link article-link" href="articoli/adios.html">
+              <img class="archive-cover" src="images/006.png" alt="Adios!" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/adios.html">Adios!</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>9 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Adios!">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-09">
+            <a class="archive-cover-link article-link" href="articoli/il-giorno-dei-draghi.html">
+              <img class="archive-cover" src="images/009.png" alt="Il Giorno Dei Draghi" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/il-giorno-dei-draghi.html">Il Giorno Dei Draghi</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>9 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Il Giorno Dei Draghi">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
 
           <article class="archive-card" data-date="2026-03-08">
             <a class="archive-cover-link article-link" href="articoli/mahsa.html">
-              <img class="archive-cover" src="images/015.png" alt="Mahsa" />
+              <img class="archive-cover" src="images/015.png" alt="Mahsa" loading="lazy" />
             </a>
             <div class="archive-content">
-              <h3>
-                <a class="archive-title-link article-link" href="articoli/mahsa.html">
-                  Mahsa
-                </a>
-              </h3>
+              <h3><a class="archive-title-link article-link" href="articoli/mahsa.html">Mahsa</a></h3>
               <div class="archive-author">Marcolino Di Capua</div>
               <p>8 marzo 2026</p>
               <div class="share-buttons archive-share" data-share-title="Mahsa">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">
-                  X
-                </a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-07">
+            <a class="archive-cover-link article-link" href="articoli/lettera-a-big-mama.html">
+              <img class="archive-cover" src="images/002.png" alt="Lettera a Big Mama" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/lettera-a-big-mama.html">Lettera a Big Mama</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>7 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Lettera a Big Mama">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-06">
+            <a class="archive-cover-link article-link" href="articoli/l-ultima-maschera.html">
+              <img class="archive-cover" src="images/014.png" alt="L'Ultima Maschera" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/l-ultima-maschera.html">L'Ultima Maschera</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>6 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="L'Ultima Maschera">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-05">
+            <a class="archive-cover-link article-link" href="articoli/l-errore.html">
+              <img class="archive-cover" src="images/004.jpg" alt="L'Errore" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/l-errore.html">L'Errore</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>5 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="L'Errore">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-04">
+            <a class="archive-cover-link article-link" href="articoli/il-danno.html">
+              <img class="archive-cover" src="images/010.png" alt="Il Danno" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/il-danno.html">Il Danno</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>4 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Il Danno">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-02">
+            <a class="archive-cover-link article-link" href="articoli/l-indeciso.html">
+              <img class="archive-cover" src="images/011.png" alt="L'Indeciso" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/l-indeciso.html">L'Indeciso</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>2 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="L'Indeciso">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-01">
+            <a class="archive-cover-link article-link" href="articoli/netanyahu-primo-del-suo-nome.html">
+              <img class="archive-cover" src="images/001.png" alt="Netanyahu Primo Del Suo Nome" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/netanyahu-primo-del-suo-nome.html">Netanyahu Primo Del Suo Nome</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>1 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Netanyahu Primo Del Suo Nome">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="archive-card" data-date="2026-03-01">
+            <a class="archive-cover-link article-link" href="articoli/operazione-collera-di-dio-ii.html">
+              <img class="archive-cover" src="images/008.png" alt="Operazione Collera di Dio II" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/operazione-collera-di-dio-ii.html">Operazione Collera di Dio II</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>1 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="Operazione Collera di Dio II">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
           </article>
@@ -1634,6 +1412,10 @@
         <div class="footer-brand">
           <img src="images/Logo.png" alt="INOoriginal logo" class="footer-logo" />
         </div>
+        <a href="https://lordcika.github.io/feed.xml" class="footer-rss" title="RSS Feed">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 19a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0zM2.6 9.4v3.2c4.9 0 8.8 4 8.8 8.9h3.2c0-6.6-5.4-12-12-12zm0-6.4v3.2c8.2 0 14.8 6.6 14.8 14.8H20.6c0-9.9-8-18-18-18z"/></svg>
+          RSS Feed
+        </a>
         <div class="muted">© 2026 Lord Cika. Tutti i diritti riservati.</div>
       </div>
     </div>
@@ -1642,20 +1424,20 @@
 
   <!-- ===== INIZIO SCRIPT PAGINA ===== -->
   <script>
-    // Ordina archivio per data (discendente)
     const archiveGrid = document.querySelector(".archive-grid");
-    const archiveCards = Array.from(archiveGrid.querySelectorAll(".archive-card"));
 
-    archiveCards
-      .sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date))
-      .forEach((card) => archiveGrid.appendChild(card));
+    if (archiveGrid) {
+      const archiveCards = Array.from(archiveGrid.querySelectorAll(".archive-card"));
 
-    // Helper per URL assoluto
+      archiveCards
+        .sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date))
+        .forEach((card) => archiveGrid.appendChild(card));
+    }
+
     function getAbsoluteUrl(relativeOrAbsoluteUrl) {
       return new URL(relativeOrAbsoluteUrl, window.location.href).href;
     }
 
-    // Link di condivisione per ogni articolo
     document.querySelectorAll(".share-buttons").forEach((group) => {
       const card = group.closest(".card, .archive-card");
       if (!card) return;
@@ -1671,25 +1453,18 @@
       const linkedinBtn = group.querySelector(".share-linkedin");
 
       if (facebookBtn) {
-        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-          articleUrl
-        )}`;
+        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`;
       }
 
       if (xBtn) {
-        xBtn.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-          articleUrl
-        )}&text=${encodeURIComponent(shareTitle)}`;
+        xBtn.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(shareTitle)}`;
       }
 
       if (linkedinBtn) {
-        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-          articleUrl
-        )}`;
+        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
       }
     });
 
-    // Condivisione sito principale
     const shareSiteBtn = document.getElementById("shareSiteBtn");
 
     if (shareSiteBtn) {
@@ -1698,15 +1473,13 @@
 
         const shareData = {
           title: document.title,
-          text: "Dai un’occhiata a INOoriginal",
+          text: "Dai un'occhiata a INOoriginal",
           url: siteUrl,
         };
 
         const animateClick = () => {
           shareSiteBtn.style.transform = "scale(0.94)";
-          setTimeout(() => {
-            shareSiteBtn.style.transform = "";
-          }, 180);
+          setTimeout(() => { shareSiteBtn.style.transform = ""; }, 180);
         };
 
         try {
@@ -1714,13 +1487,10 @@
             await navigator.share(shareData);
             return;
           }
-
           if (navigator.clipboard && navigator.clipboard.writeText) {
             await navigator.clipboard.writeText(siteUrl);
             animateClick();
           } else {
-            // Fallback molto legacy
-            // eslint-disable-next-line no-alert
             prompt("Copia questo link:", siteUrl);
           }
         } catch {
@@ -1739,13 +1509,5 @@
     }
   </script>
   <!-- ===== FINE SCRIPT PAGINA ===== -->
-
-  <!-- ===== INIZIO AREA FUTURI SCRIPT =====
-       INCOLLA QUI eventuali nuovi script:
-       - analytics
-       - contatori
-       - widget
-       - script personalizzati
-       ===== FINE AREA FUTURI SCRIPT ===== -->
 </body>
 </html>

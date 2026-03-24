@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLY1XH197N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MLY1XH197N');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PAL | INOoriginal</title>
+  <meta
+    name="description"
+    content="Un’analisi sul rapporto tra Hamas e parte della società palestinese, tra narrazione pubblica, propaganda e rimozioni selettive."
+  />
+  <meta name="author" content="Marcolino Di Capua" />
+
+  <link rel="canonical" href="https://lordcika.github.io/articoli/pal.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="PAL" />
+  <meta
+    property="og:description"
+    content="Un’analisi sul rapporto tra Hamas e parte della società palestinese, tra narrazione pubblica, propaganda e rimozioni selettive."
+  />
+  <meta property="og:url" content="https://lordcika.github.io/articoli/pal.html" />
+  <meta property="og:image" content="https://lordcika.github.io/images/021.png" />
+  <meta property="og:site_name" content="INOoriginal" />
+  <meta property="article:author" content="Marcolino Di Capua" />
+  <meta property="article:published_time" content="2026-03-25" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PAL" />
+  <meta
+    name="twitter:description"
+    content="Un’analisi sul rapporto tra Hamas e parte della società palestinese, tra narrazione pubblica, propaganda e rimozioni selettive."
+  />
+  <meta name="twitter:image" content="https://lordcika.github.io/images/021.png" />
+
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --bg-soft: rgba(255,255,255,0.04);
+      --card: rgba(255,255,255,0.06);
+      --line: rgba(255,255,255,0.12);
+      --text: #f5f7fb;
+      --muted: #a7afc3;
+      --accent: #d6b36a;
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top, rgba(90,90,140,0.16), transparent 32%),
+        linear-gradient(180deg, #11131a 0%, #090a0e 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 10, 14, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-link,
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover,
+    .brand-link:hover {
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .page {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 80px;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      margin-bottom: 26px;
+      background: #111;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .article-shell {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .article-inner {
+      padding: 34px 24px 40px;
+    }
+
+    .article-header {
+      margin-bottom: 28px;
+    }
+
+    .title {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.02;
+      margin: 0 0 20px;
+      text-align: center;
+      letter-spacing: -0.03em;
+    }
+
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .author-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .author-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-date {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .article-body {
+      font-size: 1.12rem;
+      color: #f1f3f8;
+    }
+
+    .article-body p {
+      margin: 0 0 1.3em;
+    }
+
+    .inline-image {
+      margin: 28px 0 32px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+    }
+
+    .inline-image img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .hashtags {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--accent);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .share-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+      justify-content: flex-start;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      color: var(--text);
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .publication-note {
+      margin-top: 26px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .publication-note a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        width: calc(100% - 20px);
+      }
+
+      .page {
+        width: calc(100% - 20px);
+        padding-top: 20px;
+      }
+
+      .article-inner {
+        padding: 24px 18px 30px;
+      }
+
+      .author-box {
+        width: 100%;
+      }
+
+      .article-body {
+        font-size: 1.04rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../index.html">← Torna all’archivio</a>
+      <a class="brand-link" href="../index.html">INOoriginal</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <figure class="hero-image">
+      <img src="../images/021.png" alt="PAL - immagine di copertina" />
+    </figure>
+
+    <article class="article-shell">
+      <div class="article-inner">
+        <header class="article-header">
+          <h1 class="title">PAL</h1>
+
+          <div class="author-box">
+            <a
+              class="author-avatar"
+              href="https://www.facebook.com/zavathalavudvash"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo Facebook di Marcolino Di Capua"
+            >
+              <img src="../images/avatar.jpg" alt="Marcolino Di Capua" />
+            </a>
+
+            <div class="author-meta">
+              <a
+                class="author-name"
+                href="https://www.facebook.com/zavathalavudvash"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Marcolino Di Capua
+              </a>
+              <div class="author-date">25 marzo 2026 · Tempo di lettura: 6 min</div>
+            </div>
+          </div>
+        </header>
+
+        <div class="article-body">
+          <p>Quante volte ci siamo sentiti dire: “Eh, ma i palestinesi non sono Hamas”?</p>
+
+          <p>È una di quelle frasi che tornano sempre. Appena si prova a impostare un discorso un minimo più netto, arriva subito qualcuno a ricordarti che no: non puoi sovrapporre un popolo a chi lo governa, non puoi identificare tutti con un’organizzazione, non puoi attribuire una responsabilità collettiva.</p>
+
+          <p>Ed è un argomento che, detto così, in astratto, ha pure una sua logica.</p>
+
+          <p>Negli ultimi anni, del resto, si è discusso spesso proprio di questo: di quanto un popolo si identifichi in chi lo rappresenta, in chi lo governa, in chi agisce anche formalmente in suo nome. C’è chi sostiene che il rapporto sia diretto, quasi automatico, e chi invece lo nega con forza. Dipende dai casi, dipende dai contesti, dipende soprattutto da quanto faccia comodo sostenere una tesi oppure il suo contrario.</p>
+
+          <p>Prendiamo il caso del momento. Il risultato del referendum più social della storia recente della Repubblica italiana ha dimostrato che circa il 54% degli italiani non vuole la separazione delle carriere. Volendo ragionare in modo brutale, schematico, quasi propagandistico, si potrebbe allora dire che la maggioranza degli italiani si identifica in questo sistema di giustizia. Che lo sente proprio. Che lo difende. Che in qualche modo lo considera giusto, o perlomeno preferibile a un’alternativa.</p>
+
+          <p>Naturalmente non è così semplice. Anzi, sappiamo benissimo che non è così. Sappiamo che il referendum è stato attraversato da una propaganda martellante, costruita in modo da confondere, impaurire, deformare i termini della questione. Una propaganda che, in certi momenti, sembrava voler far credere alle persone che, con una riforma, Voldemort avrebbe preso il controllo del Ministero della Magia.</p>
+
+          <p>Eppure, se uno volesse applicare proprio quel criterio che tanto piace usare in altri casi, allora dovrebbe essere coerente fino in fondo. Dovrebbe dire che quel voto rappresenta un’identificazione. Dovrebbe accettare che una maggioranza, votando in un certo modo, esprima qualcosa di sé. Non necessariamente tutta la verità, non necessariamente un consenso pieno e consapevole, ma comunque un orientamento, una fotografia, un’assunzione di posizione.</p>
+
+          <p>E invece no. In questo caso improvvisamente si diventa tutti fini analisti. Si scoprono le sfumature, i condizionamenti, le campagne mediatiche, la disinformazione, le paure indotte, i riflessi culturali, la complessità del corpo elettorale. Tutte cose vere, per carità. Tutte cose sacrosante da considerare. Ma che curiosamente spariscono quando il bersaglio cambia.</p>
+
+          <figure class="inline-image">
+            <img src="../images/021.png" alt="PAL - immagine inserita nel corpo dell’articolo" />
+          </figure>
+
+          <p>Un altro esempio lo vediamo ogni volta che si mettono in vetrina, quasi con la lente d’ingrandimento, quegli ebrei che si dissociano dal governo israeliano e da Bibi Netanyahu. Sono i cosiddetti “ebrei buoni”, quelli rassicuranti, quelli presentabili, quelli che servono a dimostrare che perfino gli ebrei, purché siano quelli giusti, possono essere tollerati. Purché recitino la parte prevista.</p>
+
+          <p>Sono quelli che non si identificano nello Stato “genocida”, come amano definirlo i soliti noti. Quelli che servono come assoluzione preventiva per chi poi riversa addosso a Israele ogni colpa immaginabile. Perché se c’è l’ebreo che condanna Israele, allora tutto il resto diventa lecito. Diventa più elegante. Più spendibile. Più moralmente presentabile.</p>
+
+          <p>Tutti gli altri, invece, quelli che non condannano Bibi, quelli che non usano il linguaggio richiesto, quelli che non ripetono il formulario obbligatorio contro l’IDF, contro Trump, contro l’Occidente, contro chiunque venga inserito nel pacchetto ideologico del momento, vengono schedati subito come complici. Senza troppe sfumature. Senza sociologi. Senza analisti. Senza la pazienza infinita che invece si concede altrove.</p>
+
+          <p>Io, ebreo italiano con cittadinanza israeliana, secondo questo principio sarei complice del conflitto a Gaza. Non per ciò che faccio. Non per ciò che penso davvero. Non per una mia responsabilità concreta. Ma per appartenenza. Per identità. Per legame. Per il semplice fatto di non prendere le distanze nel modo e nei termini richiesti.</p>
+
+          <p>Sarei quindi responsabile, moralmente e quasi metafisicamente, di una reazione definita sproporzionata al 7 ottobre 2023. Mi verrebbe attribuita una colpa per estensione, per riflesso, per genealogia politica e perfino simbolica. Come se bastasse essere parte di qualcosa, o non rinnegarla abbastanza, per diventare automaticamente corresponsabili di tutto.</p>
+
+          <p>Ed è qui che la faccenda si fa interessante.</p>
+
+          <p>Ricordiamo tutti, spero, cosa è accaduto il 7 ottobre 2023. Ma vale la pena ricordarlo ancora. Alle 7:30 di sabato mattina, durante una festività sacra ebraica, Simhat Torà, Hamas ha lanciato centinaia di missili verso lo Stato d’Israele, ha invaso il territorio con pickup e miliziani, ha ucciso ragazzi a un festival musicale, si è introdotto nei kibbutzim limitrofi, uccidendo 1.200 persone, stuprando donne, torturando uomini e bambini, e ne ha rapite 251. Una parte di loro è morta in prigionia. Tra questi anche i due bambini Ariel e Kfir Bibas, strangolati insieme alla madre.</p>
+
+          <p>Questo è quello che è successo.</p>
+
+          <p>Al ritorno dalla “missione”, Hamas a Gaza è stato accolto tra festeggiamenti, dolci, canti, balli, caramelle, gente intorno ai pickup con i prigionieri e con i morti. Eppure, se già l’8 ottobre provavi a dire che lì in mezzo non c’erano solo i miliziani, ma anche palestinesi civili che festeggiavano e giornalisti, venivi subito accusato di disumanizzazione, propaganda, razzismo, lesa maestà.</p>
+
+          <p>Capita però che, proprio in questi giorni, nel Regno Unito, il Gruppo parlamentare interpartitico, l’APPG, abbia pubblicato una versione aggiornata di quello che è stato definito il rapporto in lingua inglese più completo sull’attacco di Hamas del 7 ottobre 2023. Un rapporto di 340 pagine, arricchito con nuovo materiale e nuove testimonianze.</p>
+
+          <p>Tra questi nuovi materiali ci sono anche le interviste a Emily Damari e ad Anat Ron-Kendall. Ma soprattutto torna con forza un punto che per mesi molti hanno cercato di annacquare: il 7 ottobre non fu soltanto un’operazione di Hamas come corpo separato dal resto della realtà gazawa. Attorno a quel massacro ci fu partecipazione, sostegno, copertura, entusiasmo.</p>
+
+          <p>Ed è qui che si apre il punto vero.</p>
+
+          <p>Per anni ci hanno ripetuto che “i palestinesi non sono Hamas”, come se Hamas fosse un corpo estraneo piovuto su Gaza da un altro pianeta. Come se non esistesse consenso, complicità, partecipazione, sostegno, legittimazione sociale. Come se il 7 ottobre fosse stato opera di una setta isolata e non anche il riflesso di un ambiente che, in parte, quell’odio lo condivide, lo giustifica o lo celebra.</p>
+
+          <p>Ma il problema è proprio questo: Hamas non agisce nel vuoto. Non è una sigla sospesa nell’aria. Non è un’entità senza popolo. Attorno ad Hamas esiste una parte di società che collabora, accompagna, festeggia, copre, approva.</p>
+
+          <p>Questo non significa che ogni palestinese sia Hamas. Sarebbe una semplificazione stupida, oltre che falsa. Ma è altrettanto falso sostenere che Hamas non rappresenti nulla del mondo palestinese, o che ne sia totalmente separato.</p>
+
+          <p>Perché quando migliaia di civili partecipano all’assalto, quando altri accolgono i carnefici tra i festeggiamenti, quando la violenza viene celebrata pubblicamente invece che respinta, allora la formula “i palestinesi non sono Hamas” smette di essere un’analisi e diventa una copertura narrativa.</p>
+
+          <p>La verità, molto più scomoda, è che Hamas non rappresenta tutti i palestinesi, ma rappresenta abbastanza palestinesi da rendere ridicola la favola secondo cui tra Gaza e Hamas non esisterebbe alcun legame politico, sociale e culturale.</p>
+
+          <p>E allora forse la frase giusta non è “i palestinesi non sono Hamas”.</p>
+
+          <p>La frase giusta è: non tutti i palestinesi sono Hamas, ma Hamas è molto più palestinese di quanto ci abbiano raccontato.</p>
+
+          <div class="hashtags">
+            #Israele #Hamas #Gaza #7Ottobre #MedioOriente #Propaganda #Disinformazione #Terrorismo #OpinionePubblica #INOoriginal
+          </div>
+
+          <div class="share-row">
+            <a
+              class="share-btn"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://lordcika.github.io/articoli/pal.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Condividi su Facebook
+            </a>
+
+            <a
+              class="share-btn"
+              href="https://twitter.com/intent/tweet?url=https://lordcika.github.io/articoli/pal.html&text=PAL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Condividi su X
+            </a>
+
+            <a
+              class="share-btn"
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://lordcika.github.io/articoli/pal.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Condividi su LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

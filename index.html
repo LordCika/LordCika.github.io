@@ -263,6 +263,10 @@
       overflow: hidden;
       border-radius: var(--radius-xl);
       background: #0b0f14;
+      background-image: var(--hero-bg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-main::before {
@@ -270,8 +274,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(8, 10, 14, 0.12) 0%, rgba(8, 10, 14, 0.42) 30%, rgba(8, 10, 14, 0.92) 100%),
-        url("images/018.png") center/cover no-repeat;
+        linear-gradient(180deg, rgba(8, 10, 14, 0.12) 0%, rgba(8, 10, 14, 0.42) 30%, rgba(8, 10, 14, 0.92) 100%);
       transform: scale(1.02);
     }
 
@@ -853,7 +856,9 @@
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 19a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0zM2.6 9.4v3.2c4.9 0 8.8 4 8.8 8.9h3.2c0-6.6-5.4-12-12-12zm0-6.4v3.2c8.2 0 14.8 6.6 14.8 14.8H20.6c0-9.9-8-18-18-18z"/></svg>
                   RSS
                 </a>
-                <a href="articoli/giorgia.html" class="cta">Leggi l'ultimo</a>
+                <!-- AUTO:latest-button:start -->
+                <a href="articoli/dimona.html" class="cta">Leggi l'ultimo</a>
+                <!-- AUTO:latest-button:end -->
               </nav>
             </div>
           </div>
@@ -865,23 +870,22 @@
 
   <main>
     <!-- ===== INIZIO HERO PRINCIPALE ===== -->
+    <!-- AUTO:hero:start -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <article class="hero-main glass">
+          <article class="hero-main glass" style="--hero-bg: url('images/020.png');">
             <a
               class="hero-main-link"
-              href="articoli/giorgia.html"
-              aria-label="Leggi Giorgia"
+              href="articoli/dimona.html"
+              aria-label="Leggi DIMONA"
             ></a>
 
             <div class="hero-content">
-              <span class="eyebrow">In evidenza · 22 marzo 2026</span>
-              <h1 class="hero-title">Giorgia</h1>
+              <span class="eyebrow">In evidenza · 24 marzo 2026</span>
+              <h1 class="hero-title">DIMONA</h1>
               <p class="hero-copy">
-                La scelta di Giorgia Meloni di entrare in un podcast non è folclore politico, ma
-                una mossa precisa: uscire dal filtro dei media tradizionali e parlare direttamente
-                a un pubblico più giovane.
+                Tra ambiguità nucleare, simboli strategici, propaganda iraniana e la realtà concreta dei civili colpiti.
               </p>
               <div class="hero-author">di Marcolino Di Capua</div>
             </div>
@@ -1001,6 +1005,7 @@
         </div>
       </div>
     </section>
+    <!-- AUTO:hero:end -->
     <!-- ===== FINE HERO PRINCIPALE ===== -->
 
     <!-- ===== INIZIO SEZIONE ULTIMI ARTICOLI ===== -->
@@ -1016,6 +1021,38 @@
         </div>
 
         <div class="featured-grid">
+          <!-- AUTO:latest-articles:start -->
+          <article class="card glass" data-date="2026-03-24">
+            <div
+              class="card-media"
+              style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/020.png');"
+            ></div>
+
+            <div class="card-body glass">
+              <span class="eyebrow">Analisi</span>
+              <h3 class="card-title">DIMONA</h3>
+              <div class="card-author">Marcolino Di Capua</div>
+              <div class="card-copy">
+                Dimona come simbolo, tabù nucleare israeliano e bersaglio narrativo iraniano: tra ambiguità strategica, propaganda e civili colpiti.
+              </div>
+
+              <div class="tag-row">
+                <span class="tag">Dimona</span>
+                <span class="tag">Israele</span>
+              </div>
+
+              <a class="card-link article-link" href="articoli/dimona.html">
+                Leggi articolo
+              </a>
+
+              <div class="share-buttons" data-share-title="DIMONA">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
           <article class="card glass" data-date="2026-03-22">
             <div
               class="card-media"
@@ -1078,38 +1115,7 @@
               </div>
             </div>
           </article>
-
-          <article class="card glass" data-date="2026-03-17">
-            <div
-              class="card-media"
-              style="background-image: linear-gradient(180deg, rgba(6,8,12,0.08), rgba(6,8,12,0.18)), url('images/016.png');"
-            ></div>
-
-            <div class="card-body glass">
-              <span class="eyebrow">Propaganda</span>
-              <h3 class="card-title">Propaganda Dome</h3>
-              <div class="card-author">Marcolino Di Capua</div>
-              <div class="card-copy">
-                Gaza, Hamas, Al-Ahli e guerra informativa: non basta vincere sul campo se lasci agli
-                altri la prima impressione.
-              </div>
-
-              <div class="tag-row">
-                <span class="tag">Israele</span>
-                <span class="tag">Narrativa</span>
-              </div>
-
-              <a class="card-link article-link" href="articoli/propaganda-dome.html">
-                Leggi articolo
-              </a>
-
-              <div class="share-buttons" data-share-title="Propaganda Dome">
-                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
-                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </div>
-            </div>
-          </article>
+          <!-- AUTO:latest-articles:end -->
         </div>
       </div>
     </section>
@@ -1128,6 +1134,23 @@
         </div>
 
         <div class="archive-grid">
+          <!-- AUTO:archive:start -->
+          <article class="archive-card" data-date="2026-03-24">
+            <a class="archive-cover-link article-link" href="articoli/dimona.html">
+              <img class="archive-cover" src="images/020.png" alt="DIMONA" loading="lazy" />
+            </a>
+            <div class="archive-content">
+              <h3><a class="archive-title-link article-link" href="articoli/dimona.html">DIMONA</a></h3>
+              <div class="archive-author">Marcolino Di Capua</div>
+              <p>24 marzo 2026</p>
+              <div class="share-buttons archive-share" data-share-title="DIMONA">
+                <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">X</a>
+                <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </article>
+
           <article class="archive-card" data-date="2026-03-22">
             <a class="archive-cover-link article-link" href="articoli/giorgia.html">
               <img class="archive-cover" src="images/018.png" alt="Giorgia" loading="lazy" />
@@ -1399,6 +1422,7 @@
               </div>
             </div>
           </article>
+          <!-- AUTO:archive:end -->
         </div>
       </div>
     </section>

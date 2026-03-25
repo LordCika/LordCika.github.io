@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLY1XH197N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MLY1XH197N');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENZO TORTORA | INOoriginal</title>
+  <meta
+    name="description"
+    content="Dal caso Tortora all’era dell’AI: come nascono accuse fragili, colpevoli costruiti e narrazioni che precedono le prove."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="ENZO TORTORA" />
+  <meta
+    property="og:description"
+    content="Dal caso Tortora all’era dell’AI: come nascono accuse fragili, colpevoli costruiti e narrazioni che precedono le prove."
+  />
+  <meta property="og:image" content="../images/022.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ENZO TORTORA" />
+  <meta
+    name="twitter:description"
+    content="Dal caso Tortora all’era dell’AI: come nascono accuse fragili, colpevoli costruiti e narrazioni che precedono le prove."
+  />
+  <meta name="twitter:image" content="../images/022.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #07090d;
+      --bg-2: #0d1118;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: rgba(248, 249, 251, 0.96);
+      --muted: rgba(248, 249, 251, 0.62);
+      --soft: rgba(248, 249, 251, 0.8);
+      --accent: #9ecbff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --maxw: 860px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(158, 203, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #06080b 0%, #0b0f15 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-link {
+      font-size: 14px;
+      color: var(--soft);
+      opacity: 0.9;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .page {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 90px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #111;
+    }
+
+    .title-wrap {
+      text-align: center;
+      margin: 34px auto 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .author-card {
+      width: 100%;
+      margin: 26px 0 34px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .author-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-name a:hover {
+      text-decoration: underline;
+    }
+
+    .author-info {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    article {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.028));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+    }
+
+    article p {
+      font-size: 1.08rem;
+      color: var(--text);
+      margin-bottom: 1.35em;
+    }
+
+    article p:last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border-left: 3px solid rgba(158, 203, 255, 0.55);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 14px;
+      color: var(--soft);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .publication-note {
+      margin-top: 10px;
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .publication-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .publication-note a:hover {
+      text-decoration: underline;
+    }
+
+    .hashtags {
+      margin-top: 10px;
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+      line-height: 1.9;
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .share-wrap {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .share-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 0.94rem;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        width: min(100%, calc(100% - 22px));
+        min-height: 62px;
+      }
+
+      .page {
+        width: min(100%, calc(100% - 22px));
+        padding-top: 26px;
+      }
+
+      .hero-image {
+        aspect-ratio: 4 / 5;
+        border-radius: 20px;
+      }
+
+      .author-card {
+        padding: 14px;
+      }
+
+      article {
+        border-radius: 22px;
+        padding: 20px 18px;
+      }
+
+      article p,
+      blockquote {
+        font-size: 1.02rem;
+      }
+
+      .hashtags {
+        font-size: 0.94rem;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .share-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../index.html">← Torna all’archivio</a>
+      <div class="brand">INOoriginal</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="../images/022.png"
+        alt="Cover articolo Enzo Tortora"
+      />
+    </section>
+
+    <div class="title-wrap">
+      <div class="eyebrow">Analisi</div>
+      <h1>ENZO TORTORA</h1>
+      <p class="subtitle">
+        Il caso Tortora ai tempi della AI
+      </p>
+    </div>
+
+    <div class="author-card">
+      <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+        <img
+          class="author-avatar"
+          src="../images/avatar.jpg"
+          alt="Avatar di Marcolino Di Capua"
+        />
+      </a>
+      <div class="author-meta">
+        <div class="author-name">
+          <a href="https://www.facebook.com/zavathalavudvash" target="_blank" rel="noopener noreferrer">
+            Marcolino Di Capua
+          </a>
+        </div>
+        <div class="author-info">25 marzo 2026 · Tempo di lettura: 6 min</div>
+      </div>
+    </div>
+
+    <article>
+      <p>Se pensate che esista gente capace di schivare l’algoritmo dei social, quella non sono io. Tra disinformazione, referendum sulla giustizia e il mio nuovissimo e fiammante abbonamento a HBO Max, ho iniziato a vedere la serie tv “Portobello”, la storia di Enzo Tortora.</p>
+
+      <p>Avevo sentito qualcosa al riguardo, ma non avevo mai approfondito davvero la questione. Così ho iniziato la serie. E quella notte non ho dormito.</p>
+
+      <p>Ero terrorizzato. Più che a trovarmi nella stessa stanza con Jeffrey Dahmer. Cioè: se mi chiedessero “preferisci stare con il Cannibale di Milwaukee o con un PM e un giudice che ti arrestano da innocente?”, oggi avrei paura della seconda opzione.</p>
+
+      <p>La prima cosa che ho cercato di capire è stata questa: in termini attuali, quanto sarebbe il successo di Enzo Tortora oggi?</p>
+
+      <p>E, per parlare in termini “instagrammabili”, Enzo Tortora sarebbe stato più o meno vicino ai follower di Chiara Ferragni sommati a quelli di Fedez. Questo era il potere mediatico. Con l’aggiunta che negli anni ’80 non c’era nemmeno tutta questa scelta televisiva: c’era molto meno, e il venerdì sera riusciva a tenere incollati davanti allo schermo 28 milioni di italiani.</p>
+
+      <p>Quello che cercavo di capire, però, era un altro punto: com’è stato possibile che una bugia così grande abbia convinto giudici e magistrati?</p>
+
+      <p>In quel periodo, la figura del “pentito” veniva percepita come una fonte quasi unica e autorevole per spiegare dall’interno certi meccanismi criminali. E quindi come una figura decisiva per comprendere davvero le dinamiche della camorra.</p>
+
+      <p>Un po’ come quando una notizia riportata da un giornalista palestinese viene percepita automaticamente come più credibile, più autentica, più verificata di altre.</p>
+
+      <p>Così succede che Giovanni Pandico, Giovanni Melluso, detto “Gianni il Bello”, e Pasquale Barra, tre pentiti della camorra, per ottenere i benefici riservati ai collaboratori di giustizia, tirano dentro Enzo Tortora e lo descrivono come uomo di spicco della Nuova Camorra Organizzata.</p>
+
+      <p>A loro si aggiunsero poi altri accusatori.</p>
+
+      <p>Niente prove. Niente intercettazioni. Niente foto. Niente di niente. Eppure quest’uomo ha passato l’ultima parte della sua vita tra carcere, arresti domiciliari e processi. Fino all’assoluzione, arrivata solo dopo anni. Ma a quel punto era già stato devastato pubblicamente e umanamente.</p>
+
+      <p>E ancora oggi mi fa impazzire una cosa: come sia stato possibile credere a undici camorristi senza prove, contro una sola persona perbene.</p>
+
+      <p>Ma il meccanismo non è stato semplicemente questo: “Pandico inventa una cosa assurda e tutti gli credono perché appare plausibile”.</p>
+
+      <p>Il meccanismo è stato molto peggio.</p>
+
+      <p>Pandico disse cose false o gravemente inattendibili, ma quelle parole entrarono in un sistema che voleva crederci. Perché c’era il clima del pentitismo come arma decisiva contro la camorra. Perché più accusatori producevano una falsa impressione di conferma reciproca. Perché, dentro una maxi-inchiesta enorme, il nome di Tortora finì trascinato nel quadro generale come se ne facesse automaticamente parte. E perché, una volta partita l’accusa, fermarsi avrebbe significato ammettere un errore mostruoso.</p>
+
+      <p>In altre parole: Pandico da solo non avrebbe dovuto bastare mai.</p>
+
+      <p>Il vero scandalo non è solo la menzogna di Pandico.</p>
+
+      <p>È che quella menzogna — insieme ad altre — sia stata presa abbastanza sul serio da distruggere pubblicamente un uomo innocente.</p>
+
+      <p>E mentre continuo a essere terrorizzato perché proprio in questi giorni è stata bloccata una riforma su QUELLA GIUSTIZIA CHE STIAMO RACCONTANDO, non riesco a non fare un parallelo con Israele.</p>
+
+      <p>Lo so: sembra folle. Sembra il mio bias cognitivo che prende il sopravvento. E allora ho provato a fare una cosa semplice: ho fatto la stessa domanda a due AI, ChatGPT e Claude.</p>
+
+      <blockquote>
+        “Rispondi in modo breve, neutrale e super partes: si può fare un parallelo tra il caso Tortora e Israele, limitatamente al meccanismo per cui si tende a costruire comunque un colpevole anche su basi fragili o controverse?”
+      </blockquote>
+
+      <p><strong>Claude:</strong></p>
+
+      <blockquote>
+        “In entrambi si può osservare un meccanismo simile: la pressione sociale a individuare un colpevole porta a costruire narrative di colpevolezza che precedono — o prescindono da — una verifica rigorosa delle prove. Le accuse si autoalimentano, i dubbi vengono marginalizzati, e chi mette in discussione il quadro accusatorio viene trattato come complice o negazionista. È il meccanismo che gli studiosi chiamano tunnel cognitivo o confirmation bias collettivo.”
+      </blockquote>
+
+      <p><strong>ChatGPT:</strong></p>
+
+      <blockquote>
+        “Sì, un parallelo limitato si può fare, ma solo sul piano del meccanismo: in entrambi i casi si può osservare la tendenza, in certi contesti, a fissare rapidamente un colpevole anche quando gli elementi sono fragili, controversi o fortemente condizionati da pregiudizi, pressione mediatica o bisogno di una narrazione semplice. Detto questo, il paragone va maneggiato con cautela, perché il caso Tortora riguarda una vicenda giudiziaria individuale, mentre Israele riguarda un soggetto statale, storico e geopolitico molto più complesso.”
+      </blockquote>
+
+      <p>E allora la domanda finale è questa: quanto è davvero diverso credere a dei falsi pentiti senza prove, e credere alla neve a Gaza?</p>
+
+      <div class="publication-note">
+        Pubblicato anche su
+        <a
+          href="https://ilrepubblicano.it"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Il Repubblicano
+        </a>
+      </div>
+
+      <p class="hashtags">
+        #EnzoTortora #Portobello #Giustizia #Disinformazione #Media #AI #Israele #Propaganda #Narrazione #INOoriginal
+      </p>
+
+      <div class="share-wrap">
+        <div class="share-label">Condividi questo articolo</div>
+        <div class="share-buttons">
+          <button class="share-btn" onclick="shareFacebook()">Facebook</button>
+          <button class="share-btn" onclick="shareX()">X</button>
+          <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        INOoriginal — Archivio editoriale personale.
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function getShareUrl() {
+      return window.location.href;
+    }
+
+    function getShareTitle() {
+      return document.title;
+    }
+
+    function shareFacebook() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareX() {
+      const url = encodeURIComponent(getShareUrl());
+      const text = encodeURIComponent(getShareTitle());
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareLinkedIn() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener,noreferrer");
+    }
+  </script>
+</body>
+</html>

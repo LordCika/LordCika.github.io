@@ -1,4 +1,16 @@
-[
+[  
+  {
+    "title": "PAL",
+    "slug": "pal",
+    "article_url": "articoli/pal.html",
+    "cover_image": "images/021.png",
+    "date": "2026-03-25",
+    "display_date": "25 marzo 2026",
+    "category": "Analisi",
+    "author": "Marcolino Di Capua",
+    "description": "Il nuovo rapporto più completo sul 7 ottobre aggiorna dati, testimonianze e ricostruzioni, riportando al centro i fatti contro rimozione, minimizzazione e guerra narrativa.",
+    "hero_excerpt": "Quando emergono nuovi dati e testimonianze sul 7 ottobre, il punto non è solo cosa è accaduto, ma perché così tanti continuano a volerlo ridurre, deformare o dimenticare."
+  },
   {
     "title": "DIMONA",
     "slug": "dimona",

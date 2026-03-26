@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLY1XH197N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MLY1XH197N');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIAS | INOoriginal</title>
+  <meta
+    name="description"
+    content="Un’analisi sul confirmation bias, sulla propaganda emotiva e sul modo in cui immagini perfette possono trasformarsi in sentenze prima ancora dei fatti."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="BIAS" />
+  <meta
+    property="og:description"
+    content="Un’analisi sul confirmation bias, sulla propaganda emotiva e sul modo in cui immagini perfette possono trasformarsi in sentenze prima ancora dei fatti."
+  />
+  <meta property="og:image" content="../images/023.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BIAS" />
+  <meta
+    name="twitter:description"
+    content="Un’analisi sul confirmation bias, sulla propaganda emotiva e sul modo in cui immagini perfette possono trasformarsi in sentenze prima ancora dei fatti."
+  />
+  <meta name="twitter:image" content="../images/023.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #07090d;
+      --bg-2: #0d1118;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: rgba(248, 249, 251, 0.96);
+      --muted: rgba(248, 249, 251, 0.62);
+      --soft: rgba(248, 249, 251, 0.8);
+      --accent: #9ecbff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --maxw: 860px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(158, 203, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #06080b 0%, #0b0f15 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-link {
+      font-size: 14px;
+      color: var(--soft);
+      opacity: 0.9;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .page {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 90px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #111;
+    }
+
+    .title-wrap {
+      text-align: center;
+      margin: 34px auto 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .authors-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 26px 0 34px;
+    }
+
+    .author-card {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .author-card:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .author-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-name:hover {
+      text-decoration: underline;
+    }
+
+    .author-role {
+      font-size: 0.86rem;
+      color: var(--soft);
+    }
+
+    .author-info {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    article {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.028));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+    }
+
+    article p {
+      font-size: 1.08rem;
+      color: var(--text);
+      margin-bottom: 1.35em;
+    }
+
+    article p:last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border-left: 3px solid rgba(158, 203, 255, 0.55);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 14px;
+      color: var(--soft);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .video-block {
+      margin: 28px 0 34px;
+      padding: 12px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .video-block video {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      background: #000;
+    }
+
+    .publication-note {
+      margin-top: 10px;
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .publication-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .publication-note a:hover {
+      text-decoration: underline;
+    }
+
+    .hashtags {
+      margin-top: 10px;
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+      line-height: 1.9;
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .share-wrap {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .share-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 0.94rem;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        width: min(100%, calc(100% - 22px));
+        min-height: 62px;
+      }
+
+      .page {
+        width: min(100%, calc(100% - 22px));
+        padding-top: 26px;
+      }
+
+      .hero-image {
+        aspect-ratio: 4 / 5;
+        border-radius: 20px;
+      }
+
+      .authors-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        padding: 14px;
+      }
+
+      article {
+        border-radius: 22px;
+        padding: 20px 18px;
+      }
+
+      article p,
+      blockquote {
+        font-size: 1.02rem;
+      }
+
+      .hashtags {
+        font-size: 0.94rem;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .share-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../index.html">← Torna all’archivio</a>
+      <div class="brand">INOoriginal</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="../images/023.png"
+        alt="Cover articolo Bias"
+      />
+    </section>
+
+    <div class="title-wrap">
+      <div class="eyebrow">Analisi</div>
+      <h1>BIAS</h1>
+      <p class="subtitle">
+        Quando un’immagine perfetta diventa una sentenza prima ancora dei fatti
+      </p>
+    </div>
+
+    <div class="authors-wrap">
+      <a
+        class="author-card"
+        href="https://www.facebook.com/zavathalavudvash"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="author-avatar"
+          src="../images/avatar.jpg"
+          alt="Avatar di Marcolino Di Capua"
+        />
+        <div class="author-meta">
+          <div class="author-name">Marcolino Di Capua</div>
+          <div class="author-role">Autore</div>
+          <div class="author-info">26 marzo 2026 · Tempo di lettura: 5 min</div>
+        </div>
+      </a>
+
+      <a
+        class="author-card"
+        href="https://www.facebook.com/elisa.garfagna"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="author-avatar"
+          src="../images/Elisa.png"
+          alt="Foto profilo di Elisa Garfagna"
+        />
+        <div class="author-meta">
+          <div class="author-name">Elisa Garfagna</div>
+          <div class="author-role">Coautrice</div>
+          <div class="author-info">26 marzo 2026 · Tempo di lettura: 5 min</div>
+        </div>
+      </a>
+    </div>
+
+    <article>
+      <p>Ormai basta pochissimo per diventare virali. Basta avere la ricetta giusta. E se in questa ricetta, come si dice in gergo tecnico, l’hook, cioè i primi secondi che devono catturarti, è un bambino palestinese con presunte bruciature di sigaretta sulle gambe, allora resti incollato allo schermo.</p>
+
+      <div class="video-block">
+        <video controls playsinline preload="metadata">
+          <source src="../video/023-1.mp4" type="video/mp4" />
+          Il tuo browser non supporta il tag video.
+        </video>
+      </div>
+
+      <p>In questo video è tutto perfetto. C’è una madre coperta dalla testa ai piedi, con solo gli occhi scoperti. C’è una tenda, il disordine, il pianto, il dolore. C’è la madre che prova a calmare il bambino dandogli lo smartphone, come fanno milioni di genitori: ed ecco che la scena ti entra dentro, perché a quel punto non stai più guardando qualcosa di lontano. Ti ci stai già identificando.</p>
+
+      <p>Poi arriva il dettaglio decisivo: il pigiamino sporco di sangue, la foto del padre sul telefono, il racconto implicito dei cattivi soldati dell’IDF che avrebbero torturato un bambino innocente davanti a suo padre, per poi restituirlo alla madre con addosso i segni della violenza.</p>
+
+      <p>A quel punto il meccanismo è compiuto. Non stai più verificando un fatto. Stai già reagendo a una sentenza emotiva. E davanti a immagini del genere anche il più moderato, anche il più prudente, sente di dover dire qualcosa, fare qualcosa, schierarsi subito. Perché la violenza sui bambini azzera tutto il resto. Cancella i dubbi, sospende le domande, rende quasi osceno perfino il gesto di verificare.</p>
+
+      <p>E chissene frega se la madre è coperta dalla testa ai piedi, chissene frega se ha in mano uno smartphone di ultima generazione in mezzo a una tenda. Niente importa davvero. Importa confermare chi è il villain.</p>
+
+      <p>Per non limitarmi però all’impressione istintiva, ho chiesto un parere a un’esperta del settore: la dott.ssa Elisa Garfagna, doppiatrice, podcaster, studiosa di comunicazione, Medio Oriente e fenomeni social. E la sua lettura, di fatto, va nella stessa direzione.</p>
+
+      <p>Elisa spiega che, analizzando il fenomeno dalla prospettiva della comunicazione e, in parte, delle neuroscienze applicate ai social media, ci troviamo di fronte a un caso quasi scolastico di ingegneria del consenso emotivo. Quello che l’utente percepisce come una finestra sulla realtà è in verità un costruito funzionale alla narrazione, capace di sfruttare il cosiddetto affective overload: un sovraccarico affettivo che manda in corto circuito la corteccia prefrontale, cioè la sede del pensiero analitico. In questo stato di agitazione, la capacità critica viene letteralmente sequestrata dall’intensità dello stimolo visivo: il dolore infantile agisce come un trigger a cui è quasi impossibile resistere, trasformando il contenuto in una reazione viscerale anziché in un atto analitico.</p>
+
+      <p>La verità oggettiva, quindi, arretra davanti alla verità percepita. L’immagine non funziona più come prova, ma come bomba progettata per detonare dentro le nostre camere dell’eco. È qui che interviene il confirmation bias: l’utente medio consuma il video per convalidare una postura intellettuale o ideologica già acquisita. Anche dettagli che in un altro contesto salterebbero agli occhi — come uno smartphone di ultima generazione in mezzo a un contesto di estrema privazione — diventano improvvisamente invisibili, perché lo storytelling imposto ci ha abituati a una decontestualizzazione in cui la coerenza narrativa prevale sempre sulla coerenza logica.</p>
+
+      <p>A questo punto diventa chiaro perché un contenuto del genere esploda così in fretta. Tutti a condividere, tutti a commentare, tutti a indignarsi.</p>
+
+      <p>Poi però, come spesso accade, emergono altri video, altri dettagli, un’altra ricostruzione. E gli effetti cambiano completamente.</p>
+
+      <p>Secondo la versione diffusa successivamente da fonti israeliane, dietro l’accusa secondo cui l’IDF avrebbe torturato un bambino piccolo ci sarebbe una dinamica del tutto diversa: il padre, Osama Abu Nassar, non sarebbe un semplice civile, ma un militante di Hamas coinvolto negli eventi del 7 ottobre. Nel momento in cui si sarebbe trovato braccato dalle forze israeliane, avrebbe usato il figlio di circa 18 mesi come scudo umano. Le ferite riportate dal bambino, secondo questa ricostruzione, sarebbero state superficiali e provocate da frammenti successivi a un colpo di avvertimento; dopo l’intervento, il bambino avrebbe ricevuto cure, cibo e assistenza, per poi essere riconsegnato alla famiglia tramite la Croce Rossa.</p>
+
+      <div class="video-block">
+        <video controls playsinline preload="metadata">
+          <source src="../video/023-2.mp4" type="video/mp4" />
+          Il tuo browser non supporta il tag video.
+        </video>
+      </div>
+
+      <p>Se questa ricostruzione è corretta, il quadro si ribalta completamente. Quello che era stato presentato come il caso di un bambino torturato per costringere il padre a confessare, diventerebbe invece il caso di un bambino usato prima come scudo e poi come arma propagandistica.</p>
+
+      <p>Ed è qui che il discorso torna a monte. Perché il punto non è solo stabilire quale delle due versioni sia stata rilanciata più in fretta. Il punto è capire perché la prima, quella più emotivamente devastante, abbia trovato immediatamente un terreno così fertile. Perché quando il colpevole designato è Israele, il bisogno di credere spesso arriva prima del bisogno di verificare.</p>
+
+      <p>Non è nemmeno la prima volta. L’uso politico e simbolico dei bambini dentro il conflitto è una costante della propaganda mediorientale: scuole, ospedali, immagini di sofferenza, corpi esposti come prova morale definitiva. Ma quando un minore entra nel racconto, ogni filtro salta. E a quel punto chiunque osi chiedere conferme rischia di essere percepito non come prudente, ma come disumano.</p>
+
+      <p>Per questo storie del genere funzionano così bene. Non perché siano sempre vere, ma perché sono perfette. Ti danno una vittima assoluta, un colpevole assoluto e una reazione pronta all’uso.</p>
+
+      <p>E allora la domanda finale non è neppure soltanto che cosa sia accaduto davvero a quel bambino. La domanda è: quante volte ancora basterà un’immagine emotivamente irresistibile perché la sentenza arrivi prima dei fatti?</p>
+
+      <div class="publication-note">
+        Puoi leggere i nostri articoli anche su
+        <a
+          href="https://ilrepubblicano.it"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Il Repubblicano
+        </a>
+      </div>
+
+      <p class="hashtags">
+        #Bias #ConfirmationBias #Propaganda #Disinformazione #Media #Israele #Gaza #Narrazione #Comunicazione #INOoriginal
+      </p>
+
+      <div class="share-wrap">
+        <div class="share-label">Condividi questo articolo</div>
+        <div class="share-buttons">
+          <button class="share-btn" onclick="shareFacebook()">Facebook</button>
+          <button class="share-btn" onclick="shareX()">X</button>
+          <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        INOoriginal — Archivio editoriale personale.
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function getShareUrl() {
+      return window.location.href;
+    }
+
+    function getShareTitle() {
+      return document.title;
+    }
+
+    function shareFacebook() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareX() {
+      const url = encodeURIComponent(getShareUrl());
+      const text = encodeURIComponent(getShareTitle());
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank", "noopener,noreferrer");
+    }
+
+    function shareLinkedIn() {
+      const url = encodeURIComponent(getShareUrl());
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener,noreferrer");
+    }
+  </script>
+</body>
+</html>
